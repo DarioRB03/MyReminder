@@ -54,36 +54,3 @@ header{
     background: rgb(81,0,172);
     background: linear-gradient(90deg, rgba(81,0,172,1) 37%, rgba(0,212,255,1) 100%);
 }
-
-.icono-footer{
-	width: 7vw; 
-	margin-left: 7vw; 
-	margin-bottom: 2.5vw;
-}
-
-.redes-sociales{
-	width: 50%;
-	display: flex;
-	justify-content: flex-end;
-}
-
-.red-social-icono{
-	display: inline-block;
-	margin-left: 20px;
-	width: 60px;
-	height: 60px;
-	border: 1px solid white;
-	border-radius: 50%;
-	text-align: center;
-	color: white;
-}
-
-.red-social-icono:hover{
-	background: white;
-	color: rgb(64, 0, 167);
-}
-
-.red-social-icono i{
-	font-size: 35px;
-	line-height: 55px;
-}
