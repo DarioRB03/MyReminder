@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{ 
+ scroll-behavior: smooth;
+}
+
+body{
+	font-family: 'Bebas Neue', cursive;
+}
+
+.contenedor{
+	width: 90%;
+	max-width: 1200px;
+	overflow: hidden;
+	margin: auto;
+	padding: 60px 0;
+}
+
+header{
+	height: 100vh;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);
+	background-blend-mode: multiply,multiply, ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.head{
+	padding: 0;
+	height: 100%;
+	display: flex;
+	justify-content:  center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+}
+
+.titulo{
+	font-size: 60px;
+	margin-bottom: 15px;
+}
+
+.eslogan{
+	font-weight: 300;
+	font-size: 25px;
+
+}
+
+#color-SignUp{
+    background: rgb(81,0,172);
+    background: linear-gradient(90deg, rgba(81,0,172,1) 37%, rgba(0,212,255,1) 100%);
+}
+
+.icono-footer{
+	width: 7vw; 
+	margin-left: 7vw; 
+	margin-bottom: 2.5vw;
+}
+
+.redes-sociales{
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.red-social-icono{
+	display: inline-block;
+	margin-left: 20px;
+	width: 60px;
+	height: 60px;
+	border: 1px solid white;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+}
+
+.red-social-icono:hover{
+	background: white;
+	color: rgb(64, 0, 167);
+}
+
+.red-social-icono i{
+	font-size: 35px;
+	line-height: 55px;
+}
