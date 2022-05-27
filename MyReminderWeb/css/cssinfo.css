@@ -10,10 +10,10 @@ body {
 }
 
 .card-container {
-    width: 1000px;
+    width: 2000px;
     overflow-x: scroll;
     display: flex;
-    background-color: #100e17;
+    background-color: #ffffff;
     padding: 3rem;
 }
 
@@ -22,15 +22,11 @@ body {
     height: 350px;
     border-radius: 16px;
     background-color: #17141d;
-    box-shadow: -1rem 0 3rem #000;
+    box-shadow: -0.5rem 0 1rem #000;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
-    transition: 0.2s;
-}
-
-.date {
-    color: #8a8a8a;
+    transition: 0.1s;
 }
 
 .tags {
@@ -83,3 +79,4 @@ body {
 .card:hover~.card{
     transform: translateX(130px);
 }
+
