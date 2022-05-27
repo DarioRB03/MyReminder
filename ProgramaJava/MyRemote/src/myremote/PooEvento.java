@@ -10,4 +10,71 @@ package myremote;
  */
 public class PooEvento {
     
+    private int idEvento;
+    private int idModulo;
+    private String titulo;
+    private String descripcion;
+    private int fechaEvento;
+    private int prioridad;
+
+    public PooEvento() {
+    }
+
+    public PooEvento(int idEvento, int idModulo, String titulo, String descripcion, int fechaEvento, int prioridad) {
+        this.idEvento = idEvento;
+        this.idModulo = idModulo;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechaEvento = fechaEvento;
+        this.prioridad = prioridad;
+    }
+
+    public int getIdEvento() {
+        return idEvento;
+    }
+
+    public void setIdEvento(int idEvento) {
+        this.idEvento = idEvento;
+    }
+
+    public int getIdModulo() {
+        return idModulo;
+    }
+
+    public void setIdModulo(int idModulo) {
+        this.idModulo = idModulo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public int getFechaEvento() {
+        return fechaEvento;
+    }
+
+    public void setFechaEvento(int fechaEvento) {
+        this.fechaEvento = fechaEvento;
+    }
+
+    public int getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(int prioridad) {
+        this.prioridad = prioridad;
+    }
+    
 }
