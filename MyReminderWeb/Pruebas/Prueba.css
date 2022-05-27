@@ -1,0 +1,95 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{ 
+ scroll-behavior: smooth;
+}
+
+body{
+	font-family: 'Bebas Neue', cursive;
+    background-color: rgb(196, 196, 196);
+}
+
+.redes-sociales{
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.red-social-icono{
+	display: inline-block;
+	margin-left: 20px;
+	width: 60px;
+	height: 60px;
+	border: 1px solid rgb(0, 104, 173);
+	border-radius: 50%;
+	text-align: center;
+	color: rgb(230, 55, 55);
+}
+
+.red-social-icono:hover{
+	background: rgb(22, 161, 29);
+	color: darkorange;
+}
+
+.red-social-icono i{
+	font-size: 35px;
+	line-height: 55px;
+}
+
+#moveIG:hover{
+    animation: moveToRight 2s ease-in-out;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveToRight {
+    0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(300px);
+      }
+
+  }
+
+  .target {
+  }
+
+.movediv{
+    padding-top: 25%;
+}
+  
+  .trigger {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  @keyframes hide{
+    0% { transform: translate(0);}
+    20% { transform: translate(5px);}
+    100% { transform: translate(-120vw);}
+  }
+  
+  @keyframes show {
+    0% { transform: translate(-120vw);}
+    80% { transform: translate(-5px);}
+    100% { transform: translate(0vw);}
+  }
+  
+  .hide {
+    animation: hide 0.5s forwards ease-in-out;
+    animation-delay: .2s;
+  }
+  
+  .show {
+    animation: show 0.5s forwards ease-in-out;
+  }
+
+
+  .vuelve {
+      min-height: 600px;
+  }
