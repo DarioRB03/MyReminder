@@ -29,10 +29,6 @@ body {
     transition: 0.2s;
 }
 
-.date {
-    color: #8a8a8a;
-}
-
 .tags {
     display: flex;
     flex-wrap: wrap;
