@@ -116,13 +116,13 @@ header{
   }
   
   @keyframes hide{
-    0% { transform: translate(0);}
+    0% { transform: translate(0vw);}
     20% { transform: translate(-2vh);}
-    100% { transform: translate(25vh);}
+    100% { transform: translate(13vh);}
   }
   
   @keyframes show {
-    0% { transform: translate(25vh);}
+    0% { transform: translate(13vh);}
     80% { transform: translate(-2vh);}
     100% { transform: translate(0vw);}
   }
@@ -149,6 +149,19 @@ header{
   #contenido{
 	flex: 1;
 	margin-top: -3%;
-	margin-left: 15%;
+	margin-left: 10%;
+	margin-right: 20%;
   }
+  
+  #card-fixed{
+	  position: fixed;
+	  top: 20%;
+	  right: 1.5%;
+  }
+
+  #logo-fixed{
+	position: fixed;
+	top: 20%;
+	left: -0.3%;
+}
 
