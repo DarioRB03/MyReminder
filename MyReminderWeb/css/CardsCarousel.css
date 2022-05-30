@@ -1,13 +1,16 @@
-body {
+#cardCarousel {
   color: white;
   font-family: "Lato";
   font-weight: light;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
   overflow: hidden;
+}
+
+.logo{
+  margin-left: 25px;
+  padding-top: 1px;
 }
 .open-walkthrough {
   border: 0;
