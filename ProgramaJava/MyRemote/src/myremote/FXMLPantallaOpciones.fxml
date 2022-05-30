@@ -101,5 +101,6 @@
             <Font size="30.0" />
          </font>
       </Text>
+      <Line endX="1689.0" startX="1439.0" />
    </children>
 </AnchorPane>
