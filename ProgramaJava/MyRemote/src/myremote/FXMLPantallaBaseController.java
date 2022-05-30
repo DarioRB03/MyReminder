@@ -39,7 +39,6 @@ public class FXMLPantallaBaseController implements Initializable {
     
     private Paint activeButtonPaint;
     private Paint unactiveButtonPaint;
-
     /**
      * Initializes the controller class.
      */
@@ -53,6 +52,7 @@ public class FXMLPantallaBaseController implements Initializable {
          buttonEventos.setTextFill(unactiveButtonPaint);
          buttonCalendario.setTextFill(unactiveButtonPaint);
          buttonOpciones.setTextFill(unactiveButtonPaint);
+
     }    
 
     @FXML
@@ -134,5 +134,8 @@ public class FXMLPantallaBaseController implements Initializable {
             Logger.getLogger(FXMLPantallaBaseController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    
+    
     
 }
