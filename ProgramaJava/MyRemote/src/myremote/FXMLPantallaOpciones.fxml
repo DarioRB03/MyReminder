@@ -19,12 +19,12 @@
    <children>
       <Text layoutX="29.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tema">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Text>
       <RadioButton fx:id="radioClaro" layoutX="37.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleTemaClaro" selected="true" text="Claro">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="radio" />
@@ -32,62 +32,62 @@
       </RadioButton>
       <RadioButton fx:id="radioOscuro" layoutX="214.0" layoutY="82.0" mnemonicParsing="false" onAction="#handleTemaOscuro" text="Oscuro" toggleGroup="$radio">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </RadioButton>
       <Line endX="1415.0" layoutX="239.0" layoutY="164.0" startX="-221.0" />
       <Text layoutX="22.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tamaño letra">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Text>
       <Slider fx:id="sliderTema" blockIncrement="15.0" layoutX="45.0" layoutY="202.0" majorTickUnit="45.0" max="45.0" min="15.0" minorTickCount="2" prefHeight="127.0" prefWidth="431.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="30.0" />
       <Text layoutX="44.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
          <font>
-            <Font size="15.0" />
+            <Font name="Yu Gothic Regular" size="15.0" />
          </font>
       </Text>
       <Text layoutX="461.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
          <font>
-            <Font size="45.0" />
+            <Font name="Yu Gothic Regular" size="45.0" />
          </font>
       </Text>
       <Line endX="1415.0" layoutX="239.0" layoutY="414.0" startX="-211.0" />
       <CheckBox fx:id="checkBoxNotificaciones" layoutX="34.0" layoutY="436.0" mnemonicParsing="false" onAction="#handleCheckNotificaciones" selected="true" text="Notificaciones">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </CheckBox>
       <Text layoutX="40.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuracion de notificaciones">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Text>
       <ChoiceBox fx:id="choiceBoxNotificaciones" layoutX="36.0" layoutY="581.0" prefHeight="64.0" prefWidth="226.0" style="-fx-background-color: white; -fx-border-color: black;" />
       <Button fx:id="buttonSalir" layoutX="19.0" layoutY="799.0" mnemonicParsing="false" onAction="#handleSalirAction" prefHeight="71.0" prefWidth="313.0" style="-fx-background-color: red; -fx-border-color: #900000; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Salir" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Button>
       <Line endX="535.0" endY="-114.0" layoutX="307.0" layoutY="556.0" startX="535.0" startY="184.0" />
       <Hyperlink fx:id="linkTyC" layoutX="449.0" layoutY="802.0" onAction="#handleLinkTyC" text="Terminos y Condiciones" underline="true">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Hyperlink>
       <Hyperlink fx:id="linkSobreNosotros" layoutX="945.0" layoutY="801.0" onAction="#handleLinkSobreNosotros" text="Sobre Nosotros..." underline="true">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Hyperlink>
       <Button fx:id="buttonReestablecer" layoutX="1353.0" layoutY="791.0" mnemonicParsing="false" onAction="#handleReestablecerAction" prefHeight="71.0" prefWidth="313.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Reestablecer" textAlignment="CENTER">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Button>
       <Hyperlink fx:id="linkAyuda" layoutX="989.0" layoutY="471.0" onAction="#handleLinkAyuda" text="Ayuda..." underline="true">
          <font>
-            <Font size="30.0" />
+            <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Hyperlink>
       <ImageView fitHeight="214.0" fitWidth="135.0" layoutX="1386.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
