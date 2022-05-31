@@ -3,192 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../CSS/cssinfo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-    tailwind.config = {
+      tailwind.config = {
         theme: {
-        extend: {
+          extend: {
             fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
             },
+          }
         }
-        }
-    }
+      }
     </script>
 </head>
-
 <body>
-         <div class="card-container">
-        <div class="card">
-            <header class="article-header">
-                <div>
-                    <div class="category-title">
-                        1
-                    </div>
-                </div>
-                <h2 class="article-title">
-                        Product Owner
-                </h2>
-            </header>
-            <div class="flex justify-center">
-            <div class="rounded-full w-32 shadow-lg">
-                <img
-                    src="../Imagenes/pau.jpeg"
-                    class="rounded-full w-41"
-                     alt="Avatar"
-                />
-            </div>
-            </div>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Pau Quiles</div>
-                </div>
-            </div>
-            <div class="tags">
-                <div>JavaScript</div>
-                <div>HTML</div>
-            </div>
-        </div>
-        <div class="card">
-            <header class="article-header">
-                <div>
-                    <div class="category-title">
-                        2
-                    </div>
-                </div>
-                <div class="article-title">
-                    Scrum Master
-                </div>
-            </header>
-            <div class="flex justify-center">
-                <div class="rounded-full w-32 shadow-lg">
-                    <img
-                        src="../Imagenes/santos.jpeg"
-                        class="rounded-full w-41"
-                         alt="Avatar"
-                    />
-                </div>
-                </div>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Alex Blasco</div>
-                </div>
-            </div>
-            <div class="tags">
-                <div>JavaScript</div>
-                <div>HTML</div>
-            </div>
-        </div>
 
-        <div class="card">
-            <header class="article-header">
-                <div>
-                    <div class="category-title">
-                        3
-                    </div>
-                </div>
-                <div class="article-title">
-                    Developer Team
-                </div>
-            </header>
-            <div class="flex justify-center">
-                <div class="rounded-full w-32 shadow-lg">
-                    <img
-                        src="../Imagenes/pau.jpeg"
-                        class="rounded-full w-41"
-                         alt="Avatar"
-                    />
-                </div>
-                </div>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Darío Rivadeneira</div>
-                </div>
-            </div>
-            <div class="tags">
-                <div>JavaScript</div>
-                <div>HTML</div>
-            </div>
-        </div>
+  <!--Imagen del grupo-->
+  <div class="relative overflow-hidden bg-no-repeat bg-cover max-w-full" id="alinearImagen">
+    <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="max-w-full" alt="Foto del grupo" />
+    <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden opacity-0 transition duration-300 ease-in-out bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-70"></div>
+  </div>
 
-        <div class="card">
-            <header class="article-header">
-                <div>
-                    <div class="category-title">
-                        4
-                    </div>
-                </div>
-                <div class="article-title">
-                    Developer Team
-                </div>
-            </header>
-            <div class="flex justify-center">
-                <div class="rounded-full w-32 shadow-lg">
-                    <img
-                        src="../Imagenes/toni.jpeg"
-                        class="rounded-full w-41"
-                         alt="Avatar"
-                    />
-                </div>
-                </div>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Antoni Dolz</div>
-                </div>
-            </div>
-            <div class="tags">
-                <div>JavaScript</div>
-                <div>HTML</div>
+  <!--Contenedor de cartas-->
+    <div class="card-container" id="alinearCartas">
+  <!--Cartas-->
+      <div class="card">
+            <h2 class="article-title">
+                Product Owner
+            </h2>
+        </header>
+        <div class="author">
+            <div class="profile"></div>
+            <div class="info">
+              <div class="imagenCentrar">
+                <img src="../Imagenes/editpau.jpeg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
+              </div>
+              <div class="alinear" id="alinearTextopau">
+                <div class="caption">Integrante</div>
+                <div class="name">Pau Quiles</div>
+              </div>
             </div>
         </div>
-        <div class="card">
-            <header class="article-header">
-                <div>
-                    <div class="category-title">
-                        5
-                    </div>
-                </div>
-                <div class="article-title">
-                    Developer Team
-                </div>
-            </header>
-            <div class="flex justify-center">
-                <div class="rounded-full w-32 shadow-lg">
-                    <img
-                        src="../Imagenes/borja.jpeg"
-                        class="rounded-full w-41"
-                         alt="Avatar"
-                    />
-                </div>
-                </div>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Borja Gomez</div>
-                </div>
-            </div>
-            <div class="tags">
-                <div>JavaScript</div>
-                <div>HTML</div>
-            </div>
+        <div class="tags" id="alinearTagpau">
+            <div>PROG</div>
+            <div>ED</div>
         </div>
     </div>
+    <div class="card">
+            <div class="article-title">
+                Scrum Master
+            </div>
+        </header>
+        <div class="author">
+            <div class="profile"></div>
+            <div class="info">
+              <div class="imagenCentrar">
+                <img src="../Imagenes/editsantos.jpeg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
+              </div>
+              <div class="alinear" id="alinearTextosantos">
+                <div class="caption">Integrante</div>
+                <div class="name">Alex Blasco</div>
+              </div>
+            </div>
+        </div>
+        <div class="tags" id="alinearTagsantos">
+            <div>LLMM</div>
+            <div>SI</div>
+            <div>BBDD</div>
+            <div>PROG</div>
+        </div>
+    </div>
+    <div class="card">
+            <div class="article-title">
+                Developer Team
+            </div>
+        </header>
+        <div class="author">
+            <div class="profile"></div>
+            <div class="info">
+              <div class="imagenCentrar">
+                <img src="../Imagenes/editdario.jpg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
+              </div>
+              <div class="alinear" id="alinearTextodario">
+                <div class="caption">Integrante</div>
+                <div class="name">Darío Rivadeneira</div>
+              </div>
+            </div>
+        </div>
+        <div class="tags" id="alinearTags">
+            <div>LLMM</div>
+            <div>ED</div>
+            <div>SI</div>
+        </div>
+    </div>
+    <div class="card">
+            <div class="article-title">
+                Developer Team
+            </div>
+        </header>
+        <div class="author">
+            <div class="profile"></div>
+            <div class="info">
+              <div class="imagenCentrar">
+                <img src="../Imagenes/edittoni.jpeg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
+              </div>
+              <div class="alinear" id="alinearTextotoni">
+                <div class="caption">Integrante</div>
+                <div class="name">Antoni Dolz</div>
+              </div>
+            </div>
+        </div>
+        <div class="tags" id="alinearTags">
+            <div>BBDD</div>
+            <div>PROG</div>
+        </div>
+    </div>
+    <div class="card">
+            <div class="article-title">
+                Developer Team
+            </div>
+        </header>
+        <div class="author">
+            <div class="profile"></div>
+            <div class="info">
+              <div class="imagenCentrar">
+                <img src="../Imagenes/editborja.jpeg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
+              </div>
+              <div class="alinear" id="alinearTextoborja">
+                <div class="caption">Integrante</div>
+                <div class="name">Borja Gómez</div>
+              </div>
+            </div>
+        </div>
+        <div class="tags" id="alinearTags">
+            <div>LLMM</div>
+            <div>FOL</div>
+        </div>
+    </div>
+</div>
+         
 </body>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
 
 
 </html>
