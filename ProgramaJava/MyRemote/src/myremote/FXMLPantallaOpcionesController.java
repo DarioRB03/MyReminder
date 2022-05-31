@@ -21,6 +21,9 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -51,6 +54,14 @@ public class FXMLPantallaOpcionesController implements Initializable {
     private Button buttonReestablecer;
     @FXML
     private Hyperlink linkAyuda;
+    @FXML
+    private AnchorPane pane;
+    @FXML
+    private Text TemaTxt;
+    @FXML
+    private Text TamañoletraTxt;
+    @FXML
+    private Text NotificacionesTxt;
 
     /**
      * Initializes the controller class.
@@ -62,6 +73,24 @@ public class FXMLPantallaOpcionesController implements Initializable {
 
     @FXML
     private void handleTemaClaro(ActionEvent event) {
+        RadioButton selectedRadioButton = (RadioButton) radio.getSelectedToggle();
+        
+        System.out.println(selectedRadioButton.getText());
+        
+        Paint labelPaint = Paint.valueOf("#000");
+        
+        this.pane.setStyle("-fx-background-color: #FFF");
+        this.TemaTxt.setFill(labelPaint);
+        this.TamañoletraTxt.setFill(labelPaint);
+        this.NotificacionesTxt.setFill(labelPaint);
+        this.botonAcc.setTextFill(labelPaint);
+        this.botonAcc.setStyle("-fx-border-color: #0090ff;");
+        this.botonCon.setTextFill(labelPaint);
+        this.radioClaro.setTextFill(labelPaint);
+        this.radioOscuro.setTextFill(labelPaint);
+        this.textField1.setStyle("-fx-background-color: #dddddd");
+        this.textField2.setStyle("-fx-background-color: #dddddd");
+        this.botonTam.setTextFill(labelPaint);
     }
 
     @FXML

@@ -15,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="889.0" prefWidth="1689.0" translateX="50.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myremote.FXMLPantallaOpcionesController">
+<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="889.0" prefWidth="1689.0" translateX="50.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myremote.FXMLPantallaOpcionesController">
    <children>
-      <Text layoutX="29.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tema">
+      <Text fx:id="TemaTxt" layoutX="29.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tema">
          <font>
             <Font name="Yu Gothic Regular" size="30.0" />
          </font>
@@ -36,18 +36,18 @@
          </font>
       </RadioButton>
       <Line endX="1415.0" layoutX="239.0" layoutY="164.0" startX="-221.0" />
-      <Text layoutX="22.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tamaño letra">
+      <Text fx:id="TamañoletraTxt" layoutX="22.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tamaño letra">
          <font>
             <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Text>
       <Slider fx:id="sliderTema" blockIncrement="15.0" layoutX="45.0" layoutY="202.0" majorTickUnit="45.0" max="45.0" min="15.0" minorTickCount="2" prefHeight="127.0" prefWidth="431.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="30.0" />
-      <Text layoutX="44.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+      <Text fx:id="atxt" layoutX="44.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
          <font>
             <Font name="Yu Gothic Regular" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="461.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
+      <Text fx:id="Atxt" layoutX="461.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A">
          <font>
             <Font name="Yu Gothic Regular" size="45.0" />
          </font>
@@ -58,7 +58,7 @@
             <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </CheckBox>
-      <Text layoutX="40.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuracion de notificaciones">
+      <Text fx:id="NotificacionesTxt" layoutX="40.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuracion de notificaciones">
          <font>
             <Font name="Yu Gothic Regular" size="30.0" />
          </font>
