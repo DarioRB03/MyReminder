@@ -203,7 +203,7 @@ header{
 }
 
 .colorgithub{
-	background: rgb(212, 0, 255);
+	background: rgb(155, 1, 185);
 	color: white;
 }
 
@@ -266,6 +266,7 @@ header{
 	  position: fixed;
 	  top: 100%;
 	  right: 1.5%;
+
   }
 
   #logo-fixed{

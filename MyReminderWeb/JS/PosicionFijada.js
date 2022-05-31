@@ -1,9 +1,9 @@
 $(window).scroll(function(){
-    $("#logo-fixed").css("top",Math.max(100,900-$(this).scrollTop()));
+    $("#logo-fixed").css("top",Math.max(120,1000-$(this).scrollTop()));
 });
 
 $(window).scroll(function(){
-    $("#card-fixed").css("top",Math.max(100,900-$(this).scrollTop()));
+    $("#card-fixed").css("top",Math.max(120,1000-$(this).scrollTop()));
 });
 
 /*window.onscroll = function() {

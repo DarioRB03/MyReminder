@@ -1,6 +1,5 @@
 #cardCarousel {
   color: white;
-  font-family: "Lato";
   font-weight: light;
   display: flex;
   justify-content: center;
@@ -113,7 +112,7 @@
 }
 .walkthrough .walkthrough-body p {
   line-height: 1.6em;
-  font-size: 13px;
+  font-size: 16px;
   margin-top: 16px;
   padding-top: 0;
   color: rgba(255, 255, 255, 0.8);
@@ -148,13 +147,12 @@
   height: 40px;
   border: 0;
   background: #5da3f2;
-  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border-radius: 0;
   color: white;
   flex: 1;
-  font-size: 12px;
+  font-size: 15px;
   margin: 0;
   outline: 0;
   padding: 12px;
