@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="889.0" prefWidth="1689.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myremote.FXMLPantallaOpcionesController">
+<AnchorPane id="AnchorPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="889.0" prefWidth="1689.0" translateX="50.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myremote.FXMLPantallaOpcionesController">
    <children>
       <Text layoutX="29.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tema">
          <font>
