@@ -15,50 +15,50 @@
 <AnchorPane id="AnchorPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="-1.0" minWidth="-1.0" prefHeight="889.0" prefWidth="1689.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myremote.FXMLPantallaModulosController">
    <children>
       <Line endX="-93.0" endY="863.0" layoutX="1310.0" layoutY="25.0" startX="-93.0" startY="-17.0" stroke="#575757" />
-      <Button fx:id="botonTareasCercanas" layoutX="1292.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleTareasCercanasAction" text="Tareas">
+      <Button fx:id="botonTareasCercanas" layoutX="1266.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleTareasCercanasAction" text="Tareas">
          <font>
-            <Font size="36.0" />
+            <Font name="Yu Gothic Regular" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="botonEventosCercanos" layoutX="1471.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleEventosCercanosAction" text="Eventos">
+      <Button fx:id="botonEventosCercanos" layoutX="1461.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleEventosCercanosAction" text="Eventos">
          <font>
-            <Font size="36.0" />
+            <Font name="Yu Gothic Regular" size="36.0" />
          </font>
       </Button>
       <Pane fx:id="panel1" layoutX="1243.0" layoutY="179.0" prefHeight="176.0" prefWidth="436.0">
          <children>
-            <Label fx:id="nombrePanel1" text="nombrePanel" textFill="BLUE">
+            <Label fx:id="nombrePanel1" layoutX="-17.0" layoutY="-1.0" text="nombrePanel" textFill="BLUE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Yu Gothic Regular" size="24.0" />
                </font>
             </Label>
             <TextField fx:id="textFieldDescripcion1" editable="false" layoutX="-17.0" layoutY="42.0" prefHeight="109.0" prefWidth="436.0" promptText="Introducir descripcion...">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Yu Gothic Regular" size="18.0" />
                </font>
             </TextField>
-            <Text fx:id="labelFecha1" fill="#9a9a9a" layoutX="236.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="01/01/2022 00:00">
+            <Text fx:id="labelFecha1" fill="#9a9a9a" layoutX="218.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="01/01/2022 00:00">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Yu Gothic Regular" size="24.0" />
                </font>
             </Text>
          </children>
       </Pane>
       <Pane fx:id="panel2" layoutX="1233.0" layoutY="403.0" prefHeight="176.0" prefWidth="436.0">
          <children>
-            <Label fx:id="nombrePanel2" text="nombrePanel" textFill="BLUE">
+            <Label fx:id="nombrePanel2" layoutY="-9.0" text="nombrePanel" textFill="BLUE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Yu Gothic Regular" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="textFieldDescripcion2" editable="false" layoutY="35.0" prefHeight="109.0" prefWidth="436.0" promptText="Introducir descripcion...">
+            <TextField fx:id="textFieldDescripcion2" editable="false" layoutY="33.0" prefHeight="109.0" prefWidth="436.0" promptText="Introducir descripcion...">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Yu Gothic Regular" size="18.0" />
                </font>
             </TextField>
             <Text fx:id="labelFecha2" fill="#9a9a9a" layoutX="236.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="01/01/2022 00:00">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Yu Gothic Regular" size="24.0" />
                </font>
             </Text>
          </children>
@@ -67,17 +67,17 @@
          <children>
             <Label fx:id="nombrePanel3" text="nombrePanel" textFill="BLUE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Yu Gothic Regular" size="24.0" />
                </font>
             </Label>
             <TextField fx:id="textFieldDescripcion3" editable="false" layoutY="35.0" prefHeight="109.0" prefWidth="436.0" promptText="Introducir descripcion...">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Yu Gothic Regular" size="18.0" />
                </font>
             </TextField>
-            <Text fx:id="labelFecha3" fill="#9a9a9a" layoutX="236.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="01/01/2022 00:00">
+            <Text fx:id="labelFecha3" fill="#9a9a9a" layoutX="238.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="01/01/2022 00:00">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Yu Gothic Regular" size="24.0" />
                </font>
             </Text>
          </children>
@@ -93,12 +93,12 @@
                            <children>
                               <Label layoutX="60.0" layoutY="55.0" text="Tareas Pendientes">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font name="Yu Gothic Regular" size="24.0" />
                                  </font>
                               </Label>
                               <Label layoutX="59.0" layoutY="116.0" text="Eventos Pendientes">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font name="Yu Gothic Regular" size="24.0" />
                                  </font>
                               </Label>
                               <Label layoutX="28.0" layoutY="55.0" text="0">
@@ -111,16 +111,16 @@
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="217.0" layoutY="157.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="93.0" text="Editar" textFill="BLUE">
+                              <Button layoutX="193.0" layoutY="150.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="102.0" text="Editar" textFill="BLUE">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font name="Yu Gothic Regular" size="24.0" />
                                  </font>
                               </Button>
                            </children>
                         </AnchorPane>
                     </content>
                      <font>
-                        <Font size="24.0" />
+                        <Font name="Yu Gothic Regular" size="24.0" />
                      </font>
                   </TitledPane>
                   <BorderPane layoutX="38.0" layoutY="22.0" prefHeight="260.0" prefWidth="312.0" style="-fx-border-style: dotted;">

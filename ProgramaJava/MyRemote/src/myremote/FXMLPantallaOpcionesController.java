@@ -4,6 +4,10 @@
  */
 package myremote;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -75,10 +79,30 @@ public class FXMLPantallaOpcionesController implements Initializable {
 
     @FXML
     private void handleLinkTyC(ActionEvent event) {
+        Desktop browser = Desktop.getDesktop();
+        try{
+            browser.browse(new URI("http://www.google.com"));
+        }
+        catch(IOException err){
+            
+        }
+        catch(URISyntaxException err){
+            
+        }
     }
 
     @FXML
     private void handleLinkSobreNosotros(ActionEvent event) {
+        Desktop browser = Desktop.getDesktop();
+        try{
+            browser.browse(new URI("http://www.google.com"));
+        }
+        catch(IOException err){
+            
+        }
+        catch(URISyntaxException err){
+            
+        }
     }
 
     @FXML
@@ -87,6 +111,16 @@ public class FXMLPantallaOpcionesController implements Initializable {
 
     @FXML
     private void handleLinkAyuda(ActionEvent event) {
+        Desktop browser = Desktop.getDesktop();
+        try{
+            browser.browse(new URI("http://www.google.com"));
+        }
+        catch(IOException err){
+            
+        }
+        catch(URISyntaxException err){
+            
+        }
     }
     
 }
