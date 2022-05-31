@@ -24,7 +24,7 @@
 
 header{
 	height: 100vh;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);
+    background: linear-gradient(to bottom, rgba(89, 0, 255, 0.15) 0%, rgba(132, 0, 255, 0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/IndexFoto.jpg);
 	background-blend-mode: multiply,multiply, ;
     background-repeat: no-repeat;
     background-position: center;
@@ -111,8 +111,7 @@ header{
 	position: fixed;
     top: 18px;
     right: 30px;
-	background: rgb(56,190,255);
-	background: linear-gradient(97deg, rgba(56,190,255,1) 0%, rgba(111,0,255,0.3085609243697479) 86%);
+	background: white;
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -265,21 +264,17 @@ header{
   
   #card-fixed{
 	  position: fixed;
-	  top: 20%;
+	  top: 100%;
 	  right: 1.5%;
   }
 
   #logo-fixed{
 	position: fixed;
-	top: 20%;
+	top: 100%;
 	left: -0.3%;
 }
 
-	#logo-sticky{
-	position: sticky;
-	top: 20%;
-	left: -0.3%;
-}
+	
 
 
 /* Footer */
@@ -287,4 +282,12 @@ header{
 #footerEspaciado{
 	margin-bottom: -50px;
 	margin-top: 20px;
+}
+
+/* Pruebas */
+
+#logo-sticky{
+	position: sticky;
+	top: 20%;
+	left: -0.3%;
 }

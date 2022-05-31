@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/CardsCarousel.css">
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="JS/CardCarousel.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     </script>
     <script>
@@ -134,7 +135,7 @@
 <main id="principal">
 
 <!-- Redes Sociales -->
-    <div id="logo-sticky">
+    <div id="logo-fixed">
         <article id="logos">
             <div class="redes-sociales">
                 <a class="red-social-icono trigger show" id="instagram" href="">
@@ -460,26 +461,12 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-<script>
-window.onscroll = function() {
-  var y = window.scrollY;
-console.log(y);
-
-    var target = $('logo-sticky');
-    if(y > 680){
-        target.removeClass('logo-sticky');
-        target.addClass('logo-fixed');
-    }
-
-};
-
-
-</script>
 <script src="JS/Instagram.js"></script>
 <script src="JS/Twitter.js"></script>
 <script src="JS/GitHub.js"></script>
 <script src="JS/Youtube.js"></script>
 <script src="JS/Code.js"></script>
 <script src="JS/Menu.js"></script>
+<script src="JS/PosicionFijada.js"></script>
 
 </html>
