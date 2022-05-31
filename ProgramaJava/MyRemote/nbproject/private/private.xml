@@ -2,8 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/Admin/Desktop/MyReminder/ProgramaJava/MyRemote/src/myremote/FXMLPantallaOpcionesController.java</file>
         </group>
+=======
+<<<<<<< HEAD
+        <group>
+            <file>file:/C:/Users/Admin/Documents/MyReminder/ProgramaJava/MyRemote/src/myremote/FXMLPantallaBaseController.java</file>
+        </group>
+=======
+        <group/>
+>>>>>>> origin/main
+>>>>>>> origin/main
     </open-files>
 </project-private>
