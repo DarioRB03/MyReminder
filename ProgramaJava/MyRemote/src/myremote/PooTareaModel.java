@@ -5,7 +5,10 @@
 package myremote;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -86,4 +89,37 @@ public class PooTareaModel extends DBUtil{
 		}
 	
             }
+            
+            public ObservableList<PooTarea> getTarea(int idUsuarioActivo){
+
+                ObservableList<PooTarea> tareasObservables = FXCollections.observableArrayList();
+
+                try{
+
+                    String insertSql = "SELECT idTarea, idModulo, titulo, descripcion, fecha, prioridad FROM tareas WHERE idModulo IN (SELECT idModulo FROM modulos WHERE idUsuario=?)";
+	
+                    PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
+                    
+                    prest.setInt(1, idUsuarioActivo);
+
+                    ResultSet rs = prest.executeQuery();
+
+                    while (rs.next()){
+			int idTarea = rs.getInt("idTarea");
+                        int idModulo = rs.getInt("idModulo");
+                        String titulo = rs.getString("titulo");
+                        String descripcion = rs.getString("descripcion");
+                            /* falta modificar los POO base para poder crear los objetos correctamente */
+                        PooTarea t = new PooTarea(idTarea,idModulo,titulo,descripcion);
+                        tareasObservables.add(t);
+		}
+
+		return tareasObservables;
+	} catch (SQLException e){
+		e.printStackTrace();
+		return null;
+	}finally{
+		this.cerrarConexion();
+	}
+}
 }

@@ -5,7 +5,10 @@
 package myremote;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -90,6 +93,41 @@ public class PooEventoModel extends DBUtil{
 		}
 	
             }
+            
+            public ObservableList<PooEvento> getEvento(int idUsuarioActivo){
+
+                ObservableList<PooEvento> eventosObservables = FXCollections.observableArrayList();
+
+                try{
+
+                    String insertSql = "SELECT idEvento, idModulo, titulo, descripcion, fechaEvento, prioridad FROM eventos WHERE idModulo IN (SELECT idModulo FROM modulos WHERE idUsuario=?)";
+	
+                    PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
+                    
+                    prest.setInt(1, idUsuarioActivo);
+
+                    ResultSet rs = prest.executeQuery();
+
+                    while (rs.next()){
+			int idEvento = rs.getInt("idEvento");
+                        int idModulo = rs.getInt("idModulo");
+                        String titulo = rs.getString("titulo");
+                        String descripcion = rs.getString("descripcion");
+                        int fechaEvento = rs.getInt("fechaEvento");
+                        int prioridad = rs.getInt("prioridad");
+                            /* falta modificar los POO base para poder crear los objetos correctamente */
+                        PooEvento t = new PooEvento(idEvento,idModulo,titulo,descripcion,fechaEvento,prioridad);
+                        eventosObservables.add(t);
+		}
+
+		return eventosObservables;
+	} catch (SQLException e){
+		e.printStackTrace();
+		return null;
+	}finally{
+		this.cerrarConexion();
+	}
+}
     
 }
 
