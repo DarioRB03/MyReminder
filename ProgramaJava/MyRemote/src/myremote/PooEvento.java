@@ -4,6 +4,8 @@
  */
 package myremote;
 
+import java.util.Date;
+
 /**
  *
  * @author 1erDAM
@@ -14,13 +16,13 @@ public class PooEvento {
     private int idModulo;
     private String titulo;
     private String descripcion;
-    private int fechaEvento;
+    private Date fechaEvento;
     private int prioridad;
 
     public PooEvento() {
     }
 
-    public PooEvento(int idEvento, int idModulo, String titulo, String descripcion, int fechaEvento, int prioridad) {
+    public PooEvento(int idEvento, int idModulo, String titulo, String descripcion, Date fechaEvento, int prioridad) {
         this.idEvento = idEvento;
         this.idModulo = idModulo;
         this.titulo = titulo;
@@ -61,11 +63,11 @@ public class PooEvento {
         this.descripcion = descripcion;
     }
 
-    public int getFechaEvento() {
+    public Date getFechaEvento() {
         return fechaEvento;
     }
 
-    public void setFechaEvento(int fechaEvento) {
+    public void setFechaEvento(Date fechaEvento) {
         this.fechaEvento = fechaEvento;
     }
 
