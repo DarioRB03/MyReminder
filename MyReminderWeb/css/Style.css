@@ -8,7 +8,7 @@
  scroll-behavior: smooth;
 }
 
-body{
+#style{
 	font-family: 'Bebas Neue', cursive;
 }
 
@@ -24,7 +24,7 @@ body{
 
 header{
 	height: 100vh;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);
+    background: linear-gradient(to bottom, rgba(89, 0, 255, 0.15) 0%, rgba(132, 0, 255, 0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/IndexFoto.jpg);
 	background-blend-mode: multiply,multiply, ;
     background-repeat: no-repeat;
     background-position: center;
@@ -34,17 +34,17 @@ header{
 .head{
 	padding: 0;
 	height: 100%;
-	
 	display: flex;
 	justify-content:  center;
 	align-items: center;
 	flex-direction: column;
 	color: white;
+	margin-top: 17%;
 }
 
 .titulo{
 	font-size: 60px;
-	margin-bottom: 15px;
+	margin-bottom:15px;
 }
 
 .eslogan{
@@ -56,6 +56,114 @@ header{
 
 #espaciado-nav{
 	margin-right: 100px;
+}
+
+/* Menú Desplegable */
+
+.list{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(56,190,255);
+    background: linear-gradient(97deg, rgba(56,190,255,1) 0%, rgba(111,0,255,1) 86%);
+}
+
+.list__item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list__item--click{
+    cursor: pointer;
+}
+
+.list__button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.arrow .list__arrow{
+    transform: rotate(90deg);
+}
+
+.list__arrow{
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list__show{
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #303440;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+}
+
+.menu{
+	position: fixed;
+    top: 18px;
+    right: 30px;
+	background: white;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+	z-index: 10;
+}
+
+.menu-navegador{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 30vw;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	transition: transform .3s ease-in-out;
+	transform: translate(110%);
+	box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.spread{
+	transform: translate(0);
+}
+
+.menu-navegador a{
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.nav{
+    width: 300px;
+}
+
+.nav__link{
+    color: #303440;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+.nav__link--inside{
+    border-radius: 6px ;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.nav__link--inside:hover{
+	background: rgb(56,190,255);
+	background: linear-gradient(97deg, rgba(56,190,255,1) 0%, rgba(111,0,255,1) 86%);
 }
 
 /* Redes Sociales */
@@ -84,29 +192,30 @@ header{
 	line-height: 55px;
 }
 
-.red-social-icono:hover{
+.colorinstagram{
+	background: rgb(230, 0, 142);
 	color: white;
 }
 
-#instagram:hover{
-	background: rgb(230, 0, 142);
-}
-
-#twitter:hover{
+.colortwitter{
 	background: rgb(0, 164, 230);
+	color: white;
 }
 
-#github:hover{
-	background: rgb(212, 0, 255);
+.colorgithub{
+	background: rgb(155, 1, 185);
+	color: white;
 }
 
-#youtube:hover{
+.coloryoutube{
 	background: rgb(236, 5, 5);
+	color: white;
 }
 
-#code:hover{
+.colorcode{
 	background: rgb(235,0,251);
 	background: linear-gradient(90deg, rgba(235,0,251,1) 0%, rgba(0,151,255,1) 100%);
+	color: white;
 }
 
 /* Animación Redes Sociales */
@@ -155,13 +264,31 @@ header{
   
   #card-fixed{
 	  position: fixed;
-	  top: 20%;
+	  top: 100%;
 	  right: 1.5%;
+
   }
 
   #logo-fixed{
 	position: fixed;
-	top: 20%;
+	top: 100%;
 	left: -0.3%;
 }
 
+	
+
+
+/* Footer */
+
+#footerEspaciado{
+	margin-bottom: -50px;
+	margin-top: 20px;
+}
+
+/* Pruebas */
+
+#logo-sticky{
+	position: sticky;
+	top: 20%;
+	left: -0.3%;
+}

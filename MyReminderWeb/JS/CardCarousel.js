@@ -1,8 +1,3 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 $(document).ready(function() {
     var walkthrough = {
       index: 0,
@@ -97,9 +92,6 @@ $(document).ready(function() {
     $('.prev-screen').click(() => walkthrough.prevScreen());
   
     $('.close').click(() => walkthrough.firstScreen());
-      
-      
-    walkthrough.openModal();
    
     // Optionally use arrow keys to navigate walkthrough
     return $(document).keydown(function(e) {

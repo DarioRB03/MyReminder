@@ -1,82 +1,245 @@
 * {
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     padding: 0;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
-}
+  }
+  
+  /*
+  Contenedor cartas
+  */
 
-.card-container {
-    width: 2000px;
-    overflow-x: scroll;
+  .card-container {
+    overflow-x: hidden;
     display: flex;
-    background-color: #ffffff;
     padding: 3rem;
-}
-
-.card {
+    justify-content: center;
+  }
+  
+  .card {
     min-width: 300px;
     height: 350px;
     border-radius: 16px;
     background-color: #17141d;
-    box-shadow: -0.5rem 0 1rem #000;
+    box-shadow: 1rem 0 1rem #000;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
-    transition: 0.1s;
-}
-
-.tags {
+    transition: 0.2s;
+  }
+  
+  /*
+  Tags de las cartas
+  */
+ 
+  .tags {
     display: flex;
     flex-wrap: wrap;
     margin: 1rem 0 1rem;
-}
-
-.tags div {
+  }
+  
+  .tags div {
     font-size: 9px;
     font-weight: 700;
     padding: 4px 10px;
     border: 3px solid #28242f;
     border-radius: 2rem;
-}
+  }
+  
+  /*
+  Títulos de la cartas
+  */
 
-.card .category-title {
+  .card .category-title {
     font-size: 14px;
     color: #fff;
     margin-bottom: 1rem;
-}
-
-.card .article-title {
+  }
+  
+  .card .article-title {
     font-size: 20px;
     font-weight: 700;
-}
-
-.card .article-header {
+  }
+  
+  .card .article-header {
     margin-bottom: auto;
-}
-
-.card .author {
+  }
+  
+  .card .author {
     margin-top: 3rem;
     display: grid;
     grid-template-columns: 75px 1fr;
-}
-
-.author .info .caption {
+  }
+  
+  .author .info .caption {
     color: #8a8a8a;
-}
-
-.card:not(:first-child) {
+  }
+  
+  .card:not(:first-child) {
     margin-left: -130px;
-}
+  }
+  
+  /*
+  Transiciones de las cartas
+  */
 
-.card:hover {
+  .card:hover {
     transform: translateY(-1rem);
-}
-
-.card:hover~.card{
+  }
+  
+  .card:hover~.card{
     transform: translateX(130px);
-}
+  }
+ 
+  /*
+  Centrar imagen cartas
+  */
+
+  .imagenCentrar{
+    image-resolution: 300dpi;
+    margin-top: -25%;
+    margin-bottom: 10%;
+  }
+  
+  /*
+  Alinear texto de abajo cartas
+  */
+
+  .alinear{
+    margin-left: -30%;
+    margin-bottom: -10%;
+  }
+
+  /*
+  Alinear imagen de grupo
+  */
+
+  /*
+  Propiedades de la imagen
+  */
+
+  #atributosImagen{
+   max-width: max-content;
+  }
+
+  /*
+  Alinear texto ID-Borja
+  */
+
+  #alinearTextoborja{
+    margin-top: 5%;
+  }
+
+   /*
+  Alinear texto ID-Pau
+  */
+
+  #alinearTextopau{
+    margin-top: 19.5%;
+  }
+
+   /*
+  Alinear texto ID-Santos
+  */
+
+  #alinearTextosantos{
+    margin-top: 15%;
+  }
+
+   /*
+  Alinear texto ID-Dario
+  */
+
+  #alinearTextodario{
+    margin-top: 13%;
+  }
+
+   /*
+  Alinear texto ID-Toni
+  */
+
+  #alinearTextotoni{
+    margin-top: 10%;
+  }
+
+  /*
+  Alinear tags de las cartas
+  */
+
+  #alinearTags{
+    margin-top: 20%;
+  }
+
+   /*
+  Alinear tag ID-Santos
+  */
+
+  #alinearTagsantos{
+    margin-top: 20%;
+  }
+
+   /*
+  Alinear tsg ID-Pau
+  */
+
+  #alinearTagpau{
+    margin-top: 20%;
+  }
+
+  
+  /*
+  Clases CSS de Santos (índex)
+  */
+  
+  #espaciado-nav{
+    margin-right: 100px;
+  }
+
+  .contenedor{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+  }
+  
+  header{
+    height: 100vh;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);
+    background-blend-mode: multiply,multiply, ;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+  }
+  
+  .head{
+    padding: 0;
+    height: 100%;
+    
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .titulo{
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .eslogan{
+    font-weight: 300;
+    font-size: 25px;
+  }
+
+
+
+
+
+
 
