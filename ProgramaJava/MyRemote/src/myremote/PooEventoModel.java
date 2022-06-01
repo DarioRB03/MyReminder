@@ -7,6 +7,8 @@ package myremote;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -16,19 +18,78 @@ import javafx.collections.ObservableList;
  */
 public class PooEventoModel extends DBUtil{
     
-        public boolean agregarEvento(int idEvento, int idModulo, String titulo, String descripcion, int fechaEvento, int prioridad) {
+        public ArrayList<PooEvento> getEventos(){
+            ArrayList<PooEvento> eventos = new ArrayList<PooEvento>();
+            
+            try{
+                String insertSql = "SELECT idTarea, idModulo, titulo, descripcion, fechaEvento, prioridad FROM eventos";
+                PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
+                ResultSet rs = prest.executeQuery();
+                
+                while (rs.next()){
+                    int idEvento = rs.getInt("idEvento");
+                    int idModulo = rs.getInt("idModulo");
+                    String titulo = rs.getString("titulo");
+                    String descripcion = rs.getString("descripcion");
+                    Date fecha = rs.getDate("fechaEvento");
+                    int prioridad = rs.getInt("prioridad");
+                    
+                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
+                    eventos.add(e);
+                }
+                
+                return eventos;
+            } catch (SQLException e){
+                e.printStackTrace();
+                return null;
+            } finally {
+                this.cerrarConexion();
+            }
+        }
+        
+        public ArrayList<PooEvento> getEventosDeUsuario(int idUsuarioActivo){
+            ArrayList<PooEvento> eventos = new ArrayList<PooEvento>();
+            
+            try{
+                String insertSql = "SELECT idEvento, idModulo, titulo, descripcion, fechaEvento, prioridad FROM eventos WHERE idModulo IN (SELECT idModulo FROM modulos WHERE idUsuario=?)";
+                PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
+                prest.setInt(1, idUsuarioActivo);
+                ResultSet rs = prest.executeQuery();
+                
+                while (rs.next()){
+                    int idEvento = rs.getInt("idEvento");
+                    int idModulo = rs.getInt("idModulo");
+                    String titulo = rs.getString("titulo");
+                    String descripcion = rs.getString("descripcion");
+                    Date fecha = rs.getDate("fechaEvento");
+                    int prioridad = rs.getInt("prioridad");
+                    
+                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
+                    eventos.add(e);
+                }
+                
+                return eventos;
+            } catch (SQLException e){
+                e.printStackTrace();
+                return null;
+            } finally {
+                this.cerrarConexion();
+            }
+        }
+    
+    
+        public boolean agregarEvento(int idModulo, String titulo, String descripcion, int fechaEvento, int prioridad) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO administrador (idEvento, idModulo, titulo, descripcion, fechaEvento, prioridad) VALUES (?, ?, ?, ?, ?, ?)";
+			String insertSql = "INSERT INTO eventos (idModulo, titulo, descripcion, fechaEvento, prioridad) VALUES (?, ?, ?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
-			prest.setInt(1, idEvento);
-			prest.setInt(2, idModulo);
-			prest.setString(3, titulo);
-			prest.setString(4, descripcion);
-                        prest.setInt(5, fechaEvento);
-                        prest.setInt(6, prioridad);
+			prest.setInt(1, idModulo);
+			prest.setString(2, titulo);
+			prest.setString(3, descripcion);
+                        prest.setInt(4, fechaEvento);
+                        prest.setInt(5, prioridad);
                         
 			prest.execute();
                         resultado = true;
@@ -43,15 +104,14 @@ public class PooEventoModel extends DBUtil{
 	} 
     
     
-        public boolean eliminarEvento(int idModulo, int idEvento) {
+        public boolean eliminarEvento(int idEvento) {
 		Boolean resultado = false;
 		try {
-			String Sql = "DELETE FROM administrador WHERE idModulo=? AND idEvento=?";
+			String Sql = "DELETE FROM eventos WHERE idEvento=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
-			prest.setInt(1, idModulo);
-                        prest.setInt(2, idEvento);
+                        prest.setInt(1, idEvento);
 			
 			prest.execute();
                         resultado = true;
@@ -67,19 +127,19 @@ public class PooEventoModel extends DBUtil{
         }
 
         
-            public boolean editarEvento(int idEvento, int idModulo, String titulo, String descripcion, int fechaEvento, int prioridad) {
+            public boolean editarEvento(int idEvento, int idModulo, String titulo, String descripcion, Date fechaEvento, int prioridad) {
 		Boolean resultado = false;
 		try {
-			String Sql = "UPDATE administrador SET (idEvento, idModulo, titulo, descripcion, fechaEvento, prioridad) VALUES (?, ?, ?, ?, ?, ?)";
+			String Sql = "UPDATE eventos SET idModulo=?,titulo=?,descripcion=?,fechaEvento=?,prioridad=? WHERE idEvento=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
-			prest.setInt(1, idEvento);
-			prest.setInt(2, idModulo);
-			prest.setString(3, titulo);
-			prest.setString(4, descripcion);
-                        prest.setInt(5, fechaEvento);
-                        prest.setInt(6, prioridad);
+			prest.setInt(6, idEvento);
+			prest.setInt(1, idModulo);
+			prest.setString(2, titulo);
+			prest.setString(3, descripcion);
+                        prest.setDate(4, (java.sql.Date) fechaEvento);
+                        prest.setInt(5, prioridad);
 			
 			prest.execute();
                         resultado = true;
@@ -113,7 +173,7 @@ public class PooEventoModel extends DBUtil{
                         int idModulo = rs.getInt("idModulo");
                         String titulo = rs.getString("titulo");
                         String descripcion = rs.getString("descripcion");
-                        int fechaEvento = rs.getInt("fechaEvento");
+                        Date fechaEvento = rs.getDate("fechaEvento");
                         int prioridad = rs.getInt("prioridad");
                             /* falta modificar los POO base para poder crear los objetos correctamente */
                         PooEvento t = new PooEvento(idEvento,idModulo,titulo,descripcion,fechaEvento,prioridad);
@@ -128,6 +188,34 @@ public class PooEventoModel extends DBUtil{
 		this.cerrarConexion();
 	}
 }
-    
+    public ArrayList<PooEvento> getEventosCerca(int idUsuarioActivo){
+            ArrayList<PooEvento> eventos = new ArrayList<PooEvento>();
+            
+            try{
+                String insertSql = "SELECT idEvento, idModulo, titulo, descripcion, fechaEvento, prioridad FROM eventos WHERE idModulo IN (SELECT idModulo FROM modulos WHERE idUsuario=?)  ORDER BY fecha ASC LIMIT 3";
+                PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
+                prest.setInt(1, idUsuarioActivo);
+                ResultSet rs = prest.executeQuery();
+                
+                while (rs.next()){
+                    int idEvento = rs.getInt("idEvento");
+                    int idModulo = rs.getInt("idModulo");
+                    String titulo = rs.getString("titulo");
+                    String descripcion = rs.getString("descripcion");
+                    Date fecha = rs.getDate("fechaEvento");
+                    int prioridad = rs.getInt("prioridad");
+                    
+                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
+                    eventos.add(e);
+                }
+                
+                return eventos;
+            } catch (SQLException e){
+                e.printStackTrace();
+                return null;
+            } finally {
+                this.cerrarConexion();
+            }
+        }
 }
 
