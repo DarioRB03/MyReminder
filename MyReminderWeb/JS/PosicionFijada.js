@@ -13,17 +13,17 @@ $(window).scroll(function(){
     var diferencia = 1000 - y;
    /*console.log("top " + "max de 120 y " + diferencia);*/
 
-  if(height > 3000){
+  if(height > 3100){
     if(diferencia > 100){
-      $(".my-div-fixed").css("top",Math.max(120,850-$(this).scrollTop()));
+      $(".my-div-fixed").css("top",Math.max(120,1000-$(this).scrollTop()));
     } else if(diferencia < 1000){
-      $(".my-div-fixed").css("top",Math.min(120,2100-$(this).scrollTop()));
+      $(".my-div-fixed").css("top",Math.min(120,2400-$(this).scrollTop()));
     }
-  } else if (height > 2500){
-    if(diferencia > 300){
-      $(".my-div-fixed").css("top",Math.max(120,800-$(this).scrollTop()));
-    } else if(diferencia < -230){
-      $(".my-div-fixed").css("top",Math.min(120,1600-$(this).scrollTop()));
+  } else if (height > 2700){
+    if(diferencia > 99){
+      $(".my-div-fixed").css("top",Math.max(120,850-$(this).scrollTop()));
+    } else if(diferencia < 999){
+      $(".my-div-fixed").css("top",Math.min(120,2100-$(this).scrollTop()));
     }
   } 
 
