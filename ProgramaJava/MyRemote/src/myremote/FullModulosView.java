@@ -32,7 +32,7 @@ public class FullModulosView {
     
     public FullModulosView(PooUsuario usuarioActivo){
         
-        ArrayList<PooModulo> arrayModulos = modelModulo.getModulos(usuarioActivo.getIdUsuario());
+        ArrayList<PooModulo> arrayModulos = modelModulo.getModulosDeUsuario(usuarioActivo.getIdUsuario());
         int numModulos = arrayModulos.size();
         
         GridPane listadoModulos = new GridPane();

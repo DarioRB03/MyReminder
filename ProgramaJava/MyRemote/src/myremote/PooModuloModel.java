@@ -43,7 +43,7 @@ public class PooModuloModel extends DBUtil {
 		}
     }
     
-    public ArrayList<PooModulo> getModulos(int idUsuario){
+    public ArrayList<PooModulo> getModulosDeUsuario(int idUsuario){
         ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
         try {
 			String insertSql = "SELECT idModulo, titulo, notaFinal FROM modulos WHERE idUsuario=?";
@@ -71,17 +71,16 @@ public class PooModuloModel extends DBUtil {
 		}
     }
     
-    public boolean agregarModulo(int idModulo, int idUsuario, String titulo, float notaFinal) {
+    public boolean agregarModulo(int idUsuario, String titulo, float notaFinal) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO modulos (idModulo, idUsuario, titulo, notaFianl) VALUES (?, ?, ?, ?)";
+			String insertSql = "INSERT INTO modulos (idUsuario, titulo, notaFianl) VALUES (?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
-			prest.setInt(1, idModulo);
-			prest.setInt(2, idUsuario);
-			prest.setString(3, titulo);
-			prest.setFloat(4, notaFinal);
+			prest.setInt(1, idUsuario);
+			prest.setString(2, titulo);
+			prest.setFloat(3, notaFinal);
                         
 			prest.execute();
                         resultado = true;
@@ -96,15 +95,14 @@ public class PooModuloModel extends DBUtil {
 	} 
     
     
-        public boolean eliminarModulo(int idModulo, int idUsuario) {
+        public boolean eliminarModulo(int idModulo) {
 		Boolean resultado = false;
 		try {
-			String Sql = "DELETE FROM modulos WHERE idModulo=? AND idUsuario=?";
+			String Sql = "DELETE FROM modulos WHERE idModulo=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
 			prest.setInt(1, idModulo);
-                        prest.setInt(2, idUsuario);
 			
 			prest.execute();
                         resultado = true;
@@ -123,14 +121,13 @@ public class PooModuloModel extends DBUtil {
             public boolean editarModulo(int idModulo, int idUsuario, String titulo, float notaFinal) {
 		Boolean resultado = false;
 		try {
-			String Sql = "UPDATE modulos SET (idModulo, idUsuario, titulo, notaFianl) VALUES (?, ?, ?, ?)";
+			String Sql = "UPDATE modulos SET titulo=?, notaFinal=? WHERE idModulo=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
-			prest.setInt(1, idModulo);
-			prest.setInt(2, idUsuario);
-			prest.setString(3, titulo);
-			prest.setFloat(4, notaFinal);
+			prest.setInt(3, idModulo);
+			prest.setString(1, titulo);
+			prest.setFloat(2, notaFinal);
 			
 			prest.execute();
                         resultado = true;

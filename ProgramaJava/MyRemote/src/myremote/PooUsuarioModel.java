@@ -5,7 +5,9 @@
 package myremote;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,17 +15,45 @@ import java.sql.SQLException;
  */
 public class PooUsuarioModel extends DBUtil{
     
-        public boolean agregarUsuario(int idUsuario, String nombre, String apellido, String nick, String password ) {
+        public ArrayList<PooUsuario> getUsuarios(){
+            ArrayList<PooUsuario> arrayUsuarios = new ArrayList<PooUsuario>();
+        try {
+			String insertSql = "SELECT idUsuario, nombre, apellido, nick, password FROM usuarios";
+				  
+			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
+			ResultSet rs = prest.executeQuery();
+                        
+                        while (rs.next()){
+                           int idUsuario = rs.getInt("idModulo");
+                           String nombre = rs.getString("nombre");
+                           String apellido = rs.getString("apellido");
+                           String nick = rs.getString("nick");
+                           String password = rs.getString("password");
+                            
+                            PooUsuario u = new PooUsuario(idUsuario,nombre,apellido,nick,password);
+                            arrayUsuarios.add(u);
+                        }
+                        
+                        return arrayUsuarios;
+                } catch (SQLException e) {
+			e.printStackTrace();
+                        return null;
+		} 
+		finally {
+			this.cerrarConexion();
+		}
+        }
+    
+        public boolean agregarUsuario(String nombre, String apellido, String nick, String password ) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO usuarios (idUsuario, nombre, apellido, nick, password) VALUES (?, ?, ?, ?, ?)";
+			String insertSql = "INSERT INTO usuarios (nombre, apellido, nick, password) VALUES (?, ?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
-			prest.setInt(1, idUsuario);
-			prest.setString(2, nombre);
-			prest.setString(3, apellido);
-			prest.setString(4, nick);
+			prest.setString(1, nombre);
+			prest.setString(2, apellido);
+			prest.setString(3, nick);
                         prest.setString(4, password);
                         
 			prest.execute();
@@ -65,14 +95,14 @@ public class PooUsuarioModel extends DBUtil{
             public boolean editarModulo(int idUsuario, String nombre, String apellido, String nick, String password) {
 		Boolean resultado = false;
 		try {
-			String Sql = "UPDATE usuarios SET (idUsuario, nombre, apellido, nick, password) VALUES (?, ?, ?, ?, ?)";
+			String Sql = "UPDATE usuarios SET nombre=?, apellido=?, nick=?, password=? WHERE idUsuario=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
-			prest.setInt(1, idUsuario);
-			prest.setString(2, nombre);
-			prest.setString(3, apellido);
-			prest.setString(4, nick);
+			prest.setInt(5, idUsuario);
+			prest.setString(1, nombre);
+			prest.setString(2, apellido);
+			prest.setString(3, nick);
                         prest.setString(4, password);
 			
 			prest.execute();
