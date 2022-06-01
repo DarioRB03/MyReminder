@@ -16,7 +16,7 @@ public class PooEvaluacionModel extends DBUtil {
         public boolean agregarEvaluacion(int idModulo, int numEvaluacion, float procentaje,float nota) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO administrador (idModulo, numEvaluacion, procentaje, nota) VALUES (?, ?, ?, ?)";
+			String insertSql = "INSERT INTO evaluacion (idModulo, numEvaluacion, procentaje, nota) VALUES (?, ?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
@@ -41,7 +41,7 @@ public class PooEvaluacionModel extends DBUtil {
         public boolean eliminarEvaluacion(int idModulo, int idEvaluacion) {
 		Boolean resultado = false;
 		try {
-			String Sql = "DELETE FROM administrador WHERE idModulo=? AND idEvaluacion=?";
+			String Sql = "DELETE FROM evaluacion WHERE idModulo=? AND idEvaluacion=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
@@ -65,7 +65,7 @@ public class PooEvaluacionModel extends DBUtil {
             public boolean editarEvaluacion(int idModulo, int numEvaluacion, float procentaje,float nota) {
 		Boolean resultado = false;
 		try {
-			String Sql = "UPDATE administrador SET (idModulo, numEvaluacion, procentaje, nota) VALUES (?, ?, ?, ?)";
+			String Sql = "UPDATE evaluacion SET (idModulo, numEvaluacion, procentaje, nota) VALUES (?, ?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			

@@ -1,18 +1,27 @@
-$(window).scroll(function(){
-    $("#logo-fixed").css("top",Math.max(120,1000-$(this).scrollTop()));
-});
+var body = document.body,
+    html = document.documentElement;
+
+var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+console.log(height);
+
 
 $(window).scroll(function(){
-    $("#card-fixed").css("top",Math.max(120,1000-$(this).scrollTop()));
-});
-
-/*window.onscroll = function() {
     var y = window.scrollY;
-  console.log(y);
+    console.log(y);
+    /*var diferencia = 1000 - y;
+    console.log("top " + "max de 120 y " + diferencia);*/
+
+if(height > 4174){
+  if(diferencia > 300){
+    $(".my-div-fixed").css("top",Math.max(120,800-$(this).scrollTop()));
+  } else if(diferencia < -230){
+    $(".my-div-fixed").css("top",Math.min(120,1600-$(this).scrollTop()));
+  }
+} else if(0 < 1){
+
+}
   
-      var target = $('logo-sticky');
-      if(y > 680){
-          target.removeClass('logo-sticky');
-          target.addClass('logo-fixed');
-      }
-}*/
+
+})
