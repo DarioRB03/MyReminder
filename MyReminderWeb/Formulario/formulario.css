@@ -1,0 +1,14 @@
+.imagen {
+
+    background-image: url(https://www.frontconsulting.com/wp-content/uploads/2016/11/fondo_formulario3.jpg);
+    height: 300px;
+}
+
+body{
+	font-family: Courier New;
+}
+
+.botonenviar{
+	font-family: Arial Black;
+	font-size: 125%;
+}

@@ -24,17 +24,29 @@
       </TableView>
       <Text layoutX="33.0" layoutY="830.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de la tarea:">
          <font>
+<<<<<<< HEAD
             <Font size="36.0" />
+=======
+            <Font name="Yu Gothic Regular" size="36.0" />
+>>>>>>> 6f34bddc773edab4a306d6b399596a5970d6eac1
          </font>
       </Text>
       <TextField fx:id="fieldTextId" layoutX="284.0" layoutY="780.0" prefHeight="48.0" prefWidth="83.0" promptText="id">
          <font>
+<<<<<<< HEAD
             <Font size="36.0" />
+=======
+            <Font name="Yu Gothic Regular" size="36.0" />
+>>>>>>> 6f34bddc773edab4a306d6b399596a5970d6eac1
          </font>
       </TextField>
       <Button fx:id="buttonTareaEditar" layoutX="383.0" layoutY="793.0" mnemonicParsing="false" onAction="#handleEditarTareaAction" text="EDITAR" textFill="BLUE">
          <font>
+<<<<<<< HEAD
             <Font size="24.0" />
+=======
+            <Font name="Yu Gothic Regular" size="24.0" />
+>>>>>>> 6f34bddc773edab4a306d6b399596a5970d6eac1
          </font>
       </Button>
       <Line endX="50.0" layoutX="476.0" startX="-200.0" />

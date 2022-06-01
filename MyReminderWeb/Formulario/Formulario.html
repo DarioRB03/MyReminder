@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+	<link rel="stylesheet" type="text/css" href="formulario.css">
+	<script>    
+    tailwind.config = {
+        theme: {
+        extend: {
+            fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            },
+        }
+        }
+    }
+ 	</script>
+
+</head>
+
+
+<body>
+
+
+
+<div class="container my-24 px-6 mx-auto">
+
+
+  <section class="mb-32 text-gray-800">
+
+    <div class="imagen">
+    </div>
+    <div class="container text-gray-800 px-4 md:px-12">
+      <div class="block rounded-lg shadow-lg py-10 md:py-12 px-2 md:px-6"
+        style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
+        <div class="flex flex-wrap">
+          <div class="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
+            <form>
+              <div class="form-group mb-6">
+                <input type="text" class="form-control block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
+                  placeholder="Nombre">
+              </div>
+              <div class="form-group mb-6">
+                <input type="email" class="form-control block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
+                  placeholder="Correo Electronico">
+              </div>
+              <div class="form-group mb-6">
+                <textarea class="
+                form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+              " id="exampleFormControlTextarea13" rows="3" placeholder="Observaciones"></textarea>
+              </div>
+              <div class="form-group form-check text-center mb-6" class="botonenviar">
+                <input type="checkbox"
+                  class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
+                  id="exampleCheck87" checked>
+                <label class="form-check-label inline-block text-gray-800" for="exampleCheck87"> Concedo poblicar mis observaciones para la mejora de la web </label>
+              </div>
+          
+                    <form action="enviar.php" method="post">
+                    	<input type="text" name="nombre">
+                    	<input type="text" name="correo">
+                    	<input type="text" name="message">
+                  
+              <button type="submit" class="botonenviar
+              w-full
+              px-6
+              py-2.5
+              bg-blue-600
+              text-white
+              font-medium
+              text-xs
+              leading-tight
+              uppercase
+              rounded
+              shadow-md
+              hover:bg-blue-700 hover:shadow-lg
+              focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+              active:bg-blue-800 active:shadow-lg
+              transition
+              duration-150
+              ease-in-out">Enviar</button>
+          
+            		</form>
+            </form>	
+            
+          </div>
+          <div class="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
+            <div class="flex flex-wrap">
+              <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                <div class="flex items-start">
+                  <div class="shrink-0">
+                    <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="headset" class="w-5 text-white"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M192 208c0-17.67-14.33-32-32-32h-16c-35.35 0-64 28.65-64 64v48c0 35.35 28.65 64 64 64h16c17.67 0 32-14.33 32-32V208zm176 144c35.35 0 64-28.65 64-64v-48c0-35.35-28.65-64-64-64h-16c-17.67 0-32 14.33-32 32v112c0 17.67 14.33 32 32 32h16zM256 0C113.18 0 4.58 118.83 0 256v16c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-16c0-114.69 93.31-208 208-208s208 93.31 208 208h-.12c.08 2.43.12 165.72.12 165.72 0 23.35-18.93 42.28-42.28 42.28H320c0-26.51-21.49-48-48-48h-32c-26.51 0-48 21.49-48 48s21.49 48 48 48h181.72c49.86 0 90.28-40.42 90.28-90.28V256C507.42 118.83 398.82 0 256 0z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="grow ml-6">
+                    <p class="font-bold mb-1">Soporte Tecnico</p>
+                    <p class="text-gray-500">myreminder01@gmail.com</p>
+                    <p class="text-gray-500">636814291</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                <div class="flex items-start">
+                  <div class="shrink-0">
+                    <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+						<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+						 	width="179.000000pt" height="179.000000pt" viewBox="0 0 179.000000 179.000000"
+						 	preserveAspectRatio="xMidYMid meet">
+
+							<g transform="translate(0.000000,179.000000) scale(0.100000,-0.100000)"
+								fill="#000000" stroke="none">
+							<path d="M0 895 l0 -895 895 0 895 0 0 895 0 895 -895 0 -895 0 0 -895z m1710
+								-10 l0 -815 -815 0 -815 0 0 815 0 815 815 0 815 0 0 -815z"/>
+							<path d="M1191 1425 c-192 -79 -402 -218 -555 -367 l-99 -97 7 -61 c22 -192
+								139 -443 263 -562 l49 -48 94 93 c122 119 177 184 234 277 114 185 168 419
+								146 630 -12 112 -26 170 -43 170 -7 0 -50 -16 -96 -35z"/>
+							</g>
+						</svg>
+
+                    </div>
+                  </div>
+                  <div class="grow ml-6">
+                    <p class="font-bold mb-1">Centro Educativo Xuqer</p>
+                    <p class="text-gray-500"><a href="https://www.axuquer.es">axuquer.es</a></p>
+                    <p class="text-gray-500">info.xuquer@axuquer.es</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                <div class="flex align-start">
+                  <div class="shrink-0">
+                    <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+					<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+						width="2048.000000pt" height="2048.000000pt" viewBox="0 0 2048.000000 2048.000000"
+					 	preserveAspectRatio="xMidYMid meet">
+
+						<g transform="translate(0.000000,2048.000000) scale(0.100000,-0.100000)"
+							fill="#000000" stroke="none">
+						<path d="M9530 17953 c-2354 -18 -4751 -117 -5885 -243 -788 -88 -1120 -164
+							-1470 -335 -493 -242 -884 -631 -1129 -1125 -120 -243 -185 -452 -265 -855
+							-224 -1127 -360 -3381 -311 -5130 58 -2046 225 -3546 472 -4225 113 -314 314
+							-625 563 -876 210 -211 416 -360 670 -483 289 -141 535 -209 995 -275 1746
+							-254 6209 -371 10145 -266 2560 68 4190 198 4835 385 778 226 1404 832 1658
+							1605 146 443 281 1341 357 2380 122 1668 123 3280 5 4960 -86 1216 -234 2148
+							-411 2593 -306 767 -969 1331 -1779 1511 -927 206 -3192 336 -6555 376 -729 9
+							-1096 9 -1895 3z m1469 -5463 c1386 -800 2521 -1458 2521 -1461 0 -7 -5124
+							-2969 -5135 -2969 -3 0 -5 1337 -5 2971 l0 2971 49 -29 c27 -15 1183 -683
+							2570 -1483z"/>
+						</g>
+					</svg>
+                    </div>
+                  </div>
+                  <div class="grow ml-6">
+                    <p class="font-bold mb-1">Youtube</p>
+                    <p class="text-gray-500"><a href="https://www.youtube.com/channel/UCGflAdTCGFpYf2Ayjhg4GIA">MyReminder</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                <div class="flex align-start">
+                  <div class="shrink-0">
+                    <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+					<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+					 	width="2048.000000pt" height="2048.000000pt" viewBox="0 0 2048.000000 2048.000000"
+					 	preserveAspectRatio="xMidYMid meet">
+
+						<g transform="translate(0.000000,2048.000000) scale(0.100000,-0.100000)"
+							fill="#000000" stroke="none">
+						<path d="M9530 17953 c-2354 -18 -4751 -117 -5885 -243 -788 -88 -1120 -164
+							-1470 -335 -493 -242 -884 -631 -1129 -1125 -120 -243 -185 -452 -265 -855
+							-224 -1127 -360 -3381 -311 -5130 58 -2046 225 -3546 472 -4225 113 -314 314
+							-625 563 -876 210 -211 416 -360 670 -483 289 -141 535 -209 995 -275 1746
+							-254 6209 -371 10145 -266 2560 68 4190 198 4835 385 778 226 1404 832 1658
+							1605 146 443 281 1341 357 2380 122 1668 123 3280 5 4960 -86 1216 -234 2148
+							-411 2593 -306 767 -969 1331 -1779 1511 -927 206 -3192 336 -6555 376 -729 9
+							-1096 9 -1895 3z m1469 -5463 c1386 -800 2521 -1458 2521 -1461 0 -7 -5124
+							-2969 -5135 -2969 -3 0 -5 1337 -5 2971 l0 2971 49 -29 c27 -15 1183 -683
+							2570 -1483z"/>
+						</g>
+					</svg>
+                    </div>
+                  </div>
+                  <div class="grow ml-6">
+                    <p class="font-bold mb-1">Video Presentacion</p>
+                    <p class="text-gray-500"><a href="https://www.youtube.com/channel/UCGflAdTCGFpYf2Ayjhg4GIA">Presentacion MyReminder</a></p>
+
+				</div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- Section: Design Block -->
+
+</div>
+<!-- Container for demo purpose -->
+
+</body>
+
+	<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+</html>
