@@ -22,8 +22,8 @@ $(window).scroll(function(){
   } else if (height > 2500){
     if(diferencia > 300){
       $(".my-div-fixed").css("top",Math.max(120,800-$(this).scrollTop()));
-    } else if(diferencia < -230){
-      $(".my-div-fixed").css("top",Math.min(120,1600-$(this).scrollTop()));
+    } else if(diferencia < -250){
+      $(".my-div-fixed").css("top",Math.min(120,1900-$(this).scrollTop()));
     }
   } 
 
