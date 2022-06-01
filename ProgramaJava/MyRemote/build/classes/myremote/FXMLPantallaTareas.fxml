@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="889.0" prefWidth="1689.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myremote.FXMLPantallaTareasController">
+   <children>
+      <TableView fx:id="tableViewTareas" layoutX="1.0" layoutY="3.0" prefHeight="774.0" prefWidth="1687.0">
+        <columns>
+          <TableColumn fx:id="columnaIdModulo" prefWidth="91.33332824707031" text="ID_Modulo" />
+          <TableColumn fx:id="columnaIdTarea" prefWidth="100.33333587646484" text="ID_Tarea" />
+            <TableColumn fx:id="columnaTitulo" prefWidth="311.66668701171875" text="Titulo" />
+            <TableColumn fx:id="columnaDescripcion" prefWidth="829.3333129882812" text="Descripcion" />
+            <TableColumn fx:id="columnaFecha" prefWidth="191.0" text="Fecha" />
+            <TableColumn fx:id="columnaPrioridad" prefWidth="66.333251953125" text="Prioridad" />
+            <TableColumn fx:id="columnaRealizado" prefWidth="101.666748046875" text="Realizado" />
+        </columns>
+      </TableView>
+      <Text layoutX="33.0" layoutY="830.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de la tarea:">
+         <font>
+            <Font name="Yu Gothic Regular" size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fieldTextId" layoutX="284.0" layoutY="780.0" prefHeight="48.0" prefWidth="83.0" promptText="id">
+         <font>
+            <Font name="Yu Gothic Regular" size="36.0" />
+         </font>
+      </TextField>
+      <Button fx:id="buttonTareaEditar" layoutX="383.0" layoutY="793.0" mnemonicParsing="false" onAction="#handleEditarTareaAction" text="EDITAR" textFill="BLUE">
+         <font>
+            <Font name="Yu Gothic Regular" size="24.0" />
+         </font>
+      </Button>
+      <Line endX="50.0" layoutX="476.0" startX="-200.0" />
+   </children>
+</AnchorPane>

@@ -4,6 +4,8 @@
  */
 package myremote;
 
+import java.util.Date;
+
 /**
  *
  * @author 1erDAM
@@ -14,12 +16,20 @@ public class PooTarea {
     private int idModulo;
     private String titulo;
     private String descripcion;
+    private Date fecha;
+    private int prioridad;
+    private int realizado;
 
-    public PooTarea(int idTarea, int idModulo, String titulo, String descripcion) {
+
+
+    public PooTarea(int idTarea, int idModulo, String titulo, String descripcion, Date fecha, int prioridad, int realizado) {
         this.idTarea = idTarea;
         this.idModulo = idModulo;
         this.titulo = titulo;
         this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.prioridad = prioridad;
+        this.realizado = realizado;
     }
 
     public PooTarea() {
@@ -57,4 +67,27 @@ public class PooTarea {
         this.descripcion = descripcion;
     }
     
+        public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public int getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(int prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    public int getRealizado() {
+        return realizado;
+    }
+
+    public void setRealizado(int realizado) {
+        this.realizado = realizado;
+    }
 }
