@@ -16,7 +16,7 @@ public class PooUsuarioModel extends DBUtil{
         public boolean agregarUsuario(int idUsuario, String nombre, String apellido, String nick, String password ) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO administrador (idUsuario, nombre, apellido, nick, password) VALUES (?, ?, ?, ?, ?)";
+			String insertSql = "INSERT INTO usuarios (idUsuario, nombre, apellido, nick, password) VALUES (?, ?, ?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
@@ -42,7 +42,7 @@ public class PooUsuarioModel extends DBUtil{
         public boolean eliminarModulo(int idUsuario) {
 		Boolean resultado = false;
 		try {
-			String Sql = "DELETE FROM administrador WHERE idUsuario=?";
+			String Sql = "DELETE FROM usuarios WHERE idUsuario=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
@@ -65,7 +65,7 @@ public class PooUsuarioModel extends DBUtil{
             public boolean editarModulo(int idUsuario, String nombre, String apellido, String nick, String password) {
 		Boolean resultado = false;
 		try {
-			String Sql = "UPDATE administrador SET (idUsuario, nombre, apellido, nick, password) VALUES (?, ?, ?, ?, ?)";
+			String Sql = "UPDATE usuarios SET (idUsuario, nombre, apellido, nick, password) VALUES (?, ?, ?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			

@@ -9,6 +9,10 @@
     color: #fff;
   }
   
+  /*
+  Contenedor cartas
+  */
+
   .card-container {
     overflow-x: hidden;
     display: flex;
@@ -28,6 +32,10 @@
     transition: 0.2s;
   }
   
+  /*
+  Tags de las cartas
+  */
+ 
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -42,6 +50,10 @@
     border-radius: 2rem;
   }
   
+  /*
+  Títulos de la cartas
+  */
+
   .card .category-title {
     font-size: 14px;
     color: #fff;
@@ -71,6 +83,10 @@
     margin-left: -130px;
   }
   
+  /*
+  Transiciones de las cartas
+  */
+
   .card:hover {
     transform: translateY(-1rem);
   }
@@ -78,59 +94,148 @@
   .card:hover~.card{
     transform: translateX(130px);
   }
-  
+ 
+  /*
+  Centrar imagen cartas
+  */
+
   .imagenCentrar{
+    image-resolution: 300dpi;
     margin-top: -25%;
     margin-bottom: 10%;
   }
   
+  /*
+  Alinear texto de abajo cartas
+  */
+
   .alinear{
     margin-left: -30%;
     margin-bottom: -10%;
   }
 
-  #alinearImagen{
-    justify-content: center;
+  /*
+  Alinear imagen de grupo
+  */
+
+  /*
+  Propiedades de la imagen
+  */
+
+  #atributosImagen{
+   max-width: max-content;
   }
+
+  /*
+  Alinear texto ID-Borja
+  */
 
   #alinearTextoborja{
     margin-top: 5%;
   }
 
+   /*
+  Alinear texto ID-Pau
+  */
+
   #alinearTextopau{
     margin-top: 19.5%;
   }
+
+   /*
+  Alinear texto ID-Santos
+  */
 
   #alinearTextosantos{
     margin-top: 15%;
   }
 
+   /*
+  Alinear texto ID-Dario
+  */
 
   #alinearTextodario{
     margin-top: 13%;
   }
 
+   /*
+  Alinear texto ID-Toni
+  */
+
   #alinearTextotoni{
     margin-top: 10%;
   }
+
+  /*
+  Alinear tags de las cartas
+  */
 
   #alinearTags{
     margin-top: 20%;
   }
 
+   /*
+  Alinear tag ID-Santos
+  */
+
   #alinearTagsantos{
     margin-top: 20%;
   }
+
+   /*
+  Alinear tsg ID-Pau
+  */
 
   #alinearTagpau{
     margin-top: 20%;
   }
 
+  
+  /*
+  Clases CSS de Santos (índex)
+  */
+  
+  #espaciado-nav{
+    margin-right: 100px;
+  }
 
-
-
-
-
+  .contenedor{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+  }
+  
+  header{
+    height: 100vh;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);
+    background-blend-mode: multiply,multiply, ;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+  }
+  
+  .head{
+    padding: 0;
+    height: 100%;
+    
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .titulo{
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .eslogan{
+    font-weight: 300;
+    font-size: 25px;
+  }
 
 
 
