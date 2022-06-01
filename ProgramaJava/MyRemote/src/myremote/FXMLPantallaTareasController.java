@@ -6,6 +6,8 @@ package myremote;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -22,7 +25,7 @@ import javafx.scene.control.TextField;
 public class FXMLPantallaTareasController implements Initializable {
 
     @FXML
-    private TableView<?> tableViewTareas;
+    private TableView<PooTarea> tableViewTareas;
     @FXML
     private TextField fieldTextId;
     @FXML
@@ -42,12 +45,32 @@ public class FXMLPantallaTareasController implements Initializable {
     @FXML
     private TableColumn<?, ?> columnaRealizado;
 
+    private PooUsuario usuarioActivo;
+    private ObservableList<PooTarea> tareasObservable;
+    private PooTareaModel tareaModel;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    
+    usuarioActivo = new PooUsuario();
+    tareaModel = new PooTareaModel();
+    tareasObservable = FXCollections.observableArrayList();
+    tareasObservable = tareaModel.getTarea(usuarioActivo.getIdUsuario());
+        
+    this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("IdModulo"));   
+    this.columnaIdTarea.setCellValueFactory(new PropertyValueFactory("IdTarea"));
+    this.columnaTitulo.setCellValueFactory(new PropertyValueFactory("Titulo"));
+    this.columnaDescripcion.setCellValueFactory(new PropertyValueFactory("Descripcion"));
+    this.columnaFecha.setCellValueFactory(new PropertyValueFactory("Fecha"));
+    this.columnaPrioridad.setCellValueFactory(new PropertyValueFactory("Prioridad"));
+    this.columnaRealizado.setCellValueFactory(new PropertyValueFactory("Realizado"));
+     
+    this.tableViewTareas.setItems(tareasObservable);
+        
+        
+        
     }    
 
     @FXML
