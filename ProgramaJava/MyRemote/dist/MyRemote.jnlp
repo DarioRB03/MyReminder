@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="MyRemote.jar" size="8639" download="eager" />
+    <jar href="MyRemote.jar" size="22555" download="eager" />
+    <jar href="lib\ant-javafx.jar" size="1495348" download="eager" />
+    <jar href="lib\dt.jar" size="163047" download="eager" />
+    <jar href="lib\javafx-mx.jar" size="36044" download="eager" />
+    <jar href="lib\jconsole.jar" size="407729" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.28.jar" size="2476480" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="myremote.MyRemote"  name="MyRemote" />
