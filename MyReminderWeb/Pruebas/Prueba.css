@@ -10,6 +10,7 @@ body {
 }
 
 .card-container {
+  margin-top: 50px;
   overflow-x: hidden;
   display: flex;
   padding: 3rem;
@@ -96,4 +97,12 @@ body {
 #borjaFoto{
  width: 70%;
  height: 65%;
+}
+
+#imagenGrupo{
+  background-color: yellow;
+  
+  /* IMPORTANTE */
+  margin-left: auto;
+  margin-right: auto;
 }
