@@ -247,6 +247,11 @@ header{
     animation: show 0.5s forwards ease-in-out;
   }
 
+  /* Contenido */
+  #tituloContenido{
+	  margin-right: -10%;
+  }
+
   /* Alineación */
 
   #principal{

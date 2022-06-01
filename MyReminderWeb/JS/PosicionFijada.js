@@ -15,15 +15,15 @@ $(window).scroll(function(){
 
   if(height > 3000){
     if(diferencia > 100){
-      $(".my-div-fixed").css("top",Math.max(120,1000-$(this).scrollTop()));
+      $(".my-div-fixed").css("top",Math.max(120,850-$(this).scrollTop()));
     } else if(diferencia < 1000){
       $(".my-div-fixed").css("top",Math.min(120,2100-$(this).scrollTop()));
     }
   } else if (height > 2500){
     if(diferencia > 300){
       $(".my-div-fixed").css("top",Math.max(120,800-$(this).scrollTop()));
-    } else if(diferencia < -250){
-      $(".my-div-fixed").css("top",Math.min(120,1900-$(this).scrollTop()));
+    } else if(diferencia < -230){
+      $(".my-div-fixed").css("top",Math.min(120,1600-$(this).scrollTop()));
     }
   } 
 
