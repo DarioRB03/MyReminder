@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var walkthrough = {
-      index: 0,
+      index: -1,
       
       nextScreen() {
         if (this.index < this.indexMax()) {
@@ -28,13 +28,13 @@ $(document).ready(function() {
         const $lastBtn = $('.finish');
         
         if (walkthrough.index === walkthrough.indexMax()) {
-          $nextBtn.prop('disabled', true);
+          $nextBtn.prop('disabled', false);
           $prevBtn.prop('disabled', false);
           return $lastBtn.addClass('active').prop('disabled', false);
           
         } else if (walkthrough.index === 0) {
           $nextBtn.prop('disabled', false);
-          $prevBtn.prop('disabled', true);
+          $prevBtn.prop('disabled', false);
           return $lastBtn.removeClass('active').prop('disabled', true);
           
         } else {
@@ -82,14 +82,31 @@ $(document).ready(function() {
             this.index = 0;
             return this.updateScreen();
           }
+      },
+
+      lastToFirst(){
+        if (this.index > 4) {
+          this.index = -1;
+          return this.updateScreen();
+        }
+      },
+
+     lastScreen(){
+        if (this.index <= 0) {
+          this.index = 4;
+          return this.updateScreen();
+        }
       }
-      
 
     };
   
     $('.next-screen').click(() => walkthrough.nextScreen());
+
+    $('.next-screen').click(() => walkthrough.lastToFirst());
   
     $('.prev-screen').click(() => walkthrough.prevScreen());
+
+    $('.prev-screen').click(() => walkthrough.lastScreen());
   
     $('.close').click(() => walkthrough.firstScreen());
    
