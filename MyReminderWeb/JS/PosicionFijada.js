@@ -15,7 +15,7 @@ $(window).scroll(function(){
 
   if(height > 3000){
     if(diferencia > 100){
-      $(".my-div-fixed").css("top",Math.max(120,1000-$(this).scrollTop()));
+      $(".my-div-fixed").css("top",Math.max(120,850-$(this).scrollTop()));
     } else if(diferencia < 1000){
       $(".my-div-fixed").css("top",Math.min(120,2100-$(this).scrollTop()));
     }

@@ -58,16 +58,20 @@ header{
 	margin-right: 100px;
 }
 
+#idLogin{
+	background: linear-gradient(to right bottom, #9e66c6, #6027e1);
+}
+
 /* Menú Desplegable */
 
 .list{
     width: 100%;
     height: 100vh;
+	font-size: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: rgb(56,190,255);
-    background: linear-gradient(97deg, rgba(56,190,255,1) 0%, rgba(111,0,255,1) 86%);
+	background: linear-gradient(to right bottom, #9e66c6, #6027e1);
 }
 
 .list__item{
@@ -162,8 +166,7 @@ header{
 }
 
 .nav__link--inside:hover{
-	background: rgb(56,190,255);
-	background: linear-gradient(97deg, rgba(56,190,255,1) 0%, rgba(111,0,255,1) 86%);
+	background: #c79ae76e;
 }
 
 /* Redes Sociales */
@@ -213,8 +216,7 @@ header{
 }
 
 .colorcode{
-	background: rgb(235,0,251);
-	background: linear-gradient(90deg, rgba(235,0,251,1) 0%, rgba(0,151,255,1) 100%);
+	background: linear-gradient(to right bottom, #9e66c6, #6027e1);
 	color: white;
 }
 
@@ -243,6 +245,11 @@ header{
   
   .show {
     animation: show 0.5s forwards ease-in-out;
+  }
+
+  /* Contenido */
+  #tituloContenido{
+	  margin-right: -10%;
   }
 
   /* Alineación */
@@ -275,6 +282,10 @@ header{
 	left: -0.3%;
 }
 
+ #ultimoDiv{
+	 margin-top: 5%;
+ }
+
 	
 
 
@@ -283,6 +294,10 @@ header{
 #footerEspaciado{
 	margin-bottom: -50px;
 	margin-top: 20px;
+}
+
+.colorFooter{
+	background: linear-gradient(to right bottom, #9e66c6, #6027e1);
 }
 
 /* Pruebas */
