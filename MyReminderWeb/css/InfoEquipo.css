@@ -117,23 +117,11 @@
   }
 
   /*
-  Alinear imagen de grupo
-  */
-
-  /*
-  Propiedades de la imagen
-  */
-
-  #atributosImagen{
-   max-width: max-content;
-  }
-
-  /*
   Alinear texto ID-Borja
   */
 
   #alinearTextoborja{
-    margin-top: 5%;
+    margin-top: 15%;
   }
 
    /*
@@ -141,7 +129,7 @@
   */
 
   #alinearTextopau{
-    margin-top: 19.5%;
+    margin-top: 15%;
   }
 
    /*
@@ -157,7 +145,7 @@
   */
 
   #alinearTextodario{
-    margin-top: 13%;
+    margin-top: 15%;
   }
 
    /*
@@ -165,7 +153,7 @@
   */
 
   #alinearTextotoni{
-    margin-top: 10%;
+    margin-top: 15%;
   }
 
   /*
@@ -173,7 +161,7 @@
   */
 
   #alinearTags{
-    margin-top: 20%;
+    margin-top: 18%;
   }
 
    /*
@@ -181,15 +169,15 @@
   */
 
   #alinearTagsantos{
-    margin-top: 20%;
+    margin-top: 18%;
   }
 
    /*
-  Alinear tsg ID-Pau
+  Alinear tag ID-Pau
   */
 
   #alinearTagpau{
-    margin-top: 20%;
+    margin-top: 18%;
   }
 
   
