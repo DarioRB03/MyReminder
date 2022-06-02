@@ -1,17 +1,23 @@
 $(document).ready(function() {
     var walkthrough = {
-      index: -1,
+      index: 0,
       
       nextScreen() {
-        if (this.index < this.indexMax()) {
+        if (this.index <= this.indexMax()) {
           this.index++;
+          if(this.index > 4){
+            this.index = 0
+          }
           return this.updateScreen();
         }
       },
   
       prevScreen() {
-        if (this.index > 0) {
+        if (this.index >= 0) {
           this.index--;
+          if(this.index < 0){
+            this.index = 4
+          }
           return this.updateScreen();
         }
       },
@@ -21,6 +27,25 @@ $(document).ready(function() {
         this.goTo(this.index);
         return this.setBtns();
       },
+
+      firstScreen(){
+        this.index = 0;
+        return this.updateScreen();
+      },
+
+    /*lastToFirst(){
+      if (this.index >= 4) {
+        this.index = 0;
+        return this.updateScreen();
+      }
+       },*/
+
+    /*lastScreen(){
+      if (this.index < 1) {
+        this.index = 4;
+        return this.updateScreen();
+      }
+       },*/
         
       setBtns() {
         const $nextBtn = $('.next-screen');
@@ -77,36 +102,18 @@ $(document).ready(function() {
         return this.updateScreen();
       }*/
 
-      firstScreen(){
-        if (this.index > 0) {
-            this.index = 0;
-            return this.updateScreen();
-          }
-      },
-
-      lastToFirst(){
-        if (this.index > 4) {
-          this.index = -1;
-          return this.updateScreen();
-        }
-      },
-
-     lastScreen(){
-        if (this.index <= 0) {
-          this.index = 4;
-          return this.updateScreen();
-        }
-      }
+      
 
     };
   
+    
     $('.next-screen').click(() => walkthrough.nextScreen());
 
-    $('.next-screen').click(() => walkthrough.lastToFirst());
+    /*$('.next-screen').click(() => walkthrough.lastToFirst());*/
   
     $('.prev-screen').click(() => walkthrough.prevScreen());
 
-    $('.prev-screen').click(() => walkthrough.lastScreen());
+    /*$('.prev-screen').click(() => walkthrough.lastScreen());*/
   
     $('.close').click(() => walkthrough.firstScreen());
    

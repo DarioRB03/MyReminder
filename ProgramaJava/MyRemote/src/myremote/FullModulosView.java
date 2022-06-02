@@ -23,27 +23,43 @@ import javafx.scene.text.Text;
  */
 public class FullModulosView {
     
-    private ArrayList<AnchorPane> allModulePanes = new ArrayList<>();
+    private ArrayList<AnchorPane> allModulePanes = new ArrayList<AnchorPane>();
     private VBox mView;
-    private PooModuloModel modelModulo = new PooModuloModel();
+    /*private PooModuloModel modelModulo = new PooModuloModel();
     private PooTareaModel modelTarea = new PooTareaModel();
-    private PooEventoModel modelEvento = new PooEventoModel();
+    private PooEventoModel modelEvento = new PooEventoModel();*/
     
     
     public FullModulosView(PooUsuario usuarioActivo){
         
-        ArrayList<PooModulo> arrayModulos = modelModulo.getModulosDeUsuario(usuarioActivo.getIdUsuario());
-        int numModulos = arrayModulos.size();
+        /*ArrayList<PooModulo> arrayModulos = modelModulo.getModulosDeUsuario(usuarioActivo.getIdUsuario());*/
+        /* */
+        PooModulo modTest = new PooModulo(1,1,"a",2);
+        PooModulo modTest2 = new PooModulo(2,1,"b",4);
+        ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
+        arrayModulos.add(modTest);
+        arrayModulos.add(modTest2);
+        /* */
+        int numModulos = 1;
+        if (arrayModulos.size()==2){
+            numModulos = 1;
+        } else if ((arrayModulos.size()%3) == 0) {
+            numModulos = ((arrayModulos.size()/3)+1);
+        } else if (((arrayModulos.size()-1)%3) == 0){
+            numModulos = ((arrayModulos.size()/4)+1);
+        } else if (((arrayModulos.size()-2)%3) == 0){
+            numModulos = ((arrayModulos.size()/5)+1);
+        } 
         
         GridPane listadoModulos = new GridPane();
         listadoModulos.setPrefSize(1180,850);
-        listadoModulos.setGridLinesVisible(false);
+        listadoModulos.setGridLinesVisible(true);
         
-        for (int i = 0; i < 3; i++){
-            for (int j = 0; j < numModulos; j++){
+        for (int j = 0; j < numModulos; j++){
+            for (int i = 0; i < 3; i++){
                 AnchorPane ap = new AnchorPane();
                 ap.setPrefSize(312, 260);
-                listadoModulos.add(ap,i,j);
+                listadoModulos.add(ap,j,i);
                 allModulePanes.add(ap);
             }
         }
@@ -69,12 +85,27 @@ public class FullModulosView {
     }
     
     public void popularModulos(ArrayList<PooModulo> array){
-        for (int i=0; i < allModulePanes.size(); i++){
+        for (int i=1; i < array.size(); i++){
             PooModulo m = array.get(i);
             AnchorPane ap = allModulePanes.get(i);
-            ArrayList<PooTarea> arrayTareas = modelTarea.getTareasDeUsuario(array.get(i).getIdUsuario());
+           /* ArrayList<PooTarea> arrayTareas = modelTarea.getTareasDeUsuario(array.get(i).getIdUsuario());
             ArrayList<PooEvento> arrayEventos = modelEvento.getEventosDeUsuario(array.get(i).getIdUsuario());
+            */
+           
+           /**/
+            PooTarea tarTest = new PooTarea(1,1,"a","aaa","2022-6-12",2,0);
+            PooTarea tarTest2 = new PooTarea(2,2,"b","bbb","2022-5-26",3,1);
+            ArrayList<PooTarea> arrayTareas = new ArrayList<PooTarea>();
+            arrayTareas.add(tarTest);
+            arrayTareas.add(tarTest2);
             
+            PooEvento eveTest = new PooEvento(1,1,"a","aaa","2022-6-12",2);
+            PooEvento eveTest2 = new PooEvento(2,1,"b","bbb","2022-5-26",1);
+            ArrayList<PooEvento> arrayEventos = new ArrayList<PooEvento>();
+            arrayEventos.add(eveTest);
+            arrayEventos.add(eveTest2);
+           /**/
+           
             if(ap.getChildren().size()>0){
                 ap.getChildren().remove(0);
             }
