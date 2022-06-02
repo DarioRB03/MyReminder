@@ -81,11 +81,11 @@
          </children>
       </Pane>
       <Line endX="150.0" endY="-10.0" layoutX="136.0" layoutY="14.0" startX="-136.0" startY="-10.0" />
-      <ScrollPane layoutX="-4.0" layoutY="7.0" prefHeight="885.0" prefWidth="1215.0">
+      <ScrollPane fx:id="scrollPanel" layoutX="-4.0" layoutY="7.0" prefHeight="885.0" prefWidth="1215.0">
          <content>
-            <AnchorPane prefHeight="888.0" prefWidth="1217.0">
+            <AnchorPane prefHeight="876.0" prefWidth="1217.0">
                <children>
-                  <Pane fx:id="modulosPane" prefHeight="888.0" prefWidth="1217.0" />
+                  <Pane fx:id="modulosPane" layoutX="22.0" layoutY="28.0" prefHeight="798.0" prefWidth="1195.0" />
                </children>
             </AnchorPane>
          </content>

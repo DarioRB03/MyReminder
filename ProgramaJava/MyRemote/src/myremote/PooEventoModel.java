@@ -31,7 +31,7 @@ public class PooEventoModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    Date fecha = rs.getDate("fechaEvento");
+                    String fecha = rs.getString("fechaEvento");
                     int prioridad = rs.getInt("prioridad");
                     
                     PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
@@ -61,7 +61,7 @@ public class PooEventoModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    Date fecha = rs.getDate("fechaEvento");
+                    String fecha = rs.getString("fechaEvento");
                     int prioridad = rs.getInt("prioridad");
                     
                     PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
@@ -78,7 +78,7 @@ public class PooEventoModel extends DBUtil{
         }
     
     
-        public boolean agregarEvento(int idModulo, String titulo, String descripcion, int fechaEvento, int prioridad) {
+        public boolean agregarEvento(int idModulo, String titulo, String descripcion, String fechaEvento, int prioridad) {
 		Boolean resultado = false;
 		try {
 			String insertSql = "INSERT INTO eventos (idModulo, titulo, descripcion, fechaEvento, prioridad) VALUES (?, ?, ?, ?, ?)";
@@ -88,7 +88,7 @@ public class PooEventoModel extends DBUtil{
 			prest.setInt(1, idModulo);
 			prest.setString(2, titulo);
 			prest.setString(3, descripcion);
-                        prest.setInt(4, fechaEvento);
+                        prest.setString(4, fechaEvento);
                         prest.setInt(5, prioridad);
                         
 			prest.execute();
@@ -127,7 +127,7 @@ public class PooEventoModel extends DBUtil{
         }
 
         
-            public boolean editarEvento(int idEvento, int idModulo, String titulo, String descripcion, Date fechaEvento, int prioridad) {
+            public boolean editarEvento(int idEvento, int idModulo, String titulo, String descripcion, String fechaEvento, int prioridad) {
 		Boolean resultado = false;
 		try {
 			String Sql = "UPDATE eventos SET idModulo=?,titulo=?,descripcion=?,fechaEvento=?,prioridad=? WHERE idEvento=?";
@@ -138,7 +138,7 @@ public class PooEventoModel extends DBUtil{
 			prest.setInt(1, idModulo);
 			prest.setString(2, titulo);
 			prest.setString(3, descripcion);
-                        prest.setDate(4, (java.sql.Date) fechaEvento);
+                        prest.setString(4, fechaEvento);
                         prest.setInt(5, prioridad);
 			
 			prest.execute();
@@ -173,9 +173,8 @@ public class PooEventoModel extends DBUtil{
                         int idModulo = rs.getInt("idModulo");
                         String titulo = rs.getString("titulo");
                         String descripcion = rs.getString("descripcion");
-                        Date fechaEvento = rs.getDate("fechaEvento");
+                        String fechaEvento = rs.getString("fechaEvento");
                         int prioridad = rs.getInt("prioridad");
-                            /* falta modificar los POO base para poder crear los objetos correctamente */
                         PooEvento t = new PooEvento(idEvento,idModulo,titulo,descripcion,fechaEvento,prioridad);
                         eventosObservables.add(t);
 		}
@@ -202,7 +201,7 @@ public class PooEventoModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    Date fecha = rs.getDate("fechaEvento");
+                    String fecha = rs.getString("fechaEvento");
                     int prioridad = rs.getInt("prioridad");
                     
                     PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
