@@ -196,3 +196,7 @@ footer{
 #espaciado-nav{
 	margin-right: 100px;
 }
+
+#idLogin{
+	background: linear-gradient(to right bottom, #9e66c6, #6027e1);
+}

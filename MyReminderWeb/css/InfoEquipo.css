@@ -5,8 +5,8 @@
   body {
     padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
+    background: linear-gradient(97deg, rgb(11, 67, 131) 0%, rgb(70, 0, 161) 86%);
   }
   
   /*
@@ -18,6 +18,7 @@
     display: flex;
     padding: 3rem;
     justify-content: center;
+    margin-bottom: 5%;
   }
   
   .card {
@@ -31,10 +32,6 @@
     padding: 1.5rem;
     transition: 0.2s;
   }
-
-  #alinearCartas{
-    background: linear-gradient(97deg, rgb(11, 67, 131) 0%, rgb(70, 0, 161) 86%);
-  }
   
   /*
   Tags de las cartas
@@ -47,8 +44,9 @@
   }
   
   .tags div {
-    font-size: 9px;
-    font-weight: 700;
+    margin-right: 2%;
+    font-size: 15px;
+    font-weight: 500;
     padding: 4px 10px;
     border: 3px solid #28242f;
     border-radius: 2rem;
@@ -212,12 +210,11 @@
   }
   
   header{
-    height: 100vh;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);
-    background-blend-mode: multiply,multiply, ;
+      background-blend-mode: multiply,multiply, ;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      margin-bottom: 0%;
   }
   
   .head{
@@ -241,9 +238,6 @@
     font-size: 25px;
   }
 
-
-
-
-
-
-
+  #divImagenPortada{
+    margin-bottom: 0%;
+  }
