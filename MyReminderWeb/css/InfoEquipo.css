@@ -210,7 +210,13 @@
   }
   
   header{
+<<<<<<< HEAD
       background-blend-mode: multiply,multiply, ;
+=======
+    height: 100vh;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);
+      background-blend-mode: multiply,multiply ;
+>>>>>>> origin/main
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;

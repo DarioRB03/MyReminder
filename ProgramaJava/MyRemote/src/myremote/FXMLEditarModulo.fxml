@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="899.0" prefWidth="1694.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="myremote.FXMLEditarModuloController">
+<AnchorPane id="AnchorPane" prefHeight="903.0" prefWidth="1700.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myremote.FXMLEditarModuloController">
     <stylesheets>
         <URL value="@fxmleditarmodulo.css" />
     </stylesheets>
@@ -20,7 +20,7 @@
             <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Text>
-      <TextField fx:id="tituloTxt" layoutX="223.0" layoutY="153.0" prefHeight="45.0" prefWidth="287.0" promptText="..." style="-fx-border-color: black;">
+      <TextField fx:id="tituloTxt" layoutX="221.0" layoutY="149.0" prefHeight="45.0" prefWidth="287.0" promptText="..." style="-fx-border-color: black;">
          <font>
             <Font size="24.0" />
          </font>
@@ -119,5 +119,10 @@
          </font>
       </Button>
       <ComboBox fx:id="ComboBoxEv" layoutX="223.0" layoutY="386.0" prefHeight="57.0" prefWidth="75.0" promptText="Nº" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Button fx:id="buttonVolver" layoutX="1585.0" layoutY="38.0" mnemonicParsing="false" onAction="#handleVolverAction" style="-fx-background-color: white; -fx-border-color: #777; -fx-border-radius: 20; -fx-border-width: 1;" text="&lt;" textFill="#707070">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="889.0" prefWidth="1689.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myremote.FXMLPantallaEventosController">
   <children>
-      <TableView fx:id="tableViewTareas" layoutX="1.0" layoutY="3.0" prefHeight="774.0" prefWidth="1687.0">
+      <TableView fx:id="tableViewEventos" layoutX="1.0" layoutY="3.0" prefHeight="774.0" prefWidth="1687.0">
         <columns>
           <TableColumn fx:id="columnaIdModulo" prefWidth="91.33332824707031" text="ID_Modulo" />
           <TableColumn fx:id="columnaIdEvento" prefWidth="100.33333587646484" text="ID_Evento" />

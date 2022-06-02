@@ -47,17 +47,17 @@ public class FXMLPantallaTareasController implements Initializable {
 
     private PooUsuario usuarioActivo;
     private ObservableList<PooTarea> tareasObservable;
-    private PooTareaModel tareaModel;
+   /* private PooTareaModel tareaModel;*/
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     
-    usuarioActivo = new PooUsuario();
-    tareaModel = new PooTareaModel();
+    usuarioActivo = new PooUsuario();/*
+    tareaModel = new PooTareaModel();*/
     tareasObservable = FXCollections.observableArrayList();
-    tareasObservable = tareaModel.getTarea(usuarioActivo.getIdUsuario());
+    /*tareasObservable = tareaModel.getTarea(usuarioActivo.getIdUsuario());*/
         
     this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("IdModulo"));   
     this.columnaIdTarea.setCellValueFactory(new PropertyValueFactory("IdTarea"));

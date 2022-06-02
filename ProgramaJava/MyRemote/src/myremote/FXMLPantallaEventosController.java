@@ -45,23 +45,23 @@ public class FXMLPantallaEventosController implements Initializable {
     
     private PooUsuario usuarioActivo;
     private ObservableList<PooEvento> eventosObservable;
-    private PooEventoModel eventoModel;
+   /* private PooEventoModel eventoModel;*/
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usuarioActivo = new PooUsuario();
-        eventoModel = new PooEventoModel();
+        usuarioActivo = new PooUsuario();/*
+        eventoModel = new PooEventoModel();*/
         eventosObservable = FXCollections.observableArrayList();
-        eventosObservable = eventoModel.getEvento(usuarioActivo.getIdUsuario());
+       /*eventosObservable = eventoModel.getEvento(usuarioActivo.getIdUsuario());*/
         
-        this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("idModulo"));   
-        this.columnaIdEvento.setCellValueFactory(new PropertyValueFactory("idEvento"));
-        this.columnaTitulo.setCellValueFactory(new PropertyValueFactory("titulo"));
-        this.columnaDescripcion.setCellValueFactory(new PropertyValueFactory("descripcion"));
-        this.columnaFecha.setCellValueFactory(new PropertyValueFactory("fechaEvento"));
-        this.columnaPrioridad.setCellValueFactory(new PropertyValueFactory("prioridad"));
+        this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("IdModulo"));   
+        this.columnaIdEvento.setCellValueFactory(new PropertyValueFactory("IdEvento"));
+        this.columnaTitulo.setCellValueFactory(new PropertyValueFactory("Titulo"));
+        this.columnaDescripcion.setCellValueFactory(new PropertyValueFactory("Descripcion"));
+        this.columnaFecha.setCellValueFactory(new PropertyValueFactory("FechaEvento"));
+        this.columnaPrioridad.setCellValueFactory(new PropertyValueFactory("Prioridad"));
         
         this.tableViewEventos.setItems(eventosObservable);
         

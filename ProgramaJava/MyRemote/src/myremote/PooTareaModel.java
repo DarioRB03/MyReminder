@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -31,7 +30,7 @@ public class PooTareaModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    Date fecha = rs.getDate("fechaTarea");
+                    String fecha = rs.getString("fechaTarea");
                     int prioridad = rs.getInt("prioridad");
                     int realizado = rs.getInt("realizado");
                     
@@ -61,7 +60,7 @@ public class PooTareaModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    Date fecha = rs.getDate("fechaTarea");
+                    String fecha = rs.getString("fechaTarea");
                     int prioridad = rs.getInt("prioridad");
                     int realizado = rs.getInt("realizado");
                     
@@ -78,7 +77,7 @@ public class PooTareaModel extends DBUtil{
             }
         }
     
-        public boolean agregarTarea(int idTarea, int idModulo, String titulo, String descripcion, Date fechaTarea, int prioridad, int realizado) {
+        public boolean agregarTarea(int idTarea, int idModulo, String titulo, String descripcion, String fechaTarea, int prioridad, int realizado) {
 		Boolean resultado = false;
 		try {
 			String insertSql = "INSERT INTO tareas (idModulo, titulo, descripcion, fechaTarea, prioridad, realizado) VALUES (?, ?, ?, ?, ?, ?)";
@@ -88,7 +87,7 @@ public class PooTareaModel extends DBUtil{
 			prest.setInt(1, idModulo);
 			prest.setString(2, titulo);
 			prest.setString(3, descripcion);
-                        prest.setDate(4, (java.sql.Date) fechaTarea);
+                        prest.setString(4, fechaTarea);
                         prest.setInt(5, prioridad);
                         prest.setInt(6, realizado);
                         
@@ -128,7 +127,7 @@ public class PooTareaModel extends DBUtil{
         }
 
         
-            public boolean editarTarea(int idTarea, int idModulo, String titulo, String descripcion, Date fechaTarea, int prioridad, int realizado) {
+            public boolean editarTarea(int idTarea, int idModulo, String titulo, String descripcion, String fechaTarea, int prioridad, int realizado) {
 		Boolean resultado = false;
 		try {
 			String Sql = "UPDATE tareas SET idModulo=?,titulo=?,descripcion=?,fechaTarea=?,prioridad=?,realizado=? WHERE idTarea=?";
@@ -139,7 +138,7 @@ public class PooTareaModel extends DBUtil{
 			prest.setInt(1, idModulo);
 			prest.setString(2, titulo);
 			prest.setString(3, descripcion);
-                        prest.setDate(4, (java.sql.Date) fechaTarea);
+                        prest.setString(4, fechaTarea);
                         prest.setInt(5, prioridad);
 			prest.setInt(6, realizado);
 			
@@ -197,7 +196,7 @@ public class PooTareaModel extends DBUtil{
                         int idModulo = rs.getInt("idModulo");
                         String titulo = rs.getString("titulo");
                         String descripcion = rs.getString("descripcion");
-                        Date fecha = rs.getDate("fechaTarea");
+                        String fecha = rs.getString("fechaTarea");
                         int prioridad = rs.getInt("prioridad");
                         int realizado = rs.getInt("realizado");
                         
@@ -227,7 +226,7 @@ public class PooTareaModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    Date fecha = rs.getDate("fechaTarea");
+                    String fecha = rs.getString("fechaTarea");
                     int prioridad = rs.getInt("prioridad");
                     int realizado = rs.getInt("realizado");
                     

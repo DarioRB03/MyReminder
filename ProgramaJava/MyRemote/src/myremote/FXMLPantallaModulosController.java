@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -57,12 +58,15 @@ public class FXMLPantallaModulosController implements Initializable {
     private Pane modulosPane;
     
     private FullModulosView fmv;
-    private PooUsuario usuarioActivo;
+    private testModulosView tmv;
+    private PooUsuario usuarioActivo;/*
     private PooTareaModel ptm;
-    private PooEventoModel pem;
+    private PooEventoModel pem;*/
     private ArrayList<PooTarea> arrayTareas;
     private ArrayList<PooEvento> arrayEventos;
     /* Identificar cual es el usuario activo?? */
+    @FXML
+    private ScrollPane scrollPanel;
     
     /**
      * Initializes the controller class.
@@ -71,9 +75,10 @@ public class FXMLPantallaModulosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-        /*usuarioActivo = new PooUsuario();
-        fmv = new FullModulosView(usuarioActivo);
-        this.modulosPane.getChildren().add(fmv.getView());*/
+        usuarioActivo = new PooUsuario();
+        tmv = new testModulosView();
+        this.modulosPane.setPrefHeight(this.scrollPanel.getPrefHeight() -600+ tmv.getAlongar());
+        this.modulosPane.getChildren().add(tmv.getView());
         
         nombrePanel1.setText("...");
         textFieldDescripcion1.setText("...");
@@ -88,7 +93,7 @@ public class FXMLPantallaModulosController implements Initializable {
 
     @FXML
     private void handleTareasCercanasAction(ActionEvent event) {
-        
+        /*
         arrayTareas=ptm.getTareasCerca(usuarioActivo.getIdUsuario());
         
         PooTarea tarea1 = new PooTarea();
@@ -100,20 +105,20 @@ public class FXMLPantallaModulosController implements Initializable {
         
         nombrePanel1.setText(tarea1.getTitulo());
         textFieldDescripcion1.setText(tarea1.getDescripcion());
-        labelFecha1.setText(""/*tarea1.getFecha()*/);
+        labelFecha1.setText(""/*tarea1.getFecha()*//*);
         
         nombrePanel2.setText(tarea2.getTitulo());
         textFieldDescripcion2.setText(tarea2.getDescripcion());
-        labelFecha2.setText(""/*tarea1.getFecha()*/);
+        labelFecha2.setText(""/*tarea1.getFecha()*//*);
         
         nombrePanel3.setText(tarea3.getTitulo());
         textFieldDescripcion3.setText(tarea3.getDescripcion());
-        labelFecha3.setText(""/*tarea1.getFecha()*/);
+        labelFecha3.setText(""/*tarea1.getFecha()*//*);*/
     }
 
     @FXML
     private void handleEventosCercanosAction(ActionEvent event) {
-        
+        /*
         arrayEventos=pem.getEventosCerca(usuarioActivo.getIdUsuario());
         
         PooEvento evento1 = new PooEvento();
@@ -125,15 +130,15 @@ public class FXMLPantallaModulosController implements Initializable {
         
         nombrePanel1.setText(evento1.getTitulo());
         textFieldDescripcion1.setText(evento1.getDescripcion());
-        labelFecha1.setText(""/*evento1.getFecha()*/);
+        labelFecha1.setText(""/*evento1.getFecha()*//*);
         
         nombrePanel2.setText(evento2.getTitulo());
         textFieldDescripcion2.setText(evento2.getDescripcion());
-        labelFecha2.setText(""/*evento2.getFecha()*/);
+        labelFecha2.setText(""/*evento2.getFecha()*//*);
         
         nombrePanel3.setText(evento3.getTitulo());
         textFieldDescripcion3.setText(evento3.getDescripcion());
-        labelFecha3.setText(""/*evento3.getFecha()*/);
+        labelFecha3.setText(""/*evento3.getFecha()*//*);*/
     }
 
     
