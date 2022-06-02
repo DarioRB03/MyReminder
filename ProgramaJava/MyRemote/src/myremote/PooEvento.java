@@ -16,13 +16,13 @@ public class PooEvento {
     private int idModulo;
     private String titulo;
     private String descripcion;
-    private Date fechaEvento;
+    private String fechaEvento;
     private int prioridad;
 
     public PooEvento() {
     }
 
-    public PooEvento(int idEvento, int idModulo, String titulo, String descripcion, Date fechaEvento, int prioridad) {
+    public PooEvento(int idEvento, int idModulo, String titulo, String descripcion, String fechaEvento, int prioridad) {
         this.idEvento = idEvento;
         this.idModulo = idModulo;
         this.titulo = titulo;
@@ -63,11 +63,11 @@ public class PooEvento {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaEvento() {
+    public String getFechaEvento() {
         return fechaEvento;
     }
 
-    public void setFechaEvento(Date fechaEvento) {
+    public void setFechaEvento(String fechaEvento) {
         this.fechaEvento = fechaEvento;
     }
 
