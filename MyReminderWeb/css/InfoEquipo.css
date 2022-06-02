@@ -31,6 +31,10 @@
     padding: 1.5rem;
     transition: 0.2s;
   }
+
+  #alinearCartas{
+    background: linear-gradient(97deg, rgb(11, 67, 131) 0%, rgb(70, 0, 161) 86%);
+  }
   
   /*
   Tags de las cartas
