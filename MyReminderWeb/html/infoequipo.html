@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <title>Información Del Equipo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../CSS/cssinfo.css">
+    <title> Información Equipo </title>
+    <link rel="stylesheet" type="text/css" href="../CSS/InfoEquipo.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/General.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="icon" type="image/x-icon" href="../Imagenes/Logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -22,131 +28,274 @@
 </head>
 <body>
 
-  <!--Imagen del grupo-->
-  <div class="flex justify-center">
-  <div>
-      <img  src="../Imagenes/ejemplo1" alt="Imagen del grupo"/>
+<!--Menú Desplegable-->
+    <img src="../Imagenes/Menu/menu-regular-24.png" class="menu" alt="Imagen Menu">
+    <nav class="menu-navegador" style="z-index: 20;">
+      <ul class="list">
+        <li class="list__item">
+          <div class="list__button">
+            <img src="../Imagenes/Menu/home.svg" class="list__img" alt="Imagen Inicio">
+              <a href="../Secciones/Inicio.html" class="nav__link">Inicio</a>
+          </div>
+        </li>
+
+        <li id="boton-secciones" class="list__item list__item--click">
+          <div class="list__button list__button--click">
+              <img src="../Imagenes/Menu/youtube.svg" class="list__img" alt="">
+              <a href="../Secciones/Secciones.html" class="nav__link">Youtube - Demostraciones</a>
+              <img src="../Imagenes/Menu/arrow.svg" class="list__arrow" alt="">
+          </div>
+
+          <ul class="list__show">
+              <li class="list__inside">
+                  <a href="../Secciones/cartasDep.html" class="nav__link nav__link--inside">General</a>
+              </li>
+
+              <li class="list__inside">
+                  <a href="../Secciones/cartasInf.html" class="nav__link nav__link--inside">Calendario</a>
+              </li>
+
+              <li class="list__inside">
+                  <a href="../Secciones/cartasCan.html" class="nav__link nav__link--inside">Modulos</a>
+              </li>
+
+              <li class="list__inside">
+                  <a href="../Secciones/cartasEsc.html" class="nav__link nav__link--inside">Tareas</a>
+              </li>
+          </ul>
+      </li>
+        <li class="list__item">
+          <div class="list__button">
+            <img src="../Imagenes/Menu/contact.svg" class="list__img" alt="Imagen Contacto">
+              <a href="#contacto" class="nav__link">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+<header>
+<!-- Menu Navegación -->
+<div id="divImagenPortada" class="colorFondo">
+  <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between" >
+  <div class="px-6 w-full flex flex-wrap items-center justify-between" id="paddingPortada">
+      <div class="flex items-center">
+          <a class="navbar-brand text-blue-600" href="../Secciones/Inicio.html">
+          <img style="width: 60px;" src="../Imagenes/Logo.png" class="block w-full" alt="..." />
+          </a>
+      </div>
+
+          <div id="espaciado-nav">
+              <div class="flex items-center lg:ml-auto">
+                  <a href="../Secciones/LogIn.html">
+                      <p style="font-size: 1.2vw;"
+                          class="inline-block px-6 py-2.5 mr-2 bg-transparent text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                          data-mdb-ripple="true"
+                          data-mdb-ripple-color="light"
+                          >
+                          My Reminder
+                      </p>
+                  </a>
+                  <a href="../Secciones/FormularioWeb.html">
+                      <p style="font-size: 1.2vw;"
+                          id="idLogin"
+                          class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                          data-mdb-ripple="true"
+                          data-mdb-ripple-color="light"
+                          >
+                      Login
+                      </p>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </nav>
+
+  <div class="container my-24 px-6 mx-auto">
+    <section class="mb-32 background-radial-gradient">
+      
+  
+      <div class="px-6 py-12 md:px-12 text-center lg:text-left">
+        <div class="container mx-auto xl:px-32">
+          <div class="grid lg:grid-cols-2 gap-12 flex items-center">
+            <div class="mt-12 lg:mt-0">
+              <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" style="color: hsl(218, 81%, 95%);">My Reminder <br /><span style="color: hsl(218, 81%, 75%);">Proyecto Integrado</span></h1>
+              <a class="inline-block px-7 py-3 mr-2 bg-gray-200 text-gray-700 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Inicio</a>
+            </div>
+            <div class="mb-12 lg:mb-0">
+              <img
+                src="https://mdbootstrap.com/img/new/ecommerce/horizontal/058.jpg"
+                class="w-full rounded-lg shadow-lg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
+</header>
+
+<main>
+
+<!--Contenedor de cartas-->
+    <div class="card-container colorFondo">
+      <!--Cartas-->
+          <div class="card">
+                <h2 class="article-title">
+                    Product Owner
+                </h2>
+            </header>
+            <div class="author">
+                <div class="profile"></div>
+                <div class="info">
+                  <div class="imagenCentrar">
+                    <img src="../Imagenes/editpau.jpeg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
+                  </div>
+                  <div class="alinear" id="alinearTextopau">
+                    <div class="caption">Integrante</div>
+                    <div class="name">Pau Quiles</div>
+                  </div>
+                </div>
+            </div>
+            <div class="tags" id="alinearTagpau">
+                <div>PROG</div>
+                <div>ED</div>
+            </div>
+        </div>
+        <div class="card">
+                <div class="article-title">
+                    Scrum Master
+                </div>
+            </header>
+            <div class="author">
+                <div class="profile"></div>
+                <div class="info">
+                  <div class="imagenCentrar">
+                    <img src="../Imagenes/editsantos.jpeg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
+                  </div>
+                  <div class="alinear" id="alinearTextosantos">
+                    <div class="caption">Integrante</div>
+                    <div class="name">Alex Blasco</div>
+                  </div>
+                </div>
+            </div>
+            <div class="tags" id="alinearTagsantos">
+                <div>LLMM</div>
+                <div>SI</div>
+                <div>BBDD</div>
+                <div>PROG</div>
+            </div>
+        </div>
+        <div class="card">
+                <div class="article-title">
+                    Developer Team
+                </div>
+            </header>
+            <div class="author">
+                <div class="profile"></div>
+                <div class="info">
+                  <div class="imagenCentrar">
+                    <img src="../Imagenes/editdario.jpg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
+                  </div>
+                  <div class="alinear" id="alinearTextodario">
+                    <div class="caption">Integrante</div>
+                    <div class="name">Darío Rivadeneira</div>
+                  </div>
+                </div>
+            </div>
+            <div class="tags" id="alinearTags">
+                <div>LLMM</div>
+                <div>ED</div>
+                <div>SI</div>
+            </div>
+        </div>
+        <div class="card">
+                <div class="article-title">
+                    Developer Team
+                </div>
+            </header>
+            <div class="author">
+                <div class="profile"></div>
+                <div class="info">
+                  <div class="imagenCentrar">
+                    <img src="../Imagenes/edittoni.jpeg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
+                  </div>
+                  <div class="alinear" id="alinearTextotoni">
+                    <div class="caption">Integrante</div>
+                    <div class="name">Antoni Dolz</div>
+                  </div>
+                </div>
+            </div>
+            <div class="tags" id="alinearTags">
+                <div>BBDD</div>
+                <div>PROG</div>
+            </div>
+        </div>
+        <div class="card">
+                <div class="article-title">
+                    Developer Team
+                </div>
+            </header>
+            <div class="author">
+                <div class="profile"></div>
+                <div class="info">
+                  <div class="imagenCentrar">
+                    <img src="../Imagenes/editborja.jpeg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
+                  </div>
+                  <div class="alinear" id="alinearTextoborja">
+                    <div class="caption">Integrante</div>
+                    <div class="name">Borja Gómez</div>
+                  </div>
+                </div>
+            </div>
+            <div class="tags" id="alinearTags">
+                <div>LLMM</div>
+                <div>FOL</div>
+            </div>
+        </div>
+    </div>   
+</main>
+
+<!-- Footer Contacto -->
+<footer id="contacto">
+  <div class="contenedor footer-content">
+      <div class="contact">
+          <h2 class="brand">My Reminder</h2>
+          <p>Un buen orden es la base de todas las cosas</p>
+      </div>
+
+      <a href="#!"><img class="icono-footer" src="../Imagenes/Logo.png" alt="Logo"></a>
+      
+      <div class="redes-sociales">
+        <a class="red-social-icono movimiento" id="instagram" href="">
+          <i class="bx bxl-instagram "></i>
+        </a>
+      
+        <a class="red-social-icono movimiento" id="twitter" href="">
+            <i class="bx bxl-twitter"></i>
+        </a>
+
+        <a class="red-social-icono movimiento" id="github" href="">
+            <i class='bx bxl-github'></i>
+        </a>
+
+        <a class="red-social-icono movimiento" id="youtube" href="">
+            <i class='bx bxl-youtube'></i>       
+        </a>
+
+        <a class="red-social-icono movimiento" id="code" href="">
+            <i class="bx bx-code-alt "></i>
+        </a>
+      </div>
   </div>
 
-  <!--Contenedor de cartas-->
-    <div class="card-container" id="alinearCartas">
-  <!--Cartas-->
-      <div class="card">
-            <h2 class="article-title">
-                Product Owner
-            </h2>
-        </header>
-        <div class="author">
-            <div class="profile"></div>
-            <div class="info">
-              <div class="imagenCentrar">
-                <img src="../Imagenes/editpau.jpeg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
-              </div>
-              <div class="alinear" id="alinearTextopau">
-                <div class="caption">Integrante</div>
-                <div class="name">Pau Quiles</div>
-              </div>
-            </div>
-        </div>
-        <div class="tags" id="alinearTagpau">
-            <div>PROG</div>
-            <div>ED</div>
-        </div>
-    </div>
-    <div class="card">
-            <div class="article-title">
-                Scrum Master
-            </div>
-        </header>
-        <div class="author">
-            <div class="profile"></div>
-            <div class="info">
-              <div class="imagenCentrar">
-                <img src="../Imagenes/editsantos.jpeg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
-              </div>
-              <div class="alinear" id="alinearTextosantos">
-                <div class="caption">Integrante</div>
-                <div class="name">Alex Blasco</div>
-              </div>
-            </div>
-        </div>
-        <div class="tags" id="alinearTagsantos">
-            <div>LLMM</div>
-            <div>SI</div>
-            <div>BBDD</div>
-            <div>PROG</div>
-        </div>
-    </div>
-    <div class="card">
-            <div class="article-title">
-                Developer Team
-            </div>
-        </header>
-        <div class="author">
-            <div class="profile"></div>
-            <div class="info">
-              <div class="imagenCentrar">
-                <img src="../Imagenes/editdario.jpg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
-              </div>
-              <div class="alinear" id="alinearTextodario">
-                <div class="caption">Integrante</div>
-                <div class="name">Darío Rivadeneira</div>
-              </div>
-            </div>
-        </div>
-        <div class="tags" id="alinearTags">
-            <div>LLMM</div>
-            <div>ED</div>
-            <div>SI</div>
-        </div>
-    </div>
-    <div class="card">
-            <div class="article-title">
-                Developer Team
-            </div>
-        </header>
-        <div class="author">
-            <div class="profile"></div>
-            <div class="info">
-              <div class="imagenCentrar">
-                <img src="../Imagenes/edittoni.jpeg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
-              </div>
-              <div class="alinear" id="alinearTextotoni">
-                <div class="caption">Integrante</div>
-                <div class="name">Antoni Dolz</div>
-              </div>
-            </div>
-        </div>
-        <div class="tags" id="alinearTags">
-            <div>BBDD</div>
-            <div>PROG</div>
-        </div>
-    </div>
-    <div class="card">
-            <div class="article-title">
-                Developer Team
-            </div>
-        </header>
-        <div class="author">
-            <div class="profile"></div>
-            <div class="info">
-              <div class="imagenCentrar">
-                <img src="../Imagenes/editborja.jpeg" class="rounded-full w-32 shadow-lg" alt="Avatar"/>
-              </div>
-              <div class="alinear" id="alinearTextoborja">
-                <div class="caption">Integrante</div>
-                <div class="name">Borja Gómez</div>
-              </div>
-            </div>
-        </div>
-        <div class="tags" id="alinearTags">
-            <div>LLMM</div>
-            <div>FOL</div>
-        </div>
-    </div>
-</div>        
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+© 2022 Copyright:
+<a class="text-white" id="alignFooter" href="https://tailwind-elements.com/">My Reminder</a>
+</div>
+
+</footer>
 </body>
+<script src="../JS/Menu.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 
 

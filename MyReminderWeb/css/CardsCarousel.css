@@ -1,6 +1,6 @@
 #cardCarousel {
   color: white;
-  font-weight: light;
+  font-weight: initial;
   display: flex;
   justify-content: center;
   align-items: center;

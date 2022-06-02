@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
@@ -44,7 +45,6 @@ public class FXMLPantallaOpcionesController implements Initializable {
     private Slider sliderTema;
     @FXML
     private CheckBox checkBoxNotificaciones;
-    @FXML
     private ChoiceBox<?> choiceBoxNotificaciones;
     @FXML
     private Button buttonSalir;
@@ -70,6 +70,8 @@ public class FXMLPantallaOpcionesController implements Initializable {
     private Text ATxt;
     @FXML
     private Button buttonAplicar;
+    @FXML
+    private ComboBox<?> comboBoxNotificaciones;
 
     /**
      * Initializes the controller class.

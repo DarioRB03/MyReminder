@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title></title>
+	<title>Formulario</title>
+
+  <meta charset="UTF-8" />
 
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -39,7 +41,7 @@
         style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
         <div class="flex flex-wrap">
           <div class="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
-            <form>
+            <form action="enviar.php" method="post">
               <div class="form-group mb-6">
                 <input type="text" class="form-control block
                 w-full
@@ -93,14 +95,14 @@
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
               " id="exampleFormControlTextarea13" rows="3" placeholder="Observaciones"></textarea>
               </div>
-              <div class="form-group form-check text-center mb-6" class="botonenviar">
+              <div class="botonenviar">
                 <input type="checkbox"
                   class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
                   id="exampleCheck87" checked>
                 <label class="form-check-label inline-block text-gray-800" for="exampleCheck87"> Concedo poblicar mis observaciones para la mejora de la web </label>
               </div>
           
-                    <form action="enviar.php" method="post">
+                    
                     	<input type="text" name="nombre">
                     	<input type="text" name="correo">
                     	<input type="text" name="message">
@@ -124,7 +126,7 @@
               duration-150
               ease-in-out">Enviar</button>
           
-            		</form>
+            		
             </form>	
             
           </div>
@@ -153,7 +155,7 @@
                 <div class="flex items-start">
                   <div class="shrink-0">
                     <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-						<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+						<svg xmlns="http://www.w3.org/2000/svg"
 						 	width="179.000000pt" height="179.000000pt" viewBox="0 0 179.000000 179.000000"
 						 	preserveAspectRatio="xMidYMid meet">
 
@@ -249,9 +251,13 @@
 
 </div>
 <!-- Container for demo purpose -->
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
 
 </body>
 
-	<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+	
 
 </html>
