@@ -21,21 +21,21 @@
             <TableColumn fx:id="columnaPrioridad" prefWidth="100.0" text="Prioridad" />
         </columns>
       </TableView>
-      <Text layoutX="33.0" layoutY="830.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID del evento:">
+      <Line endX="300.0" layoutX="476.0" startX="50.0" />
+      <Text layoutX="33.0" layoutY="836.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID del evento:">
          <font>
-            <Font size="36.0" />
+            <Font name="Yu Gothic Light" size="36.0" />
          </font>
       </Text>
-      <TextField fx:id="fieldTextId" layoutX="284.0" layoutY="780.0" prefHeight="48.0" prefWidth="83.0" promptText="id">
+      <TextField fx:id="fieldTextId" layoutX="267.0" layoutY="795.0" prefHeight="22.0" prefWidth="78.0" promptText="id">
          <font>
-            <Font size="36.0" />
+            <Font name="Yu Gothic Regular" size="36.0" />
          </font>
       </TextField>
-      <Button fx:id="buttonEventoEditar" layoutX="383.0" layoutY="793.0" mnemonicParsing="false" onAction="#handleEditarEventoAction" text="EDITAR" textFill="BLUE">
+      <Button fx:id="buttonEventoEditar" layoutX="368.0" layoutY="804.0" mnemonicParsing="false" onAction="#handleEditarEventoAction" prefHeight="46.0" prefWidth="122.0" text="EDITAR" textFill="BLUE">
          <font>
-            <Font size="24.0" />
+            <Font name="Yu Gothic Regular" size="24.0" />
          </font>
       </Button>
-      <Line endX="300.0" layoutX="476.0" startX="50.0" />
    </children>
 </AnchorPane>

@@ -43,11 +43,6 @@
             <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Text>
-      <TextField fx:id="fechaField" layoutX="1173.0" layoutY="399.0" promptText=" ... / ... / ..." style="-fx-border-color: black;">
-         <font>
-            <Font name="Yu Gothic Regular" size="24.0" />
-         </font>
-      </TextField>
       <Text fx:id="idModuloTxt" layoutX="996.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id Modulo:">
          <font>
             <Font name="Yu Gothic Regular" size="30.0" />
@@ -91,5 +86,8 @@
          </font>
       </Text>
       <Separator layoutX="-1.0" layoutY="745.0" prefHeight="3.0" prefWidth="1708.0" style="-fx-background-color: black;" />
+      <ComboBox layoutX="1170.0" layoutY="404.0" prefHeight="49.0" prefWidth="68.0" />
+      <ComboBox layoutX="1333.0" layoutY="403.0" prefHeight="49.0" prefWidth="68.0" />
+      <ComboBox layoutX="1250.0" layoutY="405.0" prefHeight="49.0" prefWidth="68.0" />
    </children>
 </AnchorPane>
