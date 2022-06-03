@@ -30,15 +30,15 @@ public class testModulosView {
         
         alongar=0;
         
-        PooModulo modTest = new PooModulo(1,1,"a",2);
-        PooModulo modTest2 = new PooModulo(2,1,"b",4);
-        PooModulo modTest3 = new PooModulo(3,1,"a",2);
-        PooModulo modTest4 = new PooModulo(4,1,"b",4);
-        PooModulo modTest5 = new PooModulo(5,1,"a",2);
-        PooModulo modTest6 = new PooModulo(6,1,"b",4);
-        PooModulo modTest7 = new PooModulo(7,1,"b",4);
-        PooModulo modTest8 = new PooModulo(8,1,"a",2);
-        PooModulo modTest9 = new PooModulo(9,1,"b",4);
+        PooModulo modTest = new PooModulo(1,1,"Titulo a",2);
+        PooModulo modTest2 = new PooModulo(2,1,"Titulo b",4);
+        PooModulo modTest3 = new PooModulo(3,1,"Titulo a",2);
+        PooModulo modTest4 = new PooModulo(4,1,"Titulo b",4);
+        PooModulo modTest5 = new PooModulo(5,1,"Titulo a",2);
+        PooModulo modTest6 = new PooModulo(6,1,"Titulo b",4);
+        PooModulo modTest7 = new PooModulo(7,1,"Titulo b",4);
+        PooModulo modTest8 = new PooModulo(8,1,"Titulo a",2);
+        PooModulo modTest9 = new PooModulo(9,1,"Titulo b",4);
         ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
         arrayModulos.add(modTest);
         arrayModulos.add(modTest2);
@@ -108,25 +108,35 @@ public class testModulosView {
            
             if(ap.getChildren().size()>0){
                 ap.getChildren().remove(0);
-            }       
-            
+            } 
+            Paint labelPaint = Paint.valueOf("#0066ff");
+            Font fontTit = new Font("Yu Gothic light",30);
             Text titulo = new Text(m.getTitulo());
-            ap.setTopAnchor(titulo,5.0);
-            ap.setLeftAnchor(titulo,5.0);
+            ap.setTopAnchor(titulo,15.0);
+            ap.setLeftAnchor(titulo,10.0);
+            titulo.setFill(labelPaint);
+            titulo.setFont(fontTit);
+            
             ap.getChildren().add(titulo);
             
+            Font fontTxt = new Font("Yu Gothic light", 20);
             Text txt = new Text(arrayTareas.size() + " tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
-            ap.setTopAnchor(txt, 15.0);
-            ap.setLeftAnchor(txt, 5.0);
+            ap.setTopAnchor(txt, 80.0);
+            ap.setLeftAnchor(txt, 10.0);
             ap.getChildren().add(txt);
+            txt.setFont(fontTxt);
             
+            Font fontButton = new Font("Yu Gothic light", 14);
             Button button = new Button();
             //Setting text to the button
             button.setOnAction((event) -> {
                 handleButtonAction(event, m, arrayTareas, arrayEventos);
             });
-            button.setText(">");
-            button.setTranslateY(60);
+            button.setText("Editar");
+            button.setFont(fontButton);
+            button.setTranslateY(170);
+            button.setTranslateX(10);
+            button.setTextFill(labelPaint);
             ap.getChildren().add(button);
             
             

@@ -22,17 +22,17 @@
             <TableColumn fx:id="columnaRealizado" prefWidth="101.666748046875" text="Realizado" />
         </columns>
       </TableView>
-      <Text layoutX="33.0" layoutY="830.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de la tarea:">
+      <Text layoutX="34.0" layoutY="838.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID de la tarea:">
          <font>
-            <Font name="Yu Gothic Regular" size="36.0" />
+            <Font name="Yu Gothic Light" size="36.0" />
          </font>
       </Text>
-      <TextField fx:id="fieldTextId" layoutX="284.0" layoutY="780.0" prefHeight="48.0" prefWidth="83.0" promptText="id">
+      <TextField fx:id="fieldTextId" layoutX="268.0" layoutY="797.0" prefHeight="22.0" prefWidth="78.0" promptText="id">
          <font>
             <Font name="Yu Gothic Regular" size="36.0" />
          </font>
       </TextField>
-      <Button fx:id="buttonTareaEditar" layoutX="383.0" layoutY="793.0" mnemonicParsing="false" onAction="#handleEditarTareaAction" text="EDITAR" textFill="BLUE">
+      <Button fx:id="buttonTareaEditar" layoutX="369.0" layoutY="806.0" mnemonicParsing="false" onAction="#handleEditarTareaAction" prefHeight="46.0" prefWidth="122.0" text="EDITAR" textFill="BLUE">
          <font>
             <Font name="Yu Gothic Regular" size="24.0" />
          </font>
