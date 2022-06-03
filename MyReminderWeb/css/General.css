@@ -24,8 +24,8 @@ body{
   }
 
 footer{
-	background: rgb(12, 91, 182);
-    background: linear-gradient(97deg, rgb(12, 91, 182) 0%, rgba(111,0,255,1) 86%);
+	background: rgb(55,0,255);
+	background: linear-gradient(90deg, rgba(55,0,255,1) 0%, rgba(167,0,196,1) 60%);
 }
 
 .footer-content{
@@ -207,5 +207,5 @@ footer{
 }
 
 #idLogin{
-	background: linear-gradient(to right bottom, #9e66c6, #6027e1);
+    background: linear-gradient(to right, #6027e1, #9e66c6 );
 }
