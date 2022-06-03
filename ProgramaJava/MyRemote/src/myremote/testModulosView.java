@@ -37,7 +37,7 @@ public class testModulosView {
         
         alongar=0;
         
-<<<<<<< HEAD
+
         PooModulo modTest = new PooModulo(1,1,"Titulo Largo",2);
         PooModulo modTest2 = new PooModulo(2,1,"b",4);
         PooModulo modTest3 = new PooModulo(3,1,"a",2);
@@ -47,17 +47,7 @@ public class testModulosView {
         PooModulo modTest7 = new PooModulo(7,1,"b",4);
         PooModulo modTest8 = new PooModulo(8,1,"a",2);
         PooModulo modTest9 = new PooModulo(9,1,"b",4);
-=======
-        PooModulo modTest = new PooModulo(1,1,"Titulo a",2);
-        PooModulo modTest2 = new PooModulo(2,1,"Titulo b",4);
-        PooModulo modTest3 = new PooModulo(3,1,"Titulo a",2);
-        PooModulo modTest4 = new PooModulo(4,1,"Titulo b",4);
-        PooModulo modTest5 = new PooModulo(5,1,"Titulo a",2);
-        PooModulo modTest6 = new PooModulo(6,1,"Titulo b",4);
-        PooModulo modTest7 = new PooModulo(7,1,"Titulo b",4);
-        PooModulo modTest8 = new PooModulo(8,1,"Titulo a",2);
-        PooModulo modTest9 = new PooModulo(9,1,"Titulo b",4);
->>>>>>> c5c0b111c10d1e2dbb1b0e8fda877e3ba06c3e9f
+
         ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
         arrayModulos.add(modTest);
         arrayModulos.add(modTest2);
@@ -131,29 +121,20 @@ public class testModulosView {
             Paint labelPaint = Paint.valueOf("#0066ff");
             Font fontTit = new Font("Yu Gothic light",30);
             Text titulo = new Text(m.getTitulo());
-<<<<<<< HEAD
-            /*Estilos titulo*/
-            ap.setTopAnchor(titulo,5.0);
-            ap.setLeftAnchor(titulo,5.0);
-=======
+
             ap.setTopAnchor(titulo,15.0);
             ap.setLeftAnchor(titulo,10.0);
             titulo.setFill(labelPaint);
             titulo.setFont(fontTit);
             
->>>>>>> c5c0b111c10d1e2dbb1b0e8fda877e3ba06c3e9f
             ap.getChildren().add(titulo);
             
             Font fontTxt = new Font("Yu Gothic light", 20);
             Text txt = new Text(arrayTareas.size() + " tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
-<<<<<<< HEAD
-            /*Estilos contenido*/
-            ap.setTopAnchor(txt, 15.0);
-            ap.setLeftAnchor(txt, 5.0);
-=======
+
             ap.setTopAnchor(txt, 80.0);
             ap.setLeftAnchor(txt, 10.0);
->>>>>>> c5c0b111c10d1e2dbb1b0e8fda877e3ba06c3e9f
+
             ap.getChildren().add(txt);
             txt.setFont(fontTxt);
             
@@ -162,17 +143,13 @@ public class testModulosView {
             button.setOnAction((event) -> {
                 handleButtonAction(event, m, arrayTareas, arrayEventos);
             });
-<<<<<<< HEAD
-            button.setText(">");
-            button.setTranslateY(60);
-            button.setTranslateX(70);
-=======
+
             button.setText("Editar");
             button.setFont(fontButton);
             button.setTranslateY(170);
             button.setTranslateX(10);
             button.setTextFill(labelPaint);
->>>>>>> c5c0b111c10d1e2dbb1b0e8fda877e3ba06c3e9f
+
             ap.getChildren().add(button);
             
             
