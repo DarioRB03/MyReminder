@@ -25,12 +25,12 @@ $(window).scroll(function(){
     } else if(diferencia < 1000){
       $(".my-div-fixed").css("top",Math.min(120,2200-$(this).scrollTop()));
     }
-  } else if(height > 3100){
+  /*} else if(height > 3100){
       if(diferencia > 100){
         $(".my-div-fixed").css("top",Math.max(120,1000-$(this).scrollTop()));
       } else if(diferencia < 1000){
         $(".my-div-fixed").css("top",Math.min(120,2400-$(this).scrollTop()));
-      }
+      }*/
   } else if (height > 2700){
       if(diferencia > 99){
         $(".my-div-fixed").css("top",Math.max(120,850-$(this).scrollTop()));
