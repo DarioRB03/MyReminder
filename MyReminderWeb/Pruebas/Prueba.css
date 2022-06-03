@@ -1,108 +1,98 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  padding: 0;
+*{
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+}
+
+body{
+  background: rgb(3, 110, 18);
+}
+
+.container{
+  width: 80%;
+  margin: 80px auto;
+}
+
+.container h1{
+  padding: 60px 0;
   color: #fff;
+  font-size: 44px;
+  text-align: center;
 }
 
-.card-container {
-  margin-top: 50px;
-  overflow-x: hidden;
+.row{
   display: flex;
-  padding: 3rem;
-  justify-content: center;
-}
-
-.card {
-  min-width: 300px;
-  height: 350px;
-  border-radius: 16px;
-  background-color: #17141d;
-  box-shadow: -1rem 0 3rem #000;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  transition: 0.2s;
-}
-
-.date {
-  color: #8a8a8a;
-}
-
-.tags {
-  display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  margin: 1rem 0 1rem;
 }
 
-.tags div {
-  font-size: 9px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border: 3px solid #28242f;
-  border-radius: 2rem;
+.col{
+  flex-basis: 50%;
+  min-width: 250px;
 }
 
-.card .category-title {
-  font-size: 14px;
-  color: #fff;
-  margin-bottom: 1rem;
+.feature-img{
+  width: 83%;
+  margin: auto;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.card .article-title {
-  font-size: 20px;
-  font-weight: 700;
+.small-img-row{
+  display: flex;
+  background: #efefef;
+  margin: 20px 0;
+  align-items: center;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 85%;
 }
 
-.card .article-header {
-  margin-bottom: auto;
+.small-img{
+  position: relative;
 }
 
-.card .author {
-  margin-top: 3rem;
-  display: grid;
-  grid-template-columns: 75px 1fr;
+.small-img img{
+  width: 150px;
 }
 
-.author .info .caption {
-  color: #8a8a8a;
+.small-img .play-btn{
+  width: 35px;
 }
 
-.card:not(:first-child) {
-  margin-left: -130px;
+.small-img-row p{
+  margin-left: 20px;
+  color: #707070;
+  line-height: 22px;
+  font-size: 15px;
 }
 
-.card:hover {
-  transform: translateY(-1rem);
+.play-btn{
+  width: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
-.card:hover~.card{
-  transform: translateX(130px);
+.video-player{
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
-.imagenCentrar{
-  margin-top: -25%;
-  margin-bottom: 10%;
+video:focus{
+ outline: none;
 }
 
-.alinear{
-  margin-left: -30%;
-  margin-bottom: -10%;
-}
-
-#borjaFoto{
- width: 70%;
- height: 65%;
-}
-
-#imagenGrupo{
-  background-color: yellow;
-  
-  /* IMPORTANTE */
-  margin-left: auto;
-  margin-right: auto;
+.close-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  cursor: pointer;
 }

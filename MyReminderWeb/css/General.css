@@ -10,9 +10,18 @@
 
 body{
 	font-family: 'Bebas Neue', cursive;
+	color: white;
 }
 
 /* Footer */
+
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+  }
 
 footer{
 	background: rgb(12, 91, 182);
