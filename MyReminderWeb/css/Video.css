@@ -4,8 +4,8 @@
   }
   
   body{
-    background: linear-gradient(97deg, rgb(11, 67, 131) 0%, rgb(70, 0, 161) 86%);
-  }
+    background: rgb(80,78,255);
+    background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);  }
   
   .container{
     width: 80%;
@@ -14,7 +14,7 @@
   }
   
   .container h1{
-    margin-left: 20%;
+    margin-left: 28%;
     color: #fff;
     font-size: 44px;
   }
@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-left: 17%;
+    margin-left: 25%;
   }
   
   .col{
