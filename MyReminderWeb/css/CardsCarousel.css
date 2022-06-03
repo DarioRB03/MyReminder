@@ -146,7 +146,7 @@
 .walkthrough .walkthrough-footer button {
   height: 40px;
   border: 0;
-  background: #5da3f2;
+  background: #2e009b;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border-radius: 0;
@@ -160,16 +160,16 @@
   cursor: pointer;
 }
 .walkthrough .walkthrough-footer button:hover {
-  background: #6babf3;
+  background: #4561ffab;
 }
 .walkthrough .walkthrough-footer button:active {
-  background: #5da3f2;
+  background: #4561ffab;
 }
 .walkthrough .walkthrough-footer button:disabled {
   cursor: pointer;
 }
 .walkthrough .walkthrough-footer button.finish {
-  background: #3e94f5;
+  background: #2e009b;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -180,10 +180,10 @@
   transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .walkthrough .walkthrough-footer button.finish:hover {
-  background: #4d9cf6;
+  background: #4561ffab;
 }
 .walkthrough .walkthrough-footer button.finish:active {
-  background: #3e94f5;
+  background: #4561ffab;
 }
 .walkthrough .walkthrough-footer button.finish.active {
   transform: scale(1, 1);

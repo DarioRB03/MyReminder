@@ -1,18 +1,18 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Información Del Equipo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
-    <title> Información Equipo </title>
-    <link rel="stylesheet" type="text/css" href="../CSS/InfoEquipo.css">
+    <title> Video - Modulos </title>
     <link rel="stylesheet" type="text/css" href="../CSS/General.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Video.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <link rel="icon" type="image/x-icon" href="../Imagenes/Logo.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -35,7 +35,7 @@
         <li class="list__item">
           <div class="list__button">
             <img src="../Imagenes/Menu/home.svg" class="list__img" alt="Imagen Inicio">
-              <a href="../Index.html" class="nav__link">Inicio</a>
+              <a href="../Secciones/Inicio.html" class="nav__link">Inicio</a>
           </div>
         </li>
 
@@ -116,151 +116,56 @@
           </div>
       </div>
   </nav>
-
-  <div class="container my-24 px-6 mx-auto">
-    <section class="mb-32 background-radial-gradient">
-      
-  
-      <div class="px-6 py-12 md:px-12 text-center lg:text-left">
-        <div class="container mx-auto xl:px-32">
-          <div class="grid lg:grid-cols-2 gap-12 flex items-center">
-            <div class="mt-12 lg:mt-0">
-              <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" style="color: hsl(218, 81%, 95%);">My Reminder <br /><span style="color: hsl(218, 81%, 75%);">Proyecto Integrado</span></h1>
-              <a class="inline-block px-7 py-3 mr-2 bg-gray-200 text-gray-700 font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Inicio</a>
-            </div>
-            <div class="mb-12 lg:mb-0">
-              <img
-                src="../Imagenes/fotoGrupal.jpeg"
-                class="w-full rounded-lg shadow-lg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
 </header>
 
 <main>
 
-<!--Contenedor de cartas-->
-    <div class="card-container colorFondo">
-      <!--Cartas-->
-          <div class="card">
-                <h2 class="article-title">
-                    Product Owner
-                </h2>
-            </header>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                  <div class="imagenCentrar">
-                    <img src="../Imagenes/editpau.jpeg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
-                  </div>
-                  <div class="alinear" id="alinearTextopau">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Pau Quiles</div>
-                  </div>
-                </div>
-            </div>
-            <div class="tags" id="alinearTagpau">
-                <div>PROG</div>
-                <div>ED</div>
+  <div class="container">
+    <h1>VIDEO GALLERY</h1>
+    <div class="row">
+        <div class="col">
+            <div class="feature-img">
+                <img src="../Imagenes/modulos.png" width="100%">
+                <img src="../Imagenes/boton-de-play.png" class="play-btn" onclick="playVideo('!video!')">
             </div>
         </div>
-        <div class="card">
-                <div class="article-title">
-                    Scrum Master
-                </div>
-            </header>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                  <div class="imagenCentrar">
-                    <img src="../Imagenes/editsantos.jpeg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
+        <div>
+            <div class="col">
+                <div class="small-img-row">
+                  <div class="small-img">
+                    <img src="../Imagenes/calendarioImagen.png">
+                    <img src="../Imagenes/boton-de-play.png" class="play-btn" onclick="playVideo('!video!')">
                   </div>
-                  <div class="alinear" id="alinearTextosantos">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Alex Blasco</div>
-                  </div>
+                  <p> Hola</p>
                 </div>
-            </div>
-            <div class="tags" id="alinearTagsantos">
-                <div>LLMM</div>
-                <div>SI</div>
-                <div>BBDD</div>
-                <div>PROG</div>
+
+                <div class="small-img-row">
+                  <div class="small-img">
+                    <img src="../Imagenes/configGeneral.jpg">
+                    <img src="../Imagenes/boton-de-play.png" class="play-btn" onclick="playVideo('!video!')">
+                  </div>
+                  <p> Adios </p>
+                </div>
+
+                <div class="small-img-row">
+                  <div class="small-img">
+                    <img src="../Imagenes/tareas.png">
+                    <img src="../Imagenes/boton-de-play.png" class="play-btn" onclick="playVideo('!video!')">
+                  </div>
+                  <p> Good Morning </p>
+                </div>
             </div>
         </div>
-        <div class="card">
-                <div class="article-title">
-                    Developer Team
-                </div>
-            </header>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                  <div class="imagenCentrar">
-                    <img src="../Imagenes/editdario.jpg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
-                  </div>
-                  <div class="alinear" id="alinearTextodario">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Darío Rivadeneira</div>
-                  </div>
-                </div>
-            </div>
-            <div class="tags" id="alinearTags">
-                <div>LLMM</div>
-                <div>ED</div>
-                <div>SI</div>
-            </div>
-        </div>
-        <div class="card">
-                <div class="article-title">
-                    Developer Team
-                </div>
-            </header>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                  <div class="imagenCentrar">
-                    <img src="../Imagenes/edittoni.jpeg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
-                  </div>
-                  <div class="alinear" id="alinearTextotoni">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Antoni Dolz</div>
-                  </div>
-                </div>
-            </div>
-            <div class="tags" id="alinearTags">
-                <div>BBDD</div>
-                <div>PROG</div>
-            </div>
-        </div>
-        <div class="card">
-                <div class="article-title">
-                    Developer Team
-                </div>
-            </header>
-            <div class="author">
-                <div class="profile"></div>
-                <div class="info">
-                  <div class="imagenCentrar">
-                    <img src="../Imagenes/editborja.jpeg" class="rounded-full w-32 shadow-lg" style="width:150px; height:150px;" alt="Avatar"/>
-                  </div>
-                  <div class="alinear" id="alinearTextoborja">
-                    <div class="caption">Integrante</div>
-                    <div class="name">Borja Gómez</div>
-                  </div>
-                </div>
-            </div>
-            <div class="tags" id="alinearTags">
-                <div>LLMM</div>
-                <div>FOL</div>
-            </div>
-        </div>
-    </div>   
+    </div>
+</div>
+
+<div class="video-player" id="videoPlayer">
+  <video width="100%" controls autoplay id="myVideo">
+    <source src="https://www.youtube.com/watch?v=vOapgSfSN1s&ab_channel=MariaBecerraMusic" type="video/mp4">
+  </video>
+  <img src="../Imagenes/close.png" class="close-btn" onclick="stopVideo()">
+</div>
+
 </main>
 
 <!-- Footer Contacto -->
@@ -296,13 +201,14 @@
       </div>
   </div>
 
-<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
 © 2022 Copyright:
 <a class="text-white" id="alignFooter" href="https://tailwind-elements.com/">My Reminder</a>
 </div>
 
 </footer>
 </body>
+<script src="../JS/Video.js"></script>
 <script src="../JS/Menu.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 

@@ -6,5 +6,6 @@
     padding: 0;
     margin: 0;
     color: #fff;
-    background: linear-gradient(97deg, rgb(11, 67, 131) 0%, rgb(70, 0, 161) 86%);
+    background: rgb(80,78,255);
+    background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
   }
