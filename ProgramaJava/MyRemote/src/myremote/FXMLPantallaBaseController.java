@@ -24,6 +24,8 @@ import javafx.scene.layout.AnchorPane;
  */
 public class FXMLPantallaBaseController implements Initializable {
 
+    
+
     @FXML
     private Button buttonModulos;
     @FXML
@@ -36,7 +38,7 @@ public class FXMLPantallaBaseController implements Initializable {
     private Button buttonOpciones;
     @FXML
     private AnchorPane rootPane;
-    
+    private int log;
     private Paint activeButtonPaint;
     private Paint unactiveButtonPaint;
     /**
@@ -45,13 +47,14 @@ public class FXMLPantallaBaseController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-         activeButtonPaint = Paint.valueOf("#00f");
-         unactiveButtonPaint = Paint.valueOf("#000");
-         buttonModulos.setTextFill(unactiveButtonPaint);
-         buttonTareas.setTextFill(unactiveButtonPaint);
-         buttonEventos.setTextFill(unactiveButtonPaint);
-         buttonCalendario.setTextFill(unactiveButtonPaint);
-         buttonOpciones.setTextFill(unactiveButtonPaint);
+        log = MyRemote.getLog();
+        activeButtonPaint = Paint.valueOf("#00f");
+        unactiveButtonPaint = Paint.valueOf("#000");
+        buttonModulos.setTextFill(unactiveButtonPaint);
+        buttonTareas.setTextFill(unactiveButtonPaint);
+        buttonEventos.setTextFill(unactiveButtonPaint);
+        buttonCalendario.setTextFill(unactiveButtonPaint);
+        buttonOpciones.setTextFill(unactiveButtonPaint);
 
     }    
 
@@ -135,7 +138,4 @@ public class FXMLPantallaBaseController implements Initializable {
         }
     }
 
-    
-    
-    
 }

@@ -45,19 +45,20 @@ public class FXMLPantallaTareasController implements Initializable {
     @FXML
     private TableColumn<?, ?> columnaRealizado;
 
-    private PooUsuario usuarioActivo;
     private ObservableList<PooTarea> tareasObservable;
-   /* private PooTareaModel tareaModel;*/
+   /* private PooTareaModel tareaModel;
+    */    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    
-    usuarioActivo = new PooUsuario();/*
-    tareaModel = new PooTareaModel();*/
+    int log = MyRemote.getLog();
+/*
+    tareaModel = new PooTareaModel();
+    */
     tareasObservable = FXCollections.observableArrayList();
-    /*tareasObservable = tareaModel.getTarea(usuarioActivo.getIdUsuario());*/
+    /*tareasObservable = tareaModel.getTarea(log);*/
         
     this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("IdModulo"));   
     this.columnaIdTarea.setCellValueFactory(new PropertyValueFactory("IdTarea"));

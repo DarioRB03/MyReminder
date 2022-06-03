@@ -4,6 +4,9 @@
  */
 package myremote;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +19,7 @@ import javafx.stage.Stage;
  */
 public class MyRemote extends Application {
     
+    public static int log;
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaLogIn.fxml"));
@@ -31,6 +35,14 @@ public class MyRemote extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    public static void setLog(int logs){
+        log = logs;
+    }
+    
+    public static int getLog(){
+        return log;
     }
     
 }

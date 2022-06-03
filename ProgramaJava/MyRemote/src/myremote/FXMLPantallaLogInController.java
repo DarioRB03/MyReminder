@@ -42,6 +42,7 @@ public class FXMLPantallaLogInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        MyRemote.setLog(0);
     }    
 
     @FXML

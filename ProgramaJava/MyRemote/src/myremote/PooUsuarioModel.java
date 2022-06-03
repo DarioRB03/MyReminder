@@ -43,6 +43,7 @@ public class PooUsuarioModel extends DBUtil{
 			this.cerrarConexion();
 		}
         }
+       
     
         public boolean agregarUsuario(String nombre, String apellido, String nick, String password ) {
 		Boolean resultado = false;
@@ -69,7 +70,7 @@ public class PooUsuarioModel extends DBUtil{
 	} 
     
     
-        public boolean eliminarModulo(int idUsuario) {
+        public boolean eliminarUsuario(int idUsuario) {
 		Boolean resultado = false;
 		try {
 			String Sql = "DELETE FROM usuarios WHERE idUsuario=?";
@@ -92,7 +93,7 @@ public class PooUsuarioModel extends DBUtil{
         }
 
         
-            public boolean editarModulo(int idUsuario, String nombre, String apellido, String nick, String password) {
+            public boolean editarUsuario(int idUsuario, String nombre, String apellido, String nick, String password) {
 		Boolean resultado = false;
 		try {
 			String Sql = "UPDATE usuarios SET nombre=?, apellido=?, nick=?, password=? WHERE idUsuario=?";

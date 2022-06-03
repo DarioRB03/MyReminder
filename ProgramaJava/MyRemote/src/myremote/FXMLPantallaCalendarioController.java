@@ -35,6 +35,7 @@ public class FXMLPantallaCalendarioController implements Initializable {
         // TODO
         fcv = new FullCalendarView(YearMonth.now());
         this.calenPane.getChildren().add(fcv.getView());
+        
     }    
     
 }

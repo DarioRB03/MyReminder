@@ -4,9 +4,15 @@
  */
 package myremote;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -16,6 +22,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  *
@@ -30,7 +37,7 @@ public class testModulosView {
         
         alongar=0;
         
-        PooModulo modTest = new PooModulo(1,1,"a",2);
+        PooModulo modTest = new PooModulo(1,1,"Titulo Largo",2);
         PooModulo modTest2 = new PooModulo(2,1,"b",4);
         PooModulo modTest3 = new PooModulo(3,1,"a",2);
         PooModulo modTest4 = new PooModulo(4,1,"b",4);
@@ -111,22 +118,24 @@ public class testModulosView {
             }       
             
             Text titulo = new Text(m.getTitulo());
+            /*Estilos titulo*/
             ap.setTopAnchor(titulo,5.0);
             ap.setLeftAnchor(titulo,5.0);
             ap.getChildren().add(titulo);
             
             Text txt = new Text(arrayTareas.size() + " tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
+            /*Estilos contenido*/
             ap.setTopAnchor(txt, 15.0);
             ap.setLeftAnchor(txt, 5.0);
             ap.getChildren().add(txt);
             
             Button button = new Button();
-            //Setting text to the button
             button.setOnAction((event) -> {
                 handleButtonAction(event, m, arrayTareas, arrayEventos);
             });
             button.setText(">");
             button.setTranslateY(60);
+            button.setTranslateX(70);
             ap.getChildren().add(button);
             
             
@@ -157,9 +166,37 @@ public class testModulosView {
 
     private void handleCreateAction(ActionEvent event) {
         System.out.println("botonOk");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLEditarModulo.fxml"));
+        
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+        
+            stage.setScene(scene);
+            stage.show();
+        
+            Stage myStage = (Stage) this.mView.getScene().getWindow();
+            myStage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPantallaLogInController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void handleButtonAction(ActionEvent event, PooModulo m, ArrayList<PooTarea> arrayTareas, ArrayList<PooEvento> arrayEventos) {
         System.out.println("Boton " + m.getIdModulo() + " Ok");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLEditarModulo.fxml"));
+        
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+        
+            stage.setScene(scene);
+            stage.show();
+        
+            Stage myStage = (Stage) this.mView.getScene().getWindow();
+            myStage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPantallaLogInController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

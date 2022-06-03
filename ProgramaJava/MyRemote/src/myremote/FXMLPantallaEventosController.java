@@ -43,18 +43,17 @@ public class FXMLPantallaEventosController implements Initializable {
     @FXML
     private Button buttonEventoEditar;
     
-    private PooUsuario usuarioActivo;
     private ObservableList<PooEvento> eventosObservable;
-   /* private PooEventoModel eventoModel;*/
+   /* private PooEventoModel eventoModel;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usuarioActivo = new PooUsuario();/*
+        int log = MyRemote.getLog();/*
         eventoModel = new PooEventoModel();*/
         eventosObservable = FXCollections.observableArrayList();
-       /*eventosObservable = eventoModel.getEvento(usuarioActivo.getIdUsuario());*/
+       /*eventosObservable = eventoModel.getEvento(log);*/
         
         this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("IdModulo"));   
         this.columnaIdEvento.setCellValueFactory(new PropertyValueFactory("IdEvento"));

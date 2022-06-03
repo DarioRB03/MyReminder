@@ -79,4 +79,12 @@ public class PooEvento {
         this.prioridad = prioridad;
     }
     
+    @Override
+    public String toString(){
+        String texto;
+        
+        texto = ("EVENTO: " + this.idEvento + " ; MODULO: " + this.idModulo + " ; TITULO: " + this.titulo + " ; PRIORIDAD: " + this.prioridad);
+        
+        return texto;
+    }
 }

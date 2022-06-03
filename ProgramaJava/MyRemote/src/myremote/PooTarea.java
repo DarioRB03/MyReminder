@@ -66,7 +66,7 @@ public class PooTarea {
         this.descripcion = descripcion;
     }
     
-        public String getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
@@ -88,5 +88,14 @@ public class PooTarea {
 
     public void setRealizado(int realizado) {
         this.realizado = realizado;
+    }
+    
+    @Override
+    public String toString(){
+        String texto;
+        
+        texto = ("TAREA: " + this.idTarea + " ; MODULO: " + this.idModulo + " ; TITULO: " + this.titulo + " ; PRORIDAD: " + this.prioridad);
+        
+        return texto;
     }
 }
