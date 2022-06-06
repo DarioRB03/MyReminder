@@ -99,7 +99,7 @@ public class FXMLPantallaBaseController implements Initializable {
         buttonOpciones.setTextFill(unactiveButtonPaint);
         
         try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLPantallaEventos.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLVerEvento.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLPantallaBaseController.class.getName()).log(Level.SEVERE, null, ex);
