@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="-1.0" minWidth="-1.0" prefHeight="490.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLPantallaModulosController">
+   <children>
+      <Line endX="660.0" endY="490.0" startX="660.0" stroke="#575757" />
+      <Button fx:id="botonTareasCercanas" layoutX="672.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleTareasCercanasAction" text="Tareas">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="botonEventosCercanos" layoutX="800.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleEventosCercanosAction" text="Eventos">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Button>
+      <Pane fx:id="panel1" layoutX="680.0" layoutY="70.0" prefHeight="130.0" prefWidth="310.0">
+         <children>
+            <Label fx:id="nombrePanel1" text="nombrePanel" textFill="BLUE">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldDescripcion1" editable="false" layoutY="30.0" prefHeight="70.0" prefWidth="300.0" promptText="Introducir descripcion...">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </TextField>
+            <Text fx:id="labelFecha1" fill="#9a9a9a" layoutX="200.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2022-01-01">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="panel2" layoutX="680.0" layoutY="210.0" prefHeight="130.0" prefWidth="310.0">
+         <children>
+            <Label fx:id="nombrePanel2" text="nombrePanel" textFill="BLUE">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldDescripcion2" editable="false" layoutY="30.0" prefHeight="70.0" prefWidth="300.0" promptText="Introducir descripcion...">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </TextField>
+            <Text fx:id="labelFecha2" fill="#9a9a9a" layoutX="200.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2022-01-01">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="panel3" layoutX="680.0" layoutY="350.0" prefHeight="130.0" prefWidth="310.0">
+         <children>
+            <Label fx:id="nombrePanel3" text="nombrePanel" textFill="BLUE">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldDescripcion3" editable="false" layoutY="30.0" prefHeight="70.0" prefWidth="300.0" promptText="Introducir descripcion...">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </TextField>
+            <Text fx:id="labelFecha3" fill="#9a9a9a" layoutX="200.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2022-01-01">
+               <font>
+                  <Font name="Yu Gothic Regular" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ScrollPane fx:id="scrollPanel" prefHeight="490.0" prefWidth="660.0">
+         <content>
+            <AnchorPane layoutX="10.0" prefHeight="490.0" prefWidth="640.0">
+               <children>
+                  <Pane fx:id="modulosPane" layoutX="10.0" prefHeight="490.0" prefWidth="620.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Line endX="960.0" startX="660.0" stroke="#575757" />
+   </children>
+</AnchorPane>
