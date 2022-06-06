@@ -10,10 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 /**
@@ -21,32 +19,38 @@ import javafx.scene.text.Text;
  *
  * @author 1erDAM
  */
-public class FXMLEditarTareaController implements Initializable {
+public class FXMLVerEventoController implements Initializable {
 
     @FXML
-    private Button buttonAplicar;
+    private Button buttonEditar;
     @FXML
-    private Button buttonEliminar;
+    private TextArea DescripLabel;
     @FXML
-    private ComboBox<?> idModuloComboBox;
+    private Text IdTxt;
     @FXML
-    private TextArea DescripTextArea;
+    private Text PrioridadTxt;
     @FXML
-    private Text fechaTxt;
+    private Text DescripTxt;
+    @FXML
+    private Text FechaTxt;
+    @FXML
+    private Text TituloTxt;
+    @FXML
+    private Text ModuloTxt;
+    @FXML
+    private Text EventoTxt;
+    @FXML
+    private Label IdLabel;
+    @FXML
+    private Label TituloLabel;
+    @FXML
+    private Label ModuloLabel;
+    @FXML
+    private Label FechaLabel;
+    @FXML
+    private Label PrioridadLabel;
     @FXML
     private Button buttonVolver;
-    @FXML
-    private ComboBox<?> prioridadComboBox;
-    @FXML
-    private TextField TituloTareaTxt;
-    @FXML
-    private ComboBox<?> añoComboBox;
-    @FXML
-    private ComboBox<?> diaComboBox;
-    @FXML
-    private ComboBox<?> mesComboBox;
-    @FXML
-    private CheckBox realizadaCheckBox;
 
     /**
      * Initializes the controller class.
@@ -57,11 +61,8 @@ public class FXMLEditarTareaController implements Initializable {
     }    
 
     @FXML
-    private void handleAplicarAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void handleEliminarAction(ActionEvent event) {
+    private void handleEditarAction(ActionEvent event) {
+        
     }
 
     @FXML

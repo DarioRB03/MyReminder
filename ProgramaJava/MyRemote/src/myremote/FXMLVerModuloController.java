@@ -10,10 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 /**
@@ -21,47 +19,45 @@ import javafx.scene.text.Text;
  *
  * @author 1erDAM
  */
-public class FXMLEditarTareaController implements Initializable {
+public class FXMLVerModuloController implements Initializable {
 
     @FXML
-    private Button buttonAplicar;
+    private Text IdTxt;
     @FXML
-    private Button buttonEliminar;
+    private Text DescripTxt;
     @FXML
-    private ComboBox<?> idModuloComboBox;
+    private Text TituloTxt;
     @FXML
-    private TextArea DescripTextArea;
+    private Text ModuloTxt;
     @FXML
-    private Text fechaTxt;
+    private Button buttonEditar;
+    @FXML
+    private Label IdLabel;
+    @FXML
+    private Label TituloLabel;
+    @FXML
+    private TextArea DescripLabel;
     @FXML
     private Button buttonVolver;
     @FXML
-    private ComboBox<?> prioridadComboBox;
+    private Text evaluacionesTxt;
     @FXML
-    private TextField TituloTareaTxt;
+    private Label evaluacionesLabel;
     @FXML
-    private ComboBox<?> añoComboBox;
+    private Text notaTxt;
     @FXML
-    private ComboBox<?> diaComboBox;
-    @FXML
-    private ComboBox<?> mesComboBox;
-    @FXML
-    private CheckBox realizadaCheckBox;
+    private Label notaLabel;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        // TODO
     }    
 
     @FXML
-    private void handleAplicarAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void handleEliminarAction(ActionEvent event) {
+    private void handleEditarAction(ActionEvent event) {
     }
 
     @FXML
