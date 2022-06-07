@@ -9,80 +9,80 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="903.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLCrearEventoController">
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="489.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLCrearEventoController">
    <children>
-      <Text fx:id="CrearEventoTxt" fill="#0066ff" layoutX="156.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Evento">
+      <Text fx:id="CrearEventoTxt" fill="#0066ff" layoutX="70.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Evento">
          <font>
-            <Font name="Yu Gothic Regular" size="40.0" />
+            <Font name="Yu Gothic Regular" size="25.0" />
          </font>
       </Text>
-      <Text fx:id="tituloTxt" layoutX="156.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo:">
+      <Text fx:id="tituloTxt" layoutX="69.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo:">
          <font>
-            <Font name="Yu Gothic Regular" size="30.0" />
+            <Font name="Yu Gothic Regular" size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="TituloEventoField" layoutX="279.0" layoutY="169.0" promptText="..." style="-fx-border-color: black;">
+      <TextField fx:id="TituloEventoField" layoutX="146.0" layoutY="80.0" promptText="..." style="-fx-border-color: black;">
          <font>
-            <Font name="Yu Gothic Regular" size="24.0" />
+            <Font name="Yu Gothic Regular" size="15.0" />
          </font>
       </TextField>
-      <Separator layoutX="10.0" layoutY="275.0" prefHeight="3.0" prefWidth="1708.0" style="-fx-background-color: black;" />
-      <Text fx:id="DescripcionTxt" layoutX="167.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción:">
+      <Separator layoutX="-10.0" layoutY="122.0" prefHeight="2.0" prefWidth="980.0" style="-fx-background-color: black;" />
+      <Text fx:id="DescripcionTxt" layoutX="68.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción:">
          <font>
-            <Font name="Yu Gothic Regular" size="40.0" />
+            <Font name="Yu Gothic Regular" size="20.0" />
          </font>
       </Text>
-      <TextArea fx:id="DescripTextArea" layoutX="170.0" layoutY="412.0" prefHeight="280.0" prefWidth="642.0" promptText="Introduzca la descripción..." style="-fx-border-color: black;">
+      <TextArea fx:id="DescripTextArea" layoutX="70.0" layoutY="195.0" prefHeight="161.0" prefWidth="353.0" promptText="Introduzca la descripción..." style="-fx-border-color: black;">
          <font>
-            <Font name="Yu Gothic Regular" size="24.0" />
+            <Font name="Yu Gothic Regular" size="15.0" />
          </font>
       </TextArea>
-      <Separator layoutX="887.0" layoutY="278.0" orientation="VERTICAL" prefHeight="478.0" prefWidth="0.0" style="-fx-background-color: gray;" />
-      <Text fx:id="fechaTxt" layoutX="1058.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:">
+      <Separator layoutX="507.0" layoutY="124.0" orientation="VERTICAL" prefHeight="275.0" prefWidth="4.0" style="-fx-background-color: gray;" />
+      <Text fx:id="fechaTxt" layoutX="574.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:">
          <font>
-            <Font name="Yu Gothic Regular" size="30.0" />
+            <Font name="Yu Gothic Regular" size="20.0" />
          </font>
       </Text>
-      <Text fx:id="ModuloTxt" layoutX="1024.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Modulo:">
+      <Text fx:id="ModuloTxt" layoutX="557.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Modulo:">
          <font>
-            <Font name="Yu Gothic Regular" size="30.0" />
+            <Font name="Yu Gothic Regular" size="20.0" />
          </font>
       </Text>
-      <ComboBox fx:id="ModuloComboBox" layoutX="1186.0" layoutY="518.0" prefHeight="45.0" prefWidth="136.0" promptText="Elige" />
-      <Button fx:id="buttonCrear" layoutX="734.0" layoutY="798.0" mnemonicParsing="false" onAction="#handleCrearAction" prefHeight="71.0" prefWidth="313.0" style="-fx-background-color: white; -fx-border-color: #0066ff; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Crear" textAlignment="CENTER" textFill="#0066ff">
+      <ComboBox fx:id="ModuloComboBox" layoutX="681.0" layoutY="210.0" prefHeight="45.0" prefWidth="136.0" promptText="Elige" />
+      <Button fx:id="buttonCrear" layoutX="439.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleCrearAction" prefHeight="57.0" prefWidth="141.0" style="-fx-background-color: white; -fx-border-color: #0066ff; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Crear" textAlignment="CENTER" textFill="#0066ff">
          <font>
-            <Font name="Yu Gothic Regular" size="30.0" />
+            <Font name="Yu Gothic Regular" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="buttonVolver" layoutX="1588.0" layoutY="61.0" mnemonicParsing="false" onAction="#handleVolverAction" style="-fx-background-color: white; -fx-border-color: #777; -fx-border-radius: 20; -fx-border-width: 1;" text="&lt;" textFill="#707070">
+      <Button fx:id="buttonVolver" layoutX="886.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleVolverAction" style="-fx-background-color: white; -fx-border-color: #777; -fx-border-radius: 20; -fx-border-width: 1;" text="&lt;" textFill="#707070">
          <font>
             <Font name="Yu Gothic Regular" size="25.0" />
          </font>
       </Button>
-      <Text fx:id="medioTxt" layoutX="1262.0" layoutY="735.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2- Medio.">
+      <Text fx:id="medioTxt" layoutX="711.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2- Medio.">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="prioridadComboBox" layoutX="681.0" layoutY="273.0" prefHeight="45.0" prefWidth="109.0" promptText="Nº" />
+      <Text fx:id="nivelPrioridadTxt" layoutX="542.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Priodidad:">
          <font>
             <Font name="Yu Gothic Regular" size="20.0" />
          </font>
       </Text>
-      <ComboBox fx:id="prioridadComboBox" layoutX="1186.0" layoutY="604.0" prefHeight="47.0" prefWidth="109.0" promptText="Nº" />
-      <Text fx:id="nivelPrioridadTxt" layoutX="942.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nivel Priodidad:">
+      <Text fx:id="AltoTxt" layoutX="850.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3-Alto.">
          <font>
-            <Font name="Yu Gothic Regular" size="30.0" />
+            <Font name="Yu Gothic Regular" size="15.0" />
          </font>
       </Text>
-      <Text fx:id="AltoTxt" layoutX="1401.0" layoutY="736.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3-Alto.">
+      <Text fx:id="bajoTxt" layoutX="598.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1-Bajo.">
          <font>
-            <Font name="Yu Gothic Regular" size="20.0" />
+            <Font name="Yu Gothic Regular" size="15.0" />
          </font>
       </Text>
-      <Text fx:id="bajoTxt" layoutX="1149.0" layoutY="735.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1-Bajo.">
-         <font>
-            <Font name="Yu Gothic Regular" size="20.0" />
-         </font>
-      </Text>
-      <Separator layoutX="9.0" layoutY="755.0" prefHeight="3.0" prefWidth="1708.0" style="-fx-background-color: black;" />
-      <ComboBox fx:id="añoComboBox" layoutX="1170.0" layoutY="409.0" prefHeight="49.0" prefWidth="68.0" promptText="yyyy" />
-      <ComboBox fx:id="diaComboBox" layoutX="1363.0" layoutY="409.0" prefHeight="49.0" prefWidth="68.0" promptText="dd" />
-      <ComboBox fx:id="mesComboBox" layoutX="1265.0" layoutY="410.0" prefHeight="49.0" prefWidth="68.0" promptText="MM" />
+      <ComboBox fx:id="añoComboBox" layoutX="681.0" layoutY="144.0" prefHeight="45.0" prefWidth="68.0" promptText="yyyy" />
+      <ComboBox fx:id="diaComboBox" layoutX="847.0" layoutY="145.0" prefHeight="45.0" prefWidth="68.0" promptText="dd" />
+      <ComboBox fx:id="mesComboBox" layoutX="764.0" layoutY="144.0" prefHeight="45.0" prefWidth="68.0" promptText="MM" />
+      <Separator layoutX="-10.0" layoutY="399.0" prefHeight="2.0" prefWidth="980.0" style="-fx-background-color: black;" />
    </children>
 </AnchorPane>

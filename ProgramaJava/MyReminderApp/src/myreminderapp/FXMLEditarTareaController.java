@@ -38,8 +38,6 @@ public class FXMLEditarTareaController implements Initializable {
     @FXML
     private ComboBox<?> prioridadComboBox;
     @FXML
-    private TextField TituloTareaTxt;
-    @FXML
     private ComboBox<?> añoComboBox;
     @FXML
     private ComboBox<?> diaComboBox;
@@ -47,6 +45,24 @@ public class FXMLEditarTareaController implements Initializable {
     private ComboBox<?> mesComboBox;
     @FXML
     private CheckBox realizadaCheckBox;
+    @FXML
+    private Text EditarTareaTxt;
+    @FXML
+    private Text tituloTxt;
+    @FXML
+    private TextField TituloEventoField;
+    @FXML
+    private Text DescripcionTxt;
+    @FXML
+    private Text idModuloTxt;
+    @FXML
+    private Text medioTxt;
+    @FXML
+    private Text nivelPrioridadTxt;
+    @FXML
+    private Text AltoTxt;
+    @FXML
+    private Text bajoTxt;
 
     /**
      * Initializes the controller class.

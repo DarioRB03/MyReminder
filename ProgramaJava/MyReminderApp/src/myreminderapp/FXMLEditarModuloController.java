@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -29,21 +30,17 @@ import javafx.stage.Stage;
 public class FXMLEditarModuloController implements Initializable {
 
     @FXML
-    private TextField tituloTxt;
+    private Text tituloTxt;
     @FXML
-    private TextField editarPorcTxt;
+    private Text editarPorcTxt;
     @FXML
-    private TextField editarNotaTxt;
+    private Text editarNotaTxt;
     @FXML
     private Label editarPorcLabel;
     @FXML
-    private Button buttonAplicar;
+    private Text añadirPorcTxt;
     @FXML
-    private Button buttonEliminar;
-    @FXML
-    private TextField añadirPorcTxt;
-    @FXML
-    private TextField añadirNotaTxt;
+    private Text añadirNotaTxt;
     @FXML
     private Label añadirPorcLabel;
     @FXML
@@ -54,6 +51,28 @@ public class FXMLEditarModuloController implements Initializable {
     private ComboBox<?> ComboBoxEv;
     @FXML
     private Button buttonVolver;
+    @FXML
+    private TextField tituloField;
+    @FXML
+    private Text EditarModuloTxt;
+    @FXML
+    private TextField editarPorcField;
+    @FXML
+    private TextField editarNotaField;
+    @FXML
+    private Text evaluacionTxt;
+    @FXML
+    private Text EditarEvTxt;
+    @FXML
+    private Text añadirEvTxt;
+    @FXML
+    private TextField añadirPorcField;
+    @FXML
+    private TextField añadirNotaField;
+    @FXML
+    private Button buttonAplicar1;
+    @FXML
+    private Button buttonEliminar1;
 
     /**
      * Initializes the controller class.

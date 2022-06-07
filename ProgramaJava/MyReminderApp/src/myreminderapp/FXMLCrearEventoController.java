@@ -26,8 +26,6 @@ public class FXMLCrearEventoController implements Initializable {
     @FXML
     private AnchorPane pane;
     @FXML
-    private Text EditarEventoTxt;
-    @FXML
     private Text tituloTxt;
     @FXML
     private TextField TituloEventoField;
@@ -37,12 +35,6 @@ public class FXMLCrearEventoController implements Initializable {
     private TextArea DescripTextArea;
     @FXML
     private Text fechaTxt;
-    @FXML
-    private Text idModuloTxt;
-    @FXML
-    private ComboBox<?> idModuloComboBox;
-    @FXML
-    private Button buttonAplicar;
     @FXML
     private Button buttonVolver;
     @FXML
@@ -61,6 +53,14 @@ public class FXMLCrearEventoController implements Initializable {
     private ComboBox<?> diaComboBox;
     @FXML
     private ComboBox<?> mesComboBox;
+    @FXML
+    private Text CrearEventoTxt;
+    @FXML
+    private Text ModuloTxt;
+    @FXML
+    private ComboBox<?> ModuloComboBox;
+    @FXML
+    private Button buttonCrear;
 
     /**
      * Initializes the controller class.
@@ -70,12 +70,13 @@ public class FXMLCrearEventoController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void handleAplicarAction(ActionEvent event) {
-    }
 
     @FXML
     private void handleVolverAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleCrearAction(ActionEvent event) {
     }
     
 }

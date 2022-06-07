@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 
@@ -36,8 +38,6 @@ public class FXMLVerModuloController implements Initializable {
     @FXML
     private Label TituloLabel;
     @FXML
-    private TextArea DescripLabel;
-    @FXML
     private Button buttonVolver;
     @FXML
     private Text evaluacionesTxt;
@@ -47,6 +47,14 @@ public class FXMLVerModuloController implements Initializable {
     private Text notaTxt;
     @FXML
     private Label notaLabel;
+    @FXML
+    private TableView<?> evTableView;
+    @FXML
+    private TableColumn<?, ?> NumColumn;
+    @FXML
+    private TableColumn<?, ?> porcColumn;
+    @FXML
+    private TableColumn<?, ?> NotaColumn;
 
     /**
      * Initializes the controller class.

@@ -23,10 +23,6 @@ import javafx.scene.text.Text;
 public class FXMLCrearTareaController implements Initializable {
 
     @FXML
-    private Text CrearTareaTxt;
-    @FXML
-    private Text TituloTxt;
-    @FXML
     private TextField TituloTareaField;
     @FXML
     private Text DescripcionTxt;
@@ -41,15 +37,9 @@ public class FXMLCrearTareaController implements Initializable {
     @FXML
     private Button buttonVolver;
     @FXML
-    private Text MedioTxt;
-    @FXML
     private ComboBox<?> prioridadComboBox;
     @FXML
-    private Text PrioridadTxt;
-    @FXML
     private Text AltoTxt;
-    @FXML
-    private Text BajoTxt;
     @FXML
     private Text fechaTxt;
     @FXML
@@ -58,6 +48,16 @@ public class FXMLCrearTareaController implements Initializable {
     private ComboBox<?> diaComboBox;
     @FXML
     private ComboBox<?> mesComboBox;
+    @FXML
+    private Text CrearEventoTxt;
+    @FXML
+    private Text tituloTxt;
+    @FXML
+    private Text medioTxt;
+    @FXML
+    private Text nivelPrioridadTxt;
+    @FXML
+    private Text bajoTxt;
 
     /**
      * Initializes the controller class.
