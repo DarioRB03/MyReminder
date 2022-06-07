@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 public class MyReminderApp extends Application {
     
     public static int log;
+    public static int idModVer;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -45,7 +46,15 @@ public class MyReminderApp extends Application {
         return log;
     }
 
+    public static int getIdModVer() {
+        return idModVer;
+    }
 
+    public static void setIdModVer(int idModVer) {
+        MyReminderApp.idModVer = idModVer;
+    }
+
+    
     
 
 

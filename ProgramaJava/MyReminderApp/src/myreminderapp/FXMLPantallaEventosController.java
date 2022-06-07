@@ -45,7 +45,7 @@ public class FXMLPantallaEventosController implements Initializable {
     private ObservableList<PooEvento> eventosObservable;
     @FXML
     private Button buttonEventoVer;
-   /* private PooEventoModel eventoModel;
+    private PooEventoModel eventoModel;
     /**
      * Initializes the controller class.
      */

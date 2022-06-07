@@ -71,16 +71,15 @@ public class PooModuloModel extends DBUtil {
 		}
     }
     
-    public boolean agregarModulo(int idUsuario, String titulo, float notaFinal) {
+    public boolean agregarModulo(int idUsuario, String titulo) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO modulos (idUsuario, titulo, notaFianl) VALUES (?, ?, ?)";
+			String insertSql = "INSERT INTO modulos (idUsuario, titulo) VALUES (?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
 			prest.setInt(1, idUsuario);
 			prest.setString(2, titulo);
-			prest.setFloat(3, notaFinal);
                         
 			prest.execute();
                         resultado = true;
@@ -118,16 +117,15 @@ public class PooModuloModel extends DBUtil {
         }
 
         
-            public boolean editarModulo(int idModulo, int idUsuario, String titulo, float notaFinal) {
+            public boolean editarModulo(int idModulo, int idUsuario, String titulo) {
 		Boolean resultado = false;
 		try {
-			String Sql = "UPDATE modulos SET titulo=?, notaFinal=? WHERE idModulo=?";
+			String Sql = "UPDATE modulos SET titulo=? WHERE idModulo=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
-			prest.setInt(3, idModulo);
+			prest.setInt(2, idModulo);
 			prest.setString(1, titulo);
-			prest.setFloat(2, notaFinal);
 			
 			prest.execute();
                         resultado = true;

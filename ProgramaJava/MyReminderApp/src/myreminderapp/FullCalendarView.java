@@ -39,13 +39,13 @@ public class FullCalendarView {
         currentYearMonth = yearMonth;
         // Create the calendar grid pane
         GridPane calendar = new GridPane();
-        calendar.setPrefSize(1628, 750);
+        calendar.setPrefSize(960, 490);
         calendar.setGridLinesVisible(true);
         // Create rows and columns with anchor panes for the calendar
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 7; j++) {
                 AnchorPaneNode ap = new AnchorPaneNode();
-                ap.setPrefSize(400,200);
+                ap.setPrefSize(130,90);
                 calendar.add(ap,j,i);
                 allCalendarDays.add(ap);
             }
@@ -55,7 +55,7 @@ public class FullCalendarView {
                                         new Text("Jueves"), new Text("Viernes"), new Text("Sábado"),
                                         new Text("Domingo") };
         GridPane dayLabels = new GridPane();
-        dayLabels.setPrefWidth(1628);
+        dayLabels.setPrefWidth(960);
         Integer col = 0;
         for (Text txt : dayNames) {
             AnchorPane ap = new AnchorPane();
@@ -75,6 +75,8 @@ public class FullCalendarView {
         // Populate calendar with the appropriate day numbers
         populateCalendar(yearMonth);
         // Create the calendar view
+        dayLabels.setTranslateX(30);
+        calendar.setTranslateX(30);
         view = new VBox(titleBar, dayLabels, calendar);
     }
 
@@ -187,22 +189,22 @@ public class FullCalendarView {
             if (prioridad3){
                 Paint pinturaCir = Paint.valueOf("#ff0000");
                 Circle cir = new Circle(10);
-                cir.setTranslateX(200);
-                cir.setTranslateY(30);
+                cir.setTranslateX(110);
+                cir.setTranslateY(15);
                 cir.setFill(pinturaCir);
                 ap.getChildren().add(cir);
             } else if (prioridad2){
                 Paint pinturaCir = Paint.valueOf("#ffaa11");
                 Circle cir = new Circle(10);
-                cir.setTranslateX(200);
-                cir.setTranslateY(30);
+                cir.setTranslateX(110);
+                cir.setTranslateY(15);
                 cir.setFill(pinturaCir);
                 ap.getChildren().add(cir);
             } else if (prioridad1){
                 Paint pinturaCir = Paint.valueOf("#00ff00");
                 Circle cir = new Circle(10);
-                cir.setTranslateX(200);
-                cir.setTranslateY(30);
+                cir.setTranslateX(110);
+                cir.setTranslateY(15);
                 cir.setFill(pinturaCir);
                 ap.getChildren().add(cir);
             }

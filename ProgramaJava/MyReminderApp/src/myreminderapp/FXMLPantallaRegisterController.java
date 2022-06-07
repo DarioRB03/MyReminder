@@ -118,6 +118,7 @@ public class FXMLPantallaRegisterController implements Initializable {
                 Stage stage = new Stage();
         
                 stage.setScene(scene);
+                stage.setResizable(false);
                 stage.show();
             
                 Stage myStage = (Stage) this.buttonRegistrarse.getScene().getWindow();
@@ -140,6 +141,7 @@ public class FXMLPantallaRegisterController implements Initializable {
             Stage stage = new Stage();
         
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
         
             Stage myStage = (Stage) this.buttonRegistrarse.getScene().getWindow();

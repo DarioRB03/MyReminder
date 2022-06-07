@@ -84,6 +84,7 @@ public class FXMLPantallaLogInController implements Initializable {
             Stage stage = new Stage();
         
                 stage.setScene(scene);
+                stage.setResizable(false);
                 stage.show();
         
                 Stage myStage = (Stage) this.buttonLogIn.getScene().getWindow();
@@ -113,6 +114,7 @@ public class FXMLPantallaLogInController implements Initializable {
             Stage stage = new Stage();
         
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
         
             Stage myStage = (Stage) this.buttonLogIn.getScene().getWindow();

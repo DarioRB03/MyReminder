@@ -58,7 +58,6 @@ public class FXMLPantallaModulosController implements Initializable {
     private Pane modulosPane;
     
     private FullModulosView fmv;
-    private testModulosView tmv;
     private int log;
 /*
     private PooTareaModel ptm;
@@ -79,9 +78,9 @@ public class FXMLPantallaModulosController implements Initializable {
         ptm = new PooTareaModel();
         pem = new PooEventoModel();
         */
-        tmv = new testModulosView();
-        this.modulosPane.setPrefHeight(this.scrollPanel.getPrefHeight() -600+ tmv.getAlongar());
-        this.modulosPane.getChildren().add(tmv.getView());
+        fmv = new FullModulosView();
+        this.modulosPane.setPrefHeight(this.scrollPanel.getPrefHeight() -600+ fmv.getAlongar());
+        this.modulosPane.getChildren().add(fmv.getView());
         
         nombrePanel1.setText("...");
         textFieldDescripcion1.setText("...");

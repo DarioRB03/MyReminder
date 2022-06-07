@@ -45,8 +45,8 @@ public class FXMLPantallaTareasController implements Initializable {
 
     private ObservableList<PooTarea> tareasObservable;
     private int log;
-   /* private PooTareaModel tareaModel;
-    */    
+    private PooTareaModel tareaModel;
+      
     @FXML
     private Button buttonTareaVer;
     
@@ -60,8 +60,8 @@ public class FXMLPantallaTareasController implements Initializable {
 /*
     tareaModel = new PooTareaModel();
     */
-    tareasObservable = FXCollections.observableArrayList();
-    /*tareasObservable = tareaModel.getTarea(log);*/
+    tareasObservable = FXCollections.observableArrayList();/*
+    tareasObservable = tareaModel.getTarea(log);*/
         
     this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("IdModulo"));   
     this.columnaIdTarea.setCellValueFactory(new PropertyValueFactory("IdTarea"));
