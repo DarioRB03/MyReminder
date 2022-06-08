@@ -104,17 +104,17 @@ public class FXMLCrearModuloController implements Initializable {
 
         //Se crean las evaluaciones vacías y se añaden al ComboBox
         arrayEvaluaciones = new ArrayList<PooEvaluacion>();
-        PooEvaluacion ev1 = new PooEvaluacion(idModulo, 1, 0, 0);
-        PooEvaluacion ev2 = new PooEvaluacion(idModulo, 2, 0, 0);
-        PooEvaluacion ev3 = new PooEvaluacion(idModulo, 3, 0, 0);
-        arrayEvaluaciones.add(ev1);
-        arrayEvaluaciones.add(ev2);
-        arrayEvaluaciones.add(ev3);
-        
+        /*
         for (PooEvaluacion e : arrayEvaluaciones){
             String numero = String.valueOf(e.getNumEvaluacion());
             listaEv.add(numero);
-        }
+        }*/
+        String num = "1";
+        String num2 = "2";
+        String num3 = "3";
+        listaEv.add(num);
+        listaEv.add(num2);
+        listaEv.add(num3);
         
         ComboBoxEv.setItems(listaEv);
     }    
@@ -161,10 +161,10 @@ public class FXMLCrearModuloController implements Initializable {
     private void handleConfirmarAction(ActionEvent event) {
         
         int numEv = Integer.parseInt(ComboBoxEv.getValue().toString());
-        float porc = Float.parseFloat(editarPorcField.getText());
-        float nota = Float.parseFloat(editarNotaField.getText());
+        int porc = Integer.parseInt(editarPorcField.getText());
+        int nota = Integer.parseInt(editarNotaField.getText());
         PooEvaluacion ev = new PooEvaluacion(idModulo, numEv, porc, nota);
-        arrayEvaluaciones.add(numEv, ev);
+        arrayEvaluaciones.add(ev);
         
         System.out.println(ev.getIdModulo() + " - " + ev.getNumEvaluacion() + " - " + ev.getPorcentaje() + " - " + ev.getNota());
         
@@ -181,8 +181,8 @@ public class FXMLCrearModuloController implements Initializable {
     @FXML
     private void handleAñadirAction(ActionEvent event) {
         
-        float porc = Float.parseFloat(añadirPorcField.getText());
-        float nota = Float.parseFloat(añadirNotaField.getText());
+        int porc = Integer.parseInt(añadirPorcField.getText());
+        int nota = Integer.parseInt(añadirNotaField.getText());
         int idEv = listaEv.size()+1;
         PooEvaluacion nueva = new PooEvaluacion(idModulo, idEv, porc, nota);
         

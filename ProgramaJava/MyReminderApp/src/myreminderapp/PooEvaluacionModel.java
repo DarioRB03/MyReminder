@@ -25,15 +25,15 @@ public class PooEvaluacionModel extends DBUtil {
             ArrayList<PooEvaluacion> arrayEvaluaciones = new ArrayList<PooEvaluacion>();
             try{
 
-                    String insertSql = "SELECT idModulo,numEvaluacion,porcentaje,nota FROM evaluaciones";
+                    String insertSql = "SELECT idModulo,numEvaluacion,porcentaje,nota FROM evaluacion";
                     PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
                     ResultSet rs = prest.executeQuery();
 
                     while (rs.next()){
 			int idMod = rs.getInt("idModulo");
                         int numEvaluacion = rs.getInt("numEvaluacion");
-                        float porcentaje = rs.getFloat("porcentaje");
-                        float nota = rs.getFloat("nota");
+                        int porcentaje = rs.getInt("porcentaje");
+                        int nota = rs.getInt("nota");
                         PooEvaluacion e = new PooEvaluacion(idMod,numEvaluacion,porcentaje,nota);
                         arrayEvaluaciones.add(e);
 		}
@@ -56,7 +56,7 @@ public class PooEvaluacionModel extends DBUtil {
             ArrayList<PooEvaluacion> arrayEvaluaciones = new ArrayList<PooEvaluacion>();
             try{
 
-                    String insertSql = "SELECT idModulo,numEvaluacion,porcentaje,nota FROM evaluaciones WHERE idModulo=?";
+                    String insertSql = "SELECT idModulo,numEvaluacion,porcentaje,nota FROM evaluacion WHERE idModulo=?";
                     PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
                     prest.setInt(1, idModulo);
                     ResultSet rs = prest.executeQuery();
@@ -64,8 +64,8 @@ public class PooEvaluacionModel extends DBUtil {
                     while (rs.next()){
 			int idMod = rs.getInt("idModulo");
                         int numEvaluacion = rs.getInt("numEvaluacion");
-                        float porcentaje = rs.getFloat("porcentaje");
-                        float nota = rs.getFloat("nota");
+                        int porcentaje = rs.getInt("porcentaje");
+                        int nota = rs.getInt("nota");
                         PooEvaluacion e = new PooEvaluacion(idMod,numEvaluacion,porcentaje,nota);
                         arrayEvaluaciones.add(e);
 		}
@@ -89,7 +89,7 @@ public class PooEvaluacionModel extends DBUtil {
 
                 try{
 
-                    String insertSql = "SELECT idModulo,numEvaluacion,porcentaje,nota FROM evaluaciones WHERE idModulo=?";
+                    String insertSql = "SELECT idModulo,numEvaluacion,porcentaje,nota FROM evaluacion WHERE idModulo=?";
 	
                     PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
                     
@@ -100,8 +100,8 @@ public class PooEvaluacionModel extends DBUtil {
                     while (rs.next()){
 			int idMod = rs.getInt("idModulo");
                         int numEvaluacion = rs.getInt("numEvaluacion");
-                        float porcentaje = rs.getFloat("porcentaje");
-                        float nota = rs.getFloat("nota");
+                        int porcentaje = rs.getInt("porcentaje");
+                        int nota = rs.getInt("nota");
                         PooEvaluacion e = new PooEvaluacion(idMod,numEvaluacion,porcentaje,nota);
                         evaluacionesObservables.add(e);
 		}
@@ -123,17 +123,17 @@ public class PooEvaluacionModel extends DBUtil {
          * @param nota valor de la nota de la evaluacion
          * @return booleana
          */
-        public boolean agregarEvaluacion(int idModulo, int numEvaluacion, float procentaje,float nota) {
+        public boolean agregarEvaluacion(int idModulo, int numEvaluacion, int porcentaje,int nota) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO evaluacion (idModulo, numEvaluacion, procentaje, nota) VALUES (?, ?, ?, ?)";
+			String insertSql = "INSERT INTO evaluacion (idModulo, numEvaluacion, porcentaje, nota) VALUES (?, ?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
 			prest.setInt(1, idModulo);
 			prest.setInt(2, numEvaluacion);
-			prest.setFloat(3, procentaje);
-			prest.setFloat(4, nota);
+			prest.setInt(3, porcentaje);
+			prest.setInt(4, nota);
 			
 			prest.execute();
                         resultado = true;
@@ -184,7 +184,7 @@ public class PooEvaluacionModel extends DBUtil {
          * @param nota nota a cambiar
          * @return booleana
          */
-            public boolean editarEvaluacion(int idModulo, int numEvaluacion, float procentaje,float nota) {
+            public boolean editarEvaluacion(int idModulo, int numEvaluacion, int procentaje,int nota) {
 		Boolean resultado = false;
 		try {
 			String Sql = "UPDATE evaluacion SET procentaje=?, nota=? WHERE idModulo=? AND numEvaluacion=?";
@@ -193,8 +193,8 @@ public class PooEvaluacionModel extends DBUtil {
 			
 			prest.setInt(3, idModulo);
 			prest.setInt(4, numEvaluacion);
-			prest.setFloat(1, procentaje);
-			prest.setFloat(2, nota);
+			prest.setInt(1, procentaje);
+			prest.setInt(2, nota);
 			
 			prest.execute();
                         resultado = true;

@@ -34,10 +34,11 @@ public class PooEventoModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    String fecha = rs.getString("fechaEvento");
+                    Date fecha = rs.getDate("fechaEvento");
+                    String fechaEvento = fecha.toString();
                     int prioridad = rs.getInt("prioridad");
                     
-                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
+                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fechaEvento,prioridad);
                     eventos.add(e);
                 }
                 
@@ -69,10 +70,11 @@ public class PooEventoModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    String fecha = rs.getString("fechaEvento");
+                    Date fecha = rs.getDate("fechaEvento");
+                    String fechaEvento = fecha.toString();
                     int prioridad = rs.getInt("prioridad");
                     
-                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
+                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fechaEvento,prioridad);
                     eventos.add(e);
                 }
                 
@@ -104,7 +106,17 @@ public class PooEventoModel extends DBUtil{
 			prest.setInt(1, idModulo);
 			prest.setString(2, titulo);
 			prest.setString(3, descripcion);
-                        prest.setString(4, fechaEvento);
+                        
+                        Date fecha = new Date();
+                        String[] camposDatos = fechaEvento.split("-");
+                        int year = Integer.parseInt(camposDatos[0]);
+                        int month = Integer.parseInt(camposDatos[1]);
+                        int day = Integer.parseInt(camposDatos[2]);;
+                        fecha.setYear(year);
+                        fecha.setMonth(month);
+                        fecha.setDate(day);
+                        
+                        prest.setDate(4, (java.sql.Date) fecha);
                         prest.setInt(5, prioridad);
                         
 			prest.execute();
@@ -167,7 +179,17 @@ public class PooEventoModel extends DBUtil{
 			prest.setInt(1, idModulo);
 			prest.setString(2, titulo);
 			prest.setString(3, descripcion);
-                        prest.setString(4, fechaEvento);
+                        
+                        Date fecha = new Date();
+                        String[] camposDatos = fechaEvento.split("-");
+                        int year = Integer.parseInt(camposDatos[0]);
+                        int month = Integer.parseInt(camposDatos[1]);
+                        int day = Integer.parseInt(camposDatos[2]);;
+                        fecha.setYear(year);
+                        fecha.setMonth(month);
+                        fecha.setDate(day);
+                        
+                        prest.setDate(4, (java.sql.Date) fecha);
                         prest.setInt(5, prioridad);
 			
 			prest.execute();
@@ -207,7 +229,8 @@ public class PooEventoModel extends DBUtil{
                         int idModulo = rs.getInt("idModulo");
                         String titulo = rs.getString("titulo");
                         String descripcion = rs.getString("descripcion");
-                        String fechaEvento = rs.getString("fechaEvento");
+                        Date fecha = rs.getDate("fechaEvento");
+                        String fechaEvento = fecha.toString();
                         int prioridad = rs.getInt("prioridad");
                         PooEvento t = new PooEvento(idEvento,idModulo,titulo,descripcion,fechaEvento,prioridad);
                         eventosObservables.add(t);
@@ -241,12 +264,13 @@ public class PooEventoModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    String fecha = rs.getString("fechaEvento");
+                    Date fecha = rs.getDate("fechaEvento");
+                    String fechaEvento = fecha.toString();
                     int prioridad = rs.getInt("prioridad");
                     
                     
                     
-                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fecha,prioridad);
+                    PooEvento e = new PooEvento(idEvento,idModulo,titulo,descripcion,fechaEvento,prioridad);
                     eventos.add(e);
                 }
                 

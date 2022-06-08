@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="960.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLEditarTareaController">
+   <children>
+      <Text fx:id="EditarTareaTxt" layoutX="82.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar Tarea">
+         <font>
+            <Font name="Yu Gothic Regular" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="tituloTxt" layoutX="86.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="TituloTareaField" layoutX="180.0" layoutY="89.0" maxHeight="31.0" maxWidth="188.0" promptText="..." style="-fx-border-color: black;">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="3.0" layoutY="154.0" prefHeight="2.0" prefWidth="960.0" style="-fx-background-color: black;" />
+      <Text fx:id="DescripcionTxt" layoutX="86.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="DescripTextArea" layoutX="89.0" layoutY="228.0" prefHeight="148.0" prefWidth="314.0" promptText="Introduzca la descripción..." style="-fx-border-color: black;">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </TextArea>
+      <Separator layoutX="458.0" layoutY="157.0" orientation="VERTICAL" prefHeight="252.0" prefWidth="3.0" style="-fx-background-color: gray;" />
+      <Text fx:id="fechaTxt" layoutX="541.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="idModuloTxt" layoutX="503.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id Modulo:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="idModuloComboBox" layoutX="634.0" layoutY="250.0" prefHeight="45.0" prefWidth="136.0" promptText="Nº" />
+      <Button fx:id="buttonAplicar" layoutX="76.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleAplicarAction" prefHeight="57.0" prefWidth="141.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Aplicar" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonEliminar" layoutX="801.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleEliminarAction" prefHeight="58.0" prefWidth="141.0" style="-fx-background-color: red; -fx-border-color: #900000; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Eliminar" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonVolver" layoutX="873.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleVolverAction" style="-fx-background-color: white; -fx-border-color: #777; -fx-border-radius: 20; -fx-border-width: 1;" text="&lt;" textFill="#707070">
+         <font>
+            <Font name="Yu Gothic Regular" size="25.0" />
+         </font>
+      </Button>
+      <Text fx:id="medioTxt" layoutX="689.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2- Medio.">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="prioridadComboBox" layoutX="635.0" layoutY="314.0" prefHeight="47.0" prefWidth="109.0" promptText="Nº" />
+      <Text fx:id="nivelPrioridadTxt" layoutX="511.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prioridad:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="AltoTxt" layoutX="798.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3-Alto.">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="bajoTxt" layoutX="600.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1-Bajo.">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </Text>
+      <Separator layoutX="1.0" layoutY="408.0" prefHeight="3.0" prefWidth="960.0" style="-fx-background-color: black;" />
+      <ComboBox fx:id="añoComboBox" layoutX="635.0" layoutY="173.0" prefHeight="49.0" prefWidth="68.0" promptText="yyyy" />
+      <ComboBox fx:id="diaComboBox" layoutX="828.0" layoutY="173.0" prefHeight="49.0" prefWidth="68.0" promptText="dd" />
+      <ComboBox fx:id="mesComboBox" layoutX="730.0" layoutY="174.0" prefHeight="49.0" prefWidth="68.0" promptText="MM" />
+      <Text layoutX="710.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="806.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="realizadaCheckBox" layoutX="564.0" layoutY="68.0" mnemonicParsing="false" text="Realizada">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>
