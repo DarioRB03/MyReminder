@@ -23,7 +23,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Clase FXML Controller
  *
  * @author 1erDAM
  */
@@ -73,43 +73,40 @@ public class FXMLVerTareaController implements Initializable {
     private ArrayList<PooModulo> arrayModulos;
     private PooModulo modulo;
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller
+     * Muestra los datos de la tarea seleccionada
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //Obtener id de usuario y de tarea a ver desde estáticas, se crea una tarea base
         log=MyReminderApp.getLog();
         idTarVer=MyReminderApp.getIdTarVer();
+        
         tarea = new PooTarea();
-        modulo = new PooModulo();/*
+        modulo = new PooModulo();
+        
         tareaModel = new PooTareaModel();
         arrayTareas = tareaModel.getTareasDeUsuario(log);
         moduloModel = new PooModuloModel();
-        arrayModulos = moduloModel.getModulosDeUsuario(log);*/
+        arrayModulos = moduloModel.getModulosDeUsuario(log);
         
         
-        arrayTareas = new ArrayList<PooTarea>();
-        PooTarea t1 = new PooTarea(1, 2, "Tarea 1", "AaBbCcDdEeFfGgHhIiJjKkLlMmNnÑñOoPpQqRrSsTtUuVvWwXxYyZz", "2022-05-03", 1, 0);
-        PooTarea t2 = new PooTarea(2, 2, "Tarea 2", "Holis...", "2022-06-17", 3, 1);
-        arrayTareas.add(t1);
-        arrayTareas.add(t2);
-        arrayModulos = new ArrayList<PooModulo>();
-        PooModulo m1 = new PooModulo(2,1,"Titulo de modulo",5);
-        arrayModulos.add(m1);
-        
-        
+        //Se obtiene la tarea que coincide con el id de tarea
         for (PooTarea t : arrayTareas){
             if (t.getIdTarea() == idTarVer){
                 tarea = t;
             }
         }
         
+        //Se obtiene el modulo que coincide con el id del modulo
         for (PooModulo m : arrayModulos){
             if (m.getIdModulo()==tarea.getIdModulo()){
                 modulo = m;
             }
         }
         
+        //Se muestran los datos de la tarea y su correspondiente modulo en la interfaz
         IdLabel.setText(String.valueOf(tarea.getIdTarea()));
         
         TituloLabel.setText(tarea.getTitulo());
@@ -137,6 +134,10 @@ public class FXMLVerTareaController implements Initializable {
         RealizadoLabel.setText(rea);
     }    
 
+    /**
+     * Nos lleva al editor de dicha tarea
+     * @param event 
+     */
     @FXML
     private void handleEditarAction(ActionEvent event) {
         try {
@@ -155,7 +156,10 @@ public class FXMLVerTareaController implements Initializable {
             Logger.getLogger(FXMLPantallaLogInController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    /**
+     * Nos devuelve a la pantalla base
+     * @param event 
+     */
     @FXML
     private void handleVolverAction(ActionEvent event) {
         try {

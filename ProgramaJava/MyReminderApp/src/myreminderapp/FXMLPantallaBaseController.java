@@ -6,7 +6,6 @@ package myreminderapp;
 
 import javafx.scene.paint.Paint;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -16,12 +15,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 /**
- * FXML Controller class
+ * Clase FXML Controller que usamos de base para muchos anchor panes
+ * Dependiendo del anchor seleccionado cambia el color de los botones de la barra de botones
  *
  * @author 1erDAM
  */
@@ -48,24 +46,46 @@ public class FXMLPantallaBaseController implements Initializable {
     
     
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller
+     * Muestra un menu en formato de barra de botones
+     * Abre la página de opciones como estándar
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //Obtener id de usuario desde estáticas
         log = MyReminderApp.getLog();
-        System.out.println(log);
+        
+        //abre opciones como estándar
+        
         activeButtonPaint = Paint.valueOf("#00f");
         unactiveButtonPaint = Paint.valueOf("#000");
         buttonModulos.setTextFill(unactiveButtonPaint);
         buttonTareas.setTextFill(unactiveButtonPaint);
         buttonEventos.setTextFill(unactiveButtonPaint);
         buttonCalendario.setTextFill(unactiveButtonPaint);
-        buttonOpciones.setTextFill(unactiveButtonPaint);
+        buttonOpciones.setTextFill(activeButtonPaint);
+        buttonModulos.setTextFill(unactiveButtonPaint);
+        buttonTareas.setTextFill(unactiveButtonPaint);
+        buttonEventos.setTextFill(unactiveButtonPaint);
+        buttonCalendario.setTextFill(unactiveButtonPaint);
+        buttonOpciones.setTextFill(activeButtonPaint);
+        
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLPantallaOpciones.fxml"));
+            this.rootPane.getChildren().setAll(pane);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPantallaBaseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
 
+    /**
+     * Nos envia a modulos
+     * @param event 
+     */
     @FXML
     private void modulosPageAction(ActionEvent event) {
+        
         buttonModulos.setTextFill(activeButtonPaint);
         buttonTareas.setTextFill(unactiveButtonPaint);
         buttonEventos.setTextFill(unactiveButtonPaint);
@@ -80,8 +100,13 @@ public class FXMLPantallaBaseController implements Initializable {
         }
     }
 
+    /**
+     * Nos envia a tareas
+     * @param event 
+     */
     @FXML
     private void tareasPageAction(ActionEvent event) {
+       
         buttonModulos.setTextFill(unactiveButtonPaint);
         buttonTareas.setTextFill(activeButtonPaint);
         buttonEventos.setTextFill(unactiveButtonPaint);
@@ -96,8 +121,13 @@ public class FXMLPantallaBaseController implements Initializable {
         }
     }
 
+    /**
+     * Nos envia a eventos
+     * @param event 
+     */
     @FXML
     private void eventosPageAction(ActionEvent event) {
+        
         buttonModulos.setTextFill(unactiveButtonPaint);
         buttonTareas.setTextFill(unactiveButtonPaint);
         buttonEventos.setTextFill(activeButtonPaint);
@@ -114,6 +144,7 @@ public class FXMLPantallaBaseController implements Initializable {
 
     @FXML
     private void calendarioPageAction(ActionEvent event) {
+        //Nos envia al calendario
         buttonModulos.setTextFill(unactiveButtonPaint);
         buttonTareas.setTextFill(unactiveButtonPaint);
         buttonEventos.setTextFill(unactiveButtonPaint);
@@ -128,8 +159,13 @@ public class FXMLPantallaBaseController implements Initializable {
         }
     }
 
+    /**
+     * Nos envia a opciones
+     * @param event 
+     */
     @FXML
     private void opcionesPageAction(ActionEvent event) {
+        
         buttonModulos.setTextFill(unactiveButtonPaint);
         buttonTareas.setTextFill(unactiveButtonPaint);
         buttonEventos.setTextFill(unactiveButtonPaint);

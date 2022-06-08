@@ -28,7 +28,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Clase FXML Controller
  *
  * @author 1erDAM
  */
@@ -91,64 +91,51 @@ public class FXMLEditarTareaController implements Initializable {
     
     
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller
+     * Se generan los comboBox
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //Obtener id de usuario y de tarea a ver desde estáticas, se crea una tarea base
         log = MyReminderApp.getLog();
         idTarVer = MyReminderApp.getIdTarVer();
         tarea = new PooTarea();
-        /*
+        
         ptm = new PooTareaModel();
         arrayTareas = ptm.getTareasDeUsuario(log);
         pmm = new PooModuloModel();
-        arrayModulos = pmm.getModulosDeUsuario(log);*/
+        arrayModulos = pmm.getModulosDeUsuario(log);
         
         
-        arrayModulos = new ArrayList<PooModulo>();
-        PooModulo modTest = new PooModulo(1,1,"Titulo Largo",2);
-        PooModulo modTest2 = new PooModulo(2,1,"b",4);
-        PooModulo modTest3 = new PooModulo(3,1,"a",2);
-        PooModulo modTest4 = new PooModulo(4,1,"b",4);
-        PooModulo modTest5 = new PooModulo(5,1,"a",2);
-        PooModulo modTest6 = new PooModulo(6,1,"b",4);
-        PooModulo modTest7 = new PooModulo(7,1,"b",4);
-        PooModulo modTest8 = new PooModulo(8,1,"a",2);
-        PooModulo modTest9 = new PooModulo(9,1,"b",4);
-        arrayModulos.add(modTest);
-        arrayModulos.add(modTest2);
-        arrayModulos.add(modTest3);
-        arrayModulos.add(modTest4);
-        arrayModulos.add(modTest5);
-        arrayModulos.add(modTest6);
-        arrayModulos.add(modTest7);
-        arrayModulos.add(modTest8);
-        arrayModulos.add(modTest9);
-        
+        //Añadir el array de módulos al ComboBox de IDs de módulos
         for (PooModulo m : arrayModulos){
             String idM = String.valueOf(m.getIdModulo());
             moduloList.add(idM);
         }
         idModuloComboBox.setItems(moduloList);
         
+        //Añadir las 3 prioridades al ComboBox de prioridades
         for (int i=0; i<3; i++){
             String prio = String.valueOf(i+1);
             prioridadList.add(prio);
         }
         prioridadComboBox.setItems(prioridadList);
         
+        //Añadir 31 días al ComboBox de días
         for (int i=0; i<31; i++){
             String dia = String.valueOf(i+1);
             dayList.add(dia);
         }
         diaComboBox.setItems(dayList);
         
+        //Añadir 12 meses al ComboBox de meses
         for (int i=0; i<12; i++){
             String mes = String.valueOf(i+1);
             monthList.add(mes);
         }
         mesComboBox.setItems(monthList);
         
+        //Añadidos desde el año 2000 al 2100 al ComboBox de años
         for (int i=1999; i<2100; i++){
             String ano = String.valueOf(i+1);
             yearList.add(ano);
@@ -156,8 +143,13 @@ public class FXMLEditarTareaController implements Initializable {
         añoComboBox.setItems(yearList);
     }    
 
+    /**
+     * Se leen todos los campos y se asignan a la tarea que luego asignamos a la base de datos como nueva
+     * @param event 
+     */
     @FXML
     private void handleAplicarAction(ActionEvent event) {
+        
         tarea.setIdTarea(idTarVer);
         
         tarea.setIdModulo(Integer.parseInt(idModuloComboBox.getValue().toString()));
@@ -205,9 +197,14 @@ public class FXMLEditarTareaController implements Initializable {
         }
     }
 
+    /**
+     * Se elimina la tarea de la base de datos
+     * @param event 
+     */
     @FXML
-    private void handleEliminarAction(ActionEvent event) {/*
-        ptm.eliminarTarea(idTarVer);*/
+    private void handleEliminarAction(ActionEvent event) {
+        
+        ptm.eliminarTarea(idTarVer);
         
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaBase.fxml"));
@@ -226,8 +223,13 @@ public class FXMLEditarTareaController implements Initializable {
         }
     }
 
+    /**
+     * Volver a la pantalla base
+     * @param event 
+     */
     @FXML
     private void handleVolverAction(ActionEvent event) {
+        
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLVerTarea.fxml"));
         

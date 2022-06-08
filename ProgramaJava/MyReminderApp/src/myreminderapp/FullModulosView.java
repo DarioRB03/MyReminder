@@ -26,39 +26,36 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- *
+ * Clase de objeto vista de modulos
  * @author 1erDAM
  */
 public class FullModulosView {
     private ArrayList<AnchorPane> allModulePanes = new ArrayList<AnchorPane>();
     private VBox mView;
     private int alongar;
+    private ArrayList<PooModulo> arrayModulos;
+    private ArrayList<PooTarea> arrayTareas;
+    private ArrayList<PooEvento> arrayEventos;
+    private PooModuloModel pmm;
+    private PooTareaModel ptm;
+    private PooEventoModel pem;
+    private int log;
     
+    /**
+     * Crea un VBox de modulos
+     */
     public FullModulosView(){
         
         alongar=0;
+        log = MyReminderApp.getLog();
         
+        pmm = new PooModuloModel();
+        ptm = new PooTareaModel();
+        pem = new PooEventoModel();
+        arrayModulos = pmm.getModulosDeUsuario(log);
+        arrayTareas = ptm.getTareasDeUsuario(log);
+        arrayEventos = pem.getEventosDeUsuario(log);
 
-        PooModulo modTest = new PooModulo(1,1,"Titulo Largo",2);
-        PooModulo modTest2 = new PooModulo(2,1,"b",4);
-        PooModulo modTest3 = new PooModulo(3,1,"a",2);
-        PooModulo modTest4 = new PooModulo(4,1,"b",4);
-        PooModulo modTest5 = new PooModulo(5,1,"a",2);
-        PooModulo modTest6 = new PooModulo(6,1,"b",4);
-        PooModulo modTest7 = new PooModulo(7,1,"b",4);
-        PooModulo modTest8 = new PooModulo(8,1,"a",2);
-        PooModulo modTest9 = new PooModulo(9,1,"b",4);
-
-        ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
-        arrayModulos.add(modTest);
-        arrayModulos.add(modTest2);
-        arrayModulos.add(modTest3);
-        arrayModulos.add(modTest4);
-        arrayModulos.add(modTest5);
-        arrayModulos.add(modTest6);
-        arrayModulos.add(modTest7);
-        arrayModulos.add(modTest8);
-        arrayModulos.add(modTest9);
         
         int numModulos = 1;
         if (arrayModulos.size()==2){
@@ -91,29 +88,17 @@ public class FullModulosView {
         mView.setAlignment(Pos.BOTTOM_CENTER);
     }
     
+    /**
+     * Asigna los modulos a los paneles para popular la VBox
+     * @param array 
+     */
     public void popularModulos(ArrayList<PooModulo> array){
         
-        /**/
-        PooTarea tarTest = new PooTarea(1,1,"a","aaa","2022-6-12",2,0);
-        PooTarea tarTest2 = new PooTarea(2,2,"b","bbb","2022-5-26",3,1);
-        ArrayList<PooTarea> arrayTareas = new ArrayList<PooTarea>();
-        arrayTareas.add(tarTest);
-        arrayTareas.add(tarTest2);
-            
-        PooEvento eveTest = new PooEvento(1,1,"a","aaa","2022-6-12",2);
-        PooEvento eveTest2 = new PooEvento(2,1,"b","bbb","2022-5-26",1);
-        ArrayList<PooEvento> arrayEventos = new ArrayList<PooEvento>();
-        arrayEventos.add(eveTest);
-        arrayEventos.add(eveTest2);
-        /**/
+
         
         for (int i=0; i < array.size(); i++){
             PooModulo m = array.get(i);
             AnchorPane ap = allModulePanes.get(i+1);
-           /* ArrayList<PooTarea> arrayTareas = modelTarea.getTareasDeUsuario(array.get(i).getIdUsuario());
-            ArrayList<PooEvento> arrayEventos = modelEvento.getEventosDeUsuario(array.get(i).getIdUsuario());
-            */
-           
            
            
             if(ap.getChildren().size()>0){
@@ -172,14 +157,26 @@ public class FullModulosView {
         allModulePanes.get(0).getChildren().add(create);
     }
     
+    /**
+     * Obtener valor de la variable alongar
+     * @return 
+     */
     public int getAlongar(){
         return alongar;
     }
     
+    /**
+     * Obtener VBox de los modulos
+     * @return 
+     */
     public VBox getView(){
         return mView;
     }
 
+    /**
+     * Evento que nos lleva a la pantalla de crear modulo
+     * @param event 
+     */
     private void handleCreateAction(ActionEvent event) {
         System.out.println("botonOk");
         try {
@@ -199,6 +196,12 @@ public class FullModulosView {
         }
     }
 
+    /**
+     * Evento que nos lleva a ver el contenido de un modulo
+     * Asigna valor a la estatica de idModVer
+     * @param event
+     * @param m 
+     */
     private void handleButtonAction(ActionEvent event, PooModulo m) {
         System.out.println("Boton " + m.getIdModulo() + " Ok");
         MyReminderApp.setIdModVer(m.getIdModulo());

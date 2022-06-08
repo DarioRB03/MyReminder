@@ -28,7 +28,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Clase FXML Controller
  *
  * @author 1erDAM
  */
@@ -78,56 +78,26 @@ public class FXMLVerModuloController implements Initializable {
     
     private ObservableList<PooEvaluacion> evaluaObservables;
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller
+     * Nos muestra los datos del modulo seleccionado
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         contEva = 0;
+        //Obtener id de usuario y de modulo a ver desde estáticas
         idModulo=MyReminderApp.getIdModVer();
         log=MyReminderApp.getLog();
-        System.out.println(idModulo + " - " + log);
         
         
-        
-        
-        arrayModulos = new ArrayList<PooModulo>();
-        PooModulo modTest = new PooModulo(1,1,"Titulo Largo",2);
-        PooModulo modTest2 = new PooModulo(2,1,"b",4);
-        PooModulo modTest3 = new PooModulo(3,1,"a",2);
-        PooModulo modTest4 = new PooModulo(4,1,"b",4);
-        PooModulo modTest5 = new PooModulo(5,1,"a",2);
-        PooModulo modTest6 = new PooModulo(6,1,"b",4);
-        PooModulo modTest7 = new PooModulo(7,1,"b",4);
-        PooModulo modTest8 = new PooModulo(8,1,"a",2);
-        PooModulo modTest9 = new PooModulo(9,1,"b",4);
-        arrayModulos.add(modTest);
-        arrayModulos.add(modTest2);
-        arrayModulos.add(modTest3);
-        arrayModulos.add(modTest4);
-        arrayModulos.add(modTest5);
-        arrayModulos.add(modTest6);
-        arrayModulos.add(modTest7);
-        arrayModulos.add(modTest8);
-        arrayModulos.add(modTest9);
-        
-        
-        /*
         pem = new PooEvaluacionModel();
         pmm = new PooModuloModel();
         arrayModulos = pmm.getModulosDeUsuario(log);
-        arrayEvaluaciones = pem.getEvaluacionDeModulo(idModulo);*/
-        arrayEvaluaciones = new ArrayList<PooEvaluacion>();
-        
-        PooEvaluacion evaTest = new PooEvaluacion(1,1,30,5);
-        PooEvaluacion evaTest2 = new PooEvaluacion(1,2,30,3);
-        PooEvaluacion evaTest3 = new PooEvaluacion(1,3,40,6);
-        arrayEvaluaciones.add(evaTest);
-        arrayEvaluaciones.add(evaTest2);
-        arrayEvaluaciones.add(evaTest3);
+        arrayEvaluaciones = pem.getEvaluacionDeModulo(idModulo);
         
         evaluaObservables = FXCollections.observableArrayList();
         
+        //Añadir el array de evaluaciones a la lista de evaluaciones observables
         for (PooEvaluacion e : arrayEvaluaciones){
             evaluaObservables.add(e);
         }
@@ -136,26 +106,35 @@ public class FXMLVerModuloController implements Initializable {
         this.porcColumn.setCellValueFactory(new PropertyValueFactory("porcentaje"));
         this.NotaColumn.setCellValueFactory(new PropertyValueFactory("nota"));
      
+        //Se añade la lista de evaluaciones observables a la tabla
         this.evTableView.setItems(evaluaObservables);
         
+        //Por cada evaluacio existente se añade 1 al contador
         for (PooEvaluacion e : arrayEvaluaciones){
             contEva+=1;
         }
         
+        //Se obtienen los datos del módulo que coincide con el id de modulo seleccionado
         for (PooModulo m : arrayModulos){
             if(idModulo==m.getIdModulo()){
                 modulo = m;
             }
         }
         
+        //Se muestran los datos del modulo en la interfaz
         IdLabel.setText(String.valueOf(modulo.getIdModulo()));
         TituloLabel.setText(modulo.getTitulo());
         evaluacionesLabel.setText(String.valueOf(contEva));
         notaLabel.setText(String.valueOf(modulo.getNotaFinal()));
     }    
 
+    /**
+     * Nos lleva al editor de dicho modulo
+     * @param event 
+     */
     @FXML
     private void handleEditarAction(ActionEvent event) {
+        
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLEditarModulo.fxml"));
         
@@ -173,8 +152,13 @@ public class FXMLVerModuloController implements Initializable {
             }
     }
 
+    /**
+     * Nos devuelve a la pantalla base
+     * @param event 
+     */
     @FXML
     private void handleVolverAction(ActionEvent event) {
+        
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaBase.fxml"));
         

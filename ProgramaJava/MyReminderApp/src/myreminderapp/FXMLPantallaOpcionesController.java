@@ -35,7 +35,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Clase FXML Controller
  *
  * @author 1erDAM
  */
@@ -53,8 +53,10 @@ public class FXMLPantallaOpcionesController implements Initializable {
     private Button buttonCerrarSesion;
     @FXML
     private Button buttonSalir;
+    
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller
+     * Nos muestra diferentes links, un botón para cerrar sesión y uno para apagar el programa
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -62,13 +64,23 @@ public class FXMLPantallaOpcionesController implements Initializable {
         
     }    
 
+    /**
+     * Apaga el programa
+     * @param event 
+     */
     @FXML
     private void handleSalirAction(ActionEvent event) {
+   
         System.exit(0);
     }
 
+    /**
+     * Nos 'saca' del programa y nos lleva a la página de LogIn
+     * @param event 
+     */
     @FXML
     private void handelCerrarSesion(ActionEvent event) {
+        
         try {
                 Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaLogIn.fxml"));
         
@@ -86,6 +98,10 @@ public class FXMLPantallaOpcionesController implements Initializable {
             }
     }
     
+    /**
+     * Nos lleva a la página web de Terminos y condiciones
+     * @param event 
+     */
     @FXML
     private void handleLinkTyC(ActionEvent event) {
         Desktop browser = Desktop.getDesktop();
@@ -100,6 +116,10 @@ public class FXMLPantallaOpcionesController implements Initializable {
         }
     }
 
+    /**
+     * Nos lleva a la página web de Sobre Nosotros
+     * @param event 
+     */
     @FXML
     private void handleLinkSobreNosotros(ActionEvent event) {
         Desktop browser = Desktop.getDesktop();
@@ -115,6 +135,10 @@ public class FXMLPantallaOpcionesController implements Initializable {
     }
 
 
+    /**
+     * Nos lleva a la página web de Ayuda
+     * @param event 
+     */
     @FXML
     private void handleLinkAyuda(ActionEvent event) {
         Desktop browser = Desktop.getDesktop();
@@ -129,6 +153,10 @@ public class FXMLPantallaOpcionesController implements Initializable {
         }
     }
 
+    /**
+     * Nos lleva a la página web principal del proyecto desde el logo grande
+     * @param event 
+     */
     @FXML
     private void handlelinkLogo(MouseEvent event) {
         Desktop browser = Desktop.getDesktop();

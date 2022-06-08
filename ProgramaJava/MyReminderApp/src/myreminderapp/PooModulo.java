@@ -15,6 +15,13 @@ public class PooModulo {
     private String titulo;
     private float notaFinal;
 
+    /**
+     * Constructor del modulo con parametros
+     * @param idModulo id del modulo creado
+     * @param idUsuario id del usuario al que se asigna
+     * @param titulo titulo del modulo
+     * @param notaFinal valor de nota calculada entre las evaluaciones
+     */
     public PooModulo(int idModulo, int idUsuario, String titulo, float notaFinal) {
         this.idModulo = idModulo;
         this.idUsuario = idUsuario;

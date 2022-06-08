@@ -27,7 +27,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Clase FXML Controller
  *
  * @author 1erDAM
  */
@@ -60,22 +60,21 @@ public class FXMLPantallaTareasController implements Initializable {
     
     
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller
+     * Nos muestra una tabla con las tareas del usuario a las cuales se puede acceder
+     * y un botón para crear una tarea nueva
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+    //Obtener el id de usuario activo de las estaticas
     log = MyReminderApp.getLog();
     
-/*
+    //Se crea el model
     tareaModel = new PooTareaModel();
-    */
-    tareasObservable = FXCollections.observableArrayList();/*
-    tareasObservable = tareaModel.getTarea(log);*/
     
-    PooTarea t1 = new PooTarea(1, 2, "", "", "", 1, 0);
-    PooTarea t2 = new PooTarea(2, 2, "", "", "", 3, 1);
-    tareasObservable.add(t1);
-    tareasObservable.add(t2);
+    //Se declara la lista observable y se iguala al array obtenido de la base de datos
+    tareasObservable = FXCollections.observableArrayList();
+    tareasObservable = tareaModel.getTarea(log);
     
     this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("IdModulo"));   
     this.columnaIdTarea.setCellValueFactory(new PropertyValueFactory("IdTarea"));
@@ -85,14 +84,17 @@ public class FXMLPantallaTareasController implements Initializable {
     this.columnaPrioridad.setCellValueFactory(new PropertyValueFactory("Prioridad"));
     this.columnaRealizado.setCellValueFactory(new PropertyValueFactory("Realizado"));
      
+    //Se añade la lista de tareas visibles a la tabla
     this.tableViewTareas.setItems(tareasObservable);
-        
-        
-        
     }    
 
+    /**
+     * Nos lleva a la pantalla de creacion de tareas
+     * @param event 
+     */
     @FXML
     private void handleCrearTareaAction(ActionEvent event) {
+        
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLCrearTarea.fxml"));
         
@@ -110,8 +112,13 @@ public class FXMLPantallaTareasController implements Initializable {
         }
     }
 
+    /**
+     * Al hacer doble click en una tarea de la tabla, nos lleva a la página de ver dicha tarea
+     * @param event 
+     */
     @FXML
     private void handleVerTareaClick(MouseEvent event) {
+        
         if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount()==2){
             PooTarea t = this.tableViewTareas.getSelectionModel().getSelectedItem();
             MyReminderApp.setIdTarVer(t.getIdTarea());

@@ -12,11 +12,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * Clase model de tarea
  * @author 1erDAM
  */
 public class PooTareaModel extends DBUtil{
-    
+        /**
+         * Obtener un ArrayList de tareas de la base de datos
+         * @return ArrayList
+         */
         public ArrayList<PooTarea> getTareas(){
             ArrayList<PooTarea> tareas = new ArrayList<PooTarea>();
             
@@ -47,6 +50,11 @@ public class PooTareaModel extends DBUtil{
             }
         }
         
+        /**
+         * Obtener un ArrayList de tareas correspondiente a un usuario
+         * @param idUsuarioActivo id del usuario correspondiente
+         * @return ArrayList
+         */
         public ArrayList<PooTarea> getTareasDeUsuario(int idUsuarioActivo){
             ArrayList<PooTarea> tareas = new ArrayList<PooTarea>();
             
@@ -77,6 +85,17 @@ public class PooTareaModel extends DBUtil{
             }
         }
     
+        /**
+         * Insertar una tarea en la base de datos
+         * @param idTarea id de la tarea
+         * @param idModulo id del modulo respectivo de la tarea
+         * @param titulo titulo de la tarea
+         * @param descripcion descripcion de la tarea
+         * @param fechaTarea fecha de la tarea
+         * @param prioridad prioridad de la tarea, de 1 a 3
+         * @param realizado si esta realizada la tarea (1) o no (2)
+         * @return booleana
+         */
         public boolean agregarTarea(int idTarea, int idModulo, String titulo, String descripcion, String fechaTarea, int prioridad, int realizado) {
 		Boolean resultado = false;
 		try {
@@ -103,7 +122,11 @@ public class PooTareaModel extends DBUtil{
 		}
 	} 
     
-    
+        /**
+         * Eliminar una tarea de la base de datos
+         * @param idTarea id de la tarea a eliminar
+         * @return booleana
+         */
         public boolean eliminarTarea(int idTarea) {
 		Boolean resultado = false;
 		try {
@@ -126,7 +149,17 @@ public class PooTareaModel extends DBUtil{
 	
         }
 
-        
+            /**
+             * Editar una tarea en la base de datos
+             * @param idTarea id de la tarea a editar
+             * @param idModulo id del modulo respectivo de la tarea editado 
+             * @param titulo titulo de la tarea editado
+             * @param descripcion descripcion de la tarea editada
+             * @param fechaTarea fecha de la tarea editada
+             * @param prioridad prioridad de la tarea editada, de 1 a 3
+             * @param realizado si esta realizada la tarea (1) o no (2), valor editado
+             * @return 
+             */
             public boolean editarTarea(int idTarea, int idModulo, String titulo, String descripcion, String fechaTarea, int prioridad, int realizado) {
 		Boolean resultado = false;
 		try {
@@ -155,6 +188,12 @@ public class PooTareaModel extends DBUtil{
 	
             }
             
+            /**
+             * Editar la tarea para asignar si esta realizada o no
+             * @param idTarea id de la tarea a editar
+             * @param realizado si esta realizada o no, 1 (si) o 2 (no)
+             * @return booleana
+             */
             public boolean realizarTarea (int idTarea, int realizado){
                 Boolean resultado = false;
 		try {
@@ -177,6 +216,11 @@ public class PooTareaModel extends DBUtil{
 		}
             }
             
+            /**
+             * Obtener una ObservableList de tareas correspondiente a un usuario
+             * @param idUsuarioActivo id de la tarea correspondiente
+             * @return ObservableList
+             */
             public ObservableList<PooTarea> getTarea(int idUsuarioActivo){
 
                 ObservableList<PooTarea> tareasObservables = FXCollections.observableArrayList();
@@ -212,7 +256,11 @@ public class PooTareaModel extends DBUtil{
 		this.cerrarConexion();
         }
     }
-            
+    /**
+     * Obtener un ArrayList de las 3 tareas correspondiente a un usuario más cercanas
+     * @param idUsuarioActivo id del usuario
+     * @return ArrayList
+     */
     public ArrayList<PooTarea> getTareasCerca(int idUsuarioActivo){
             ArrayList<PooTarea> tareas = new ArrayList<PooTarea>();
             

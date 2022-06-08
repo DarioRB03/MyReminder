@@ -27,7 +27,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Clase FXML Controller
  *
  * @author 1erDAM
  */
@@ -86,39 +86,23 @@ public class FXMLCrearModuloController implements Initializable {
     private int idModulo;
     private int log;
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller.
+     * Genera las evaluaciones base y su respectivo comboBox
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
         log=MyReminderApp.getLog();
-        /*
+        
         pmm = new PooModuloModel();
         pem = new PooEvaluacionModel();
         
-        arrayModulos = pmm.getModulos();*/
-        arrayModulos = new ArrayList<PooModulo>();
-        PooModulo modTest = new PooModulo(1,1,"Titulo Largo",2);
-        PooModulo modTest2 = new PooModulo(2,1,"b",4);
-        PooModulo modTest3 = new PooModulo(3,1,"a",2);
-        PooModulo modTest4 = new PooModulo(4,1,"b",4);
-        PooModulo modTest5 = new PooModulo(5,1,"a",2);
-        PooModulo modTest6 = new PooModulo(6,1,"b",4);
-        PooModulo modTest7 = new PooModulo(7,1,"b",4);
-        PooModulo modTest8 = new PooModulo(8,1,"a",2);
-        PooModulo modTest9 = new PooModulo(9,1,"b",4);
-        arrayModulos.add(modTest);
-        arrayModulos.add(modTest2);
-        arrayModulos.add(modTest3);
-        arrayModulos.add(modTest4);
-        arrayModulos.add(modTest5);
-        arrayModulos.add(modTest6);
-        arrayModulos.add(modTest7);
-        arrayModulos.add(modTest8);
-        arrayModulos.add(modTest9);
+        arrayModulos = pmm.getModulos();
+
         idModulo=arrayModulos.size()+1;
 
+        //Se crean las evaluaciones vacías y se añaden al ComboBox
         arrayEvaluaciones = new ArrayList<PooEvaluacion>();
         PooEvaluacion ev1 = new PooEvaluacion(idModulo, 1, 0, 0);
         PooEvaluacion ev2 = new PooEvaluacion(idModulo, 2, 0, 0);
@@ -135,15 +119,22 @@ public class FXMLCrearModuloController implements Initializable {
         ComboBoxEv.setItems(listaEv);
     }    
 
+    /**
+     * Recupera datos de la interfaz y crea un modulo que luego añadiremos a la base de datos
+     * @param event 
+     */
     @FXML
     private void handleCrearAction(ActionEvent event) {/*Crear modulo*/
+        
         m = new PooModulo(idModulo,log,tituloField.getText(),0);
-        /*
+        
+        //Agrregar las evaluaciones del modulo a la base de datos
         for(PooEvaluacion e : arrayEvaluaciones){
             pem.agregarEvaluacion(e.getIdModulo(), e.getNumEvaluacion(), e.getPorcentaje(), e.getNota());
         }
         
-        pmm.agregarModulo(log, m.getTitulo());*/
+        //Agregar el modulo a la base de datos
+        pmm.agregarModulo(log, m.getTitulo());
         
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaBase.fxml"));
@@ -162,8 +153,13 @@ public class FXMLCrearModuloController implements Initializable {
         }
     }
 
+    /**
+     * Confirmar datos de evaluacion. No se añade a la base de datos
+     * @param event 
+     */
     @FXML
-    private void handleConfirmarAction(ActionEvent event) {/*Confirmar datos de evaluacion*/
+    private void handleConfirmarAction(ActionEvent event) {
+        
         int numEv = Integer.parseInt(ComboBoxEv.getValue().toString());
         float porc = Float.parseFloat(editarPorcField.getText());
         float nota = Float.parseFloat(editarNotaField.getText());
@@ -178,8 +174,13 @@ public class FXMLCrearModuloController implements Initializable {
         alertaInfo.showAndWait();
     }
 
+    /**
+     * Confirmar datos de evaluacion nueva y se añade al array. No se añade a la base de datos
+     * @param event 
+     */
     @FXML
-    private void handleAñadirAction(ActionEvent event) {/*Añadir evaluacion*/
+    private void handleAñadirAction(ActionEvent event) {
+        
         float porc = Float.parseFloat(añadirPorcField.getText());
         float nota = Float.parseFloat(añadirNotaField.getText());
         int idEv = listaEv.size()+1;
@@ -197,8 +198,13 @@ public class FXMLCrearModuloController implements Initializable {
         alertaInfo.showAndWait();
     }
 
+    /**
+     * Volver a la pantalla base
+     * @param event 
+     */
     @FXML
     private void handleVolverAction(ActionEvent event) {
+       
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaBase.fxml"));
         

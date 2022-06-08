@@ -10,11 +10,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase model de modulo
  * @author 1erDAM
  */
 public class PooModuloModel extends DBUtil {
     
+    /**
+     * Obtener un ArrayList de modulos de la base de datos
+     * @return ArrayList
+     */
     public ArrayList<PooModulo> getModulos(){
         ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
         try {
@@ -43,6 +47,11 @@ public class PooModuloModel extends DBUtil {
 		}
     }
     
+    /**
+     * Obtener un ArrayList de modulos correspondientes a un usuario específico de la base de datos
+     * @param idUsuario el usuario específico
+     * @return ArrayList
+     */
     public ArrayList<PooModulo> getModulosDeUsuario(int idUsuario){
         ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
         try {
@@ -71,6 +80,12 @@ public class PooModuloModel extends DBUtil {
 		}
     }
     
+    /**
+     * Inserta un modulo en la base de datos
+     * @param idUsuario id del usuario correspondiente al modulo añadido
+     * @param titulo titulo del modulo
+     * @return booleana
+     */
     public boolean agregarModulo(int idUsuario, String titulo) {
 		Boolean resultado = false;
 		try {
@@ -93,7 +108,11 @@ public class PooModuloModel extends DBUtil {
 		}
 	} 
     
-    
+    /**
+     * Eliminar un modulo de la base de datos
+     * @param idModulo id del modulo que se elimina
+     * @return booleana
+     */
         public boolean eliminarModulo(int idModulo) {
 		Boolean resultado = false;
 		try {
@@ -116,7 +135,13 @@ public class PooModuloModel extends DBUtil {
 	
         }
 
-        
+        /**
+         * Editar un modulo en la base de datos
+         * @param idModulo id del modulo a editar
+         * @param idUsuario id del usuario que se edita
+         * @param titulo titulo que se edita
+         * @return booleana
+         */
             public boolean editarModulo(int idModulo, int idUsuario, String titulo) {
 		Boolean resultado = false;
 		try {
