@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
-    <title> Video - Calendario </title>
+    <title> Video - General </title>
     <link rel="stylesheet" type="text/css" href="../CSS/General.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Video.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
 
 <!--Menú Desplegable-->
     <img src="../Imagenes/Menu/menu-regular-24.png" class="menu" alt="Imagen Menu">
-<nav class="menu-navegador" style="z-index: 20;">
+ <nav class="menu-navegador" style="z-index: 20;" id="anchoMenu">
   <ul class="list">
     <li class="list__item">
       <div class="list__button">
@@ -81,7 +81,11 @@
   </ul>
 </nav>
 <header>
+<<<<<<< HEAD
+<!-- Menú Navegación -->
+=======
 <!-- Menu Navegación -->
+>>>>>>> 19f272b59321d34ab3c0dd631a1164e51cc46c8d
  <header>
      <div>
         <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between" >
@@ -115,7 +119,7 @@
     <div class="row">
         <div class="col">
             <div class="feature-img">
-                <img src="../Imagenes/calendarioImagen.png" width="100%">
+                <img src="../Imagenes/configGeneral.jpg" width="100%">
                 <img src="../Imagenes/boton-de-play.png" class="play-btn" onclick="playVideo('!video!')">
             </div>
         </div>
@@ -123,10 +127,10 @@
             <div class="col">
                 <div class="small-img-row">
                   <div class="small-img">
-                    <img src="../Imagenes/configGeneral.jpg">
+                    <img src="../Imagenes/calendarioImagen.png">
                     <img src="../Imagenes/boton-de-play.png" class="play-btn" onclick="playVideo('!video!')">
                   </div>
-                  <p> Esto es un video explicativo de la pagina web.</p>
+                  <p> Esto es un video explicativo del calendario</p>
                 </div>
 
                 <div class="small-img-row">
@@ -134,7 +138,7 @@
                     <img src="../Imagenes/modulos.png">
                     <img src="../Imagenes/boton-de-play.png" class="play-btn" onclick="playVideo('!video!')">
                   </div>
-                  <p> Esto es un video explicativo de los modulos  </p>
+                  <p> Esto es un video explicativo de los modulos </p>
                 </div>
 
                 <div class="small-img-row">
@@ -160,15 +164,15 @@
 
 <!-- Footer Contacto -->
 <footer id="contacto">
-  <div class="contenedor footer-content">
-      <div class="contact">
+  <div class="contenedor footer-content" id="alignAbajofooter">
+      <div class="contact" id="alignContacto">
           <h2 class="brand">My Reminder</h2>
           <p>Un buen orden es la base de todas las cosas</p>
       </div>
 
       <a href="#!"><img class="icono-footer" src="../Imagenes/Logo.png" alt="Logo"></a>
       
-      <div class="redes-sociales">
+      <div class="redes-sociales" id="espaciadoLogos">
         <a class="red-social-icono movimiento" id="instagram" href="https://www.instagram.com/xuquer_ce/">
           <i class="bx bxl-instagram "></i>
         </a>
