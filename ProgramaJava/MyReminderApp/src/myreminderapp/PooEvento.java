@@ -7,7 +7,7 @@ package myreminderapp;
 import java.util.Date;
 
 /**
- *
+ * Clase de objeto evento
  * @author 1erDAM
  */
 public class PooEvento {
