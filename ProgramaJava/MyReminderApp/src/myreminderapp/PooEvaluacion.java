@@ -5,7 +5,7 @@
 package myreminderapp;
 
 /**
- *
+ *Clase de objeto evaluacion
  * @author 1erDAM
  */
 public class PooEvaluacion {

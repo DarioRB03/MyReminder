@@ -230,3 +230,1198 @@
   #divImagenPortada{
     margin-bottom: 0%;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Móvil pequeño (LISTO FALTA CARDS)
+*/
+
+  @media only screen and (min-width: 355px) and (max-width: 640px){
+
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      background: rgb(80,78,255);
+      background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
+    }  
+    /*
+    Contenedor cartas
+    */
+  
+    .card-container {
+      overflow-x: hidden;
+      display: flex;
+      padding: 3rem;
+      justify-content: center;
+      margin-bottom: 5%;
+    }
+    
+    .card {
+      min-width: 170px;
+      min-height: 410px;
+      border-radius: 16px;
+      background-color: #17141d;
+      box-shadow: 1rem 0 1rem #000;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      transition: 0.2s;
+    }
+    
+    /*
+    Tags de las cartas
+    */
+   
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1rem 0 1rem;
+    }
+    
+    .tags div {
+      margin-right: 2%;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border: 3px solid #28242f;
+      border-radius: 2rem;
+    }
+    
+    /*
+    Títulos de la cartas
+    */
+  
+    .card .category-title {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    
+    .card .article-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .card .article-header {
+      margin-bottom: auto;
+    }
+    
+    .card .author {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 75px 1fr;
+    }
+    
+    .author .info .caption {
+      color: #8a8a8a;
+    }
+    
+    .card:not(:first-child) {
+      margin-left: -130px;
+    }
+    
+    /*
+    Transiciones de las cartas
+    */
+  
+    .card:hover {
+      transform: translateY(-1rem);
+    }
+    
+    .card:hover~.card{
+      transform: translateX(130px);
+    }
+   
+    /*
+    Centrar imagen cartas
+    */
+  
+    .imagenCentrar{
+      image-resolution: 300dpi;
+      margin-top: -25%;
+      margin-bottom: 10%;
+      align-content: center;
+    }
+    
+    /*
+    Alinear texto de abajo cartas
+    */
+  
+    .alinear{
+      margin-left: -30%;
+      margin-bottom: -10%;
+    }
+  
+    /*
+    Alinear texto ID-Borja
+    */
+  
+    #alinearTextoborja{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Pau
+    */
+  
+    #alinearTextopau{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Santos
+    */
+  
+    #alinearTextosantos{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Dario
+    */
+  
+    #alinearTextodario{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Toni
+    */
+  
+    #alinearTextotoni{
+      margin-top: 15%;
+    }
+  
+    /*
+    Alinear tags de las cartas
+    */
+  
+    #alinearTags{
+      margin-top: 18%;
+    }
+  
+     /*
+    Alinear tag ID-Santos
+    */
+  
+    #alinearTagsantos{
+      margin-top: 28%;
+    }
+  
+     /*
+    Alinear tag ID-Pau
+    */
+  
+
+    /*
+    Alinear tag ID-Dario
+    */
+    #AlinearTagdario{
+      margin-top: 19%;
+    }
+
+    #alinearTagpau{
+      margin-top: 57%;
+    }
+
+    #alinearTagborja{
+       margin-top: 56%;
+    }
+
+    #alinearTagtoni{
+      margin-top: 56%;
+    }
+  
+    
+    /*
+    Clases CSS de Santos (índex)
+    */
+    
+    #espaciado-nav{
+      margin-right: 100px;
+    }
+  
+    .contenedor{
+      width: 90%;
+      max-width: 1200px;
+      overflow: hidden;
+      margin: auto;
+      padding: 60px 0;
+    }
+    
+    header{
+        /*background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);*/
+        background-blend-mode: multiply,multiply ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 0%;
+    }
+    
+    .head{
+      padding: 0;
+      height: 100%;
+      
+      display: flex;
+      justify-content:  center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+    }
+    
+    .titulo{
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+    
+    .eslogan{
+      font-weight: 300;
+      font-size: 25px;
+    }
+  
+    #divImagenPortada{
+      margin-bottom: 0%;
+    }
+
+    #anchoMenu{
+      width: 64%;
+    }
+
+    #espaciadoLogos{
+     margin-top: 100%;
+     margin-left: -20%;
+    }
+
+   #alignContacto{
+     margin-left: 10%;
+     margin-bottom: 40%;
+   }
+
+   #alignButtoninicio{
+     margin-left: 7%;
+   }
+
+   #alignTexttitle{
+     margin-left: 5%;
+   }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Móvil mediano (LISTO FALTA EL MYREMINDER FOOTER)
+*/
+
+  @media only screen and (min-width: 359px) and (max-width: 667px){
+
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      background: rgb(80,78,255);
+      background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
+    }  
+    /*
+    Contenedor cartas
+    */
+  
+    .card-container {
+      overflow-x: hidden;
+      display: flex;
+      padding: 3rem;
+      justify-content: center;
+      margin-bottom: 5%;
+    }
+    
+    .card {
+      min-width: 170px;
+      min-height: 435px;
+      border-radius: 16px;
+      background-color: #17141d;
+      box-shadow: 1rem 0 1rem #000;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      transition: 0.2s;
+    }
+    
+    /*
+    Tags de las cartas
+    */
+   
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1rem 0 1rem;
+    }
+    
+    .tags div {
+      margin-right: 2%;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border: 3px solid #28242f;
+      border-radius: 2rem;
+    }
+    
+    /*
+    Títulos de la cartas
+    */
+  
+    .card .category-title {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    
+    .card .article-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .card .article-header {
+      margin-bottom: auto;
+    }
+    
+    .card .author {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 75px 1fr;
+    }
+    
+    .author .info .caption {
+      color: #8a8a8a;
+    }
+    
+    .card:not(:first-child) {
+      margin-left: -130px;
+    }
+    
+    /*
+    Transiciones de las cartas
+    */
+  
+    .card:hover {
+      transform: translateY(-1rem);
+    }
+    
+    .card:hover~.card{
+      transform: translateX(130px);
+    }
+   
+    /*
+    Centrar imagen cartas
+    */
+  
+    .imagenCentrar{
+      image-resolution: 300dpi;
+      margin-top: -25%;
+      margin-bottom: 10%;
+      align-content: center;
+    }
+    
+    /*
+    Alinear texto de abajo cartas
+    */
+  
+  
+  
+    /*
+    Alinear texto ID-Borja
+    */
+  
+    #alinearTextoborja{
+      margin-top: 0%;
+    }
+  
+     /*
+    Alinear texto ID-Pau
+    */
+  
+    #alinearTextopau{
+      margin-top: 0%;
+    }
+  
+     /*
+    Alinear texto ID-Santos
+    */
+  
+    #alinearTextosantos{
+      margin-top: 0%;
+    }
+  
+     /*
+    Alinear texto ID-Dario
+    */
+  
+    #alinearTextodario{
+      margin-top: 0%;
+    }
+  
+     /*
+    Alinear texto ID-Toni
+    */
+  
+    #alinearTextotoni{
+      margin-top: 0%;
+    }
+  
+    /*
+    Alinear tags de las cartas
+    */
+  
+    #alinearTags{
+      margin-top: 0%;
+    }
+  
+     /*
+    Alinear tag ID-Santos
+    */
+  
+    #alinearTagsantos{
+      margin-top: 35%;
+    }
+  
+     /*
+    Alinear tag ID-Pau
+    */
+  
+    #alinearTagpau{
+      margin-top: 0%;
+    }
+
+    /*
+    Alinear tag ID-Dario
+    */
+    #AlinearTagdario{
+      margin-top: 10%;
+    }
+
+    /*
+    Alinear tag ID-Pau
+    */
+    #alinearTagpau{
+      margin-top: 57%;
+    }
+
+    /*
+    Alinear tag ID-Borja
+    */
+    #alinearTagborja{
+       margin-top: 59%;
+    }
+
+    /*
+    Alinear tag ID-Toni
+    */
+    #alinearTagtoni{
+      margin-top: 56%;
+    }
+    
+    /*
+    Clases CSS de Santos (índex)
+    */
+    
+    #espaciado-nav{
+      margin-right: 100px;
+    }
+  
+    .contenedor{
+      width: 90%;
+      max-width: 1200px;
+      overflow: hidden;
+      margin: auto;
+      padding: 60px 0;
+    }
+    
+    header{
+        /*background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);*/
+        background-blend-mode: multiply,multiply ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 0%;
+    }
+    
+    .head{
+      padding: 0;
+      height: 100%;
+      
+      display: flex;
+      justify-content:  center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+    }
+    
+    .titulo{
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+    
+    .eslogan{
+      font-weight: 300;
+      font-size: 25px;
+    }
+  
+    #divImagenPortada{
+      margin-bottom: 0%;
+    }
+
+    #anchoMenu{
+      width: 64%;
+    }
+
+    #espaciadoLogos{
+     margin-top: 100%;
+     margin-left: -20%;
+    }
+
+   #alignContacto{
+     margin-left: 10%;
+     margin-bottom: 40%;
+   }
+
+   #alignButtoninicio{
+    margin-left: 7%;
+  }
+
+  #alignTexttitle{
+    margin-left: 5%;
+  }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Móvil grande (LISTOO)
+*/
+  @media only screen and (min-width: 720px) and (max-width: 1280px){
+
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      background: rgb(80,78,255);
+      background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
+    }  
+    /*
+    Contenedor cartas
+    */
+  
+    .card-container {
+      overflow-x: hidden;
+      display: flex;
+      padding: 3rem;
+      justify-content: center;
+      margin-bottom: 5%;
+    }
+    
+    .card {
+      min-width: 250px;
+      height: 350px;
+      border-radius: 16px;
+      background-color: #17141d;
+      box-shadow: 1rem 0 1rem #000;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      transition: 0.2s;
+    }
+    
+    /*
+    Tags de las cartas
+    */
+   
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1rem 0 1rem;
+    }
+    
+    .tags div {
+      margin-right: 2%;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border: 3px solid #28242f;
+      border-radius: 2rem;
+    }
+    
+    /*
+    Títulos de la cartas
+    */
+  
+    .card .category-title {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    
+    .card .article-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .card .article-header {
+      margin-bottom: auto;
+    }
+    
+    .card .author {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 75px 1fr;
+    }
+    
+    .author .info .caption {
+      color: #8a8a8a;
+    }
+    
+    .card:not(:first-child) {
+      margin-left: -130px;
+    }
+    
+    /*
+    Transiciones de las cartas
+    */
+  
+    .card:hover {
+      transform: translateY(-1rem);
+    }
+    
+    .card:hover~.card{
+      transform: translateX(130px);
+    }
+   
+    /*
+    Centrar imagen cartas
+    */
+  
+    .imagenCentrar{
+      image-resolution: 300dpi;
+      margin-top: -25%;
+      margin-bottom: 10%;
+    }
+    
+    /*
+    Alinear texto de abajo cartas
+    */
+  
+    .alinear{
+      margin-left: -30%;
+      margin-bottom: -10%;
+    }
+  
+    /*
+    Alinear texto ID-Borja
+    */
+  
+    #alinearTextoborja{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Pau
+    */
+  
+    #alinearTextopau{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Santos
+    */
+  
+    #alinearTextosantos{
+      margin-top: 0%;
+    }
+  
+     /*
+    Alinear texto ID-Dario
+    */
+  
+    #alinearTextodario{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Toni
+    */
+  
+    #alinearTextotoni{
+      margin-top: 15%;
+    }
+  
+    /*
+    Alinear tags de las cartas
+    */
+  
+    #alinearTags{
+      margin-top: 18%;
+    }
+  
+     /*
+    Alinear tag ID-Santos
+    */
+  
+    #alinearTagsantos{
+      margin-top: 2%;
+    }
+  
+     /*
+    Alinear tag ID-Pau
+    */
+  
+    #alinearTagpau{
+      margin-top: 18%;
+    }
+  
+    
+    /*
+    Clases CSS de Santos (índex)
+    */
+    
+    #espaciado-nav{
+      margin-right: 100px;
+    }
+  
+    .contenedor{
+      width: 90%;
+      max-width: 1200px;
+      overflow: hidden;
+      margin: auto;
+      padding: 60px 0;
+    }
+    
+    header{
+        /*background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);*/
+        background-blend-mode: multiply,multiply ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 0%;
+    }
+    
+    .head{
+      padding: 0;
+      height: 100%;
+      
+      display: flex;
+      justify-content:  center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+    }
+    
+    .titulo{
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+    
+    .eslogan{
+      font-weight: 300;
+      font-size: 25px;
+    }
+  
+    #divImagenPortada{
+      margin-bottom: 0%;
+    }
+
+    #anchoMenu{
+      width: 40%;
+    }
+
+    #alignButtoninicio{
+      margin-left: 7%;
+    }
+  
+    #alignTexttitle{
+      margin-left: 8%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Tablet orientation landscape (LISTA)
+*/
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      background: rgb(80,78,255);
+      background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
+    }  
+    /*
+    Contenedor cartas
+    */
+  
+    .card-container {
+      overflow-x: hidden;
+      display: flex;
+      padding: 3rem;
+      justify-content: center;
+      margin-bottom: 5%;
+    }
+    
+    .card {
+      min-width: 300px;
+      height: 350px;
+      border-radius: 16px;
+      background-color: #17141d;
+      box-shadow: 1rem 0 1rem #000;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      transition: 0.2s;
+    }
+    
+    /*
+    Tags de las cartas
+    */
+   
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 1rem 0 1rem;
+    }
+    
+    .tags div {
+      margin-right: 2%;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border: 3px solid #28242f;
+      border-radius: 2rem;
+    }
+    
+    /*
+    Títulos de la cartas
+    */
+  
+    .card .category-title {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    
+    .card .article-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .card .article-header {
+      margin-bottom: auto;
+    }
+    
+    .card .author {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 75px 1fr;
+    }
+    
+    .author .info .caption {
+      color: #8a8a8a;
+    }
+    
+    .card:not(:first-child) {
+      margin-left: -130px;
+    }
+    
+    /*
+    Transiciones de las cartas
+    */
+  
+    .card:hover {
+      transform: translateY(-1rem);
+    }
+    
+    .card:hover~.card{
+      transform: translateX(130px);
+    }
+   
+    /*
+    Centrar imagen cartas
+    */
+  
+    .imagenCentrar{
+      image-resolution: 300dpi;
+      margin-top: -25%;
+      margin-bottom: 10%;
+    }
+    
+    /*
+    Alinear texto de abajo cartas
+    */
+  
+    .alinear{
+      margin-left: -30%;
+      margin-bottom: -10%;
+    }
+  
+    /*
+    Alinear texto ID-Borja
+    */
+  
+    #alinearTextoborja{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Pau
+    */
+  
+    #alinearTextopau{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Santos
+    */
+  
+    #alinearTextosantos{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Dario
+    */
+  
+    #alinearTextodario{
+      margin-top: 15%;
+    }
+  
+     /*
+    Alinear texto ID-Toni
+    */
+  
+    #alinearTextotoni{
+      margin-top: 15%;
+    }
+  
+    /*
+    Alinear tags de las cartas
+    */
+  
+    #alinearTags{
+      margin-top: 18%;
+    }
+  
+     /*
+    Alinear tag ID-Santos
+    */
+  
+    #alinearTagsantos{
+      margin-top: 18%;
+    }
+  
+     /*
+    Alinear tag ID-Pau
+    */
+  
+    #alinearTagpau{
+      margin-top: 18%;
+    }
+  
+    
+    /*
+    Clases CSS de Santos (índex)
+    */
+    
+    #espaciado-nav{
+      margin-right: 100px;
+    }
+  
+    .contenedor{
+      width: 90%;
+      max-width: 1200px;
+      overflow: hidden;
+      margin: auto;
+      padding: 60px 0;
+    }
+    
+    header{
+        /*background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%), url(../Imagenes/Inicio.jpg);*/
+        background-blend-mode: multiply,multiply ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 0%;
+    }
+    
+    .head{
+      padding: 0;
+      height: 100%;
+      
+      display: flex;
+      justify-content:  center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+    }
+    
+    .titulo{
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+    
+    .eslogan{
+      font-weight: 300;
+      font-size: 25px;
+    }
+  
+    #divImagenPortada{
+      margin-bottom: 0%;
+    }
+  
+    #alignButtoninicio{
+      margin-left: 7%;
+    }
+  
+    #alignTexttitle{
+      margin-left: 7%;
+    }
+  
+  
+  
+  }
+
+
+
+
+
+
+
+
+

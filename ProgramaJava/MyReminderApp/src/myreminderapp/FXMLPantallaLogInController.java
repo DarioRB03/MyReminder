@@ -52,6 +52,7 @@ public class FXMLPantallaLogInController implements Initializable {
         // TODO
         //Se obtienen los usuarios de la base de datos y se meten en un ArrayList
         pum = new PooUsuarioModel();
+        arrayUsuarios = new ArrayList<PooUsuario>();
         arrayUsuarios = pum.getUsuarios();
     }    
 
