@@ -1,0 +1,56 @@
+Usuario{
+idUsuario int auto_increment CP
+nombre varchar(50)
+apellido varcnar(50)
+nick varchar(25)
+password varchar(15)
+}
+
+Administra{
+idAdmin int CP --> FK
+idUsuario int CP --> FK
+}
+
+Administrador{
+idAdmin int auto_increment CP
+nombre varchar(50)
+apellido varcnar(50)
+nick varchar(25)
+password varchar(15)
+}
+
+Tareas{
+idTarea int auto_increment CP
+titulo varchar(25)
+descripcion varchar(100)
+fechaTarea date
+prioridad int
+realizado boolean
+idModulo int --> FK
+}
+
+Eventos{
+idEvento int auto_increment CP
+titulo varchar(25)
+descripcion varchar(100)
+fechaEvento date
+prioridad int
+idModulo int --> FK
+}
+
+Modulos{
+idModulo int auto_increment CP
+titulo varchar(25)
+notaFinal float
+idUsuario int --> FK
+}
+
+Evaluacion{
+numEvaluacion int
+porcentaje float
+nota float
+idModulo int --> FK
+}
+
+
+
