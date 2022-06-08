@@ -9,3 +9,196 @@
     background: rgb(80,78,255);
     background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
   }
+
+
+ /*
+Móvil pequeño
+*/
+@media only screen and (min-width: 355px) and (max-width: 640px){
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background: rgb(80,78,255);
+    background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
+  }
+
+  #anchoMenu{
+    width: 60%;
+  }
+
+  #alignSymbolinicio{
+    margin-left: -15%;
+  }
+
+  #alignSymbolyt{
+    margin-left: -15%;
+  }
+
+  #alignSymbolgeneral{
+    margin-left: -15%;
+  }
+
+  #alignSymbolcalendario{
+    margin-left: -15%;
+  }
+
+  #alignSymbolmodulos{
+    margin-left: -15%;
+  }
+
+  #alignSymboltareas{
+    margin-left: -15%;
+  }
+
+  #alignSymbolsobrenosotros{
+    margin-right: -30%;
+  }
+
+  #alignSymbolcontacto{
+    margin-right: -30%;
+  }
+
+  #anchoMenu{
+		width: 64%;
+	  }
+  
+	  #espaciadoLogos{
+	   margin-top: 100%;
+	   margin-left: -20%;
+	  }
+  
+	 #alignContacto{
+	   margin-left: 10%;
+	   margin-bottom: 40%;
+	 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Móvil mediano
+*/
+@media only screen and (min-width: 359px) and (max-width: 667px){
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background: rgb(80,78,255);
+    background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
+  }
+
+  #anchoMenu{
+		width: 64%;
+	  }
+  
+	  #espaciadoLogos{
+	   margin-top: 100%;
+	   margin-left: -20%;
+	  }
+  
+	 #alignContacto{
+	   margin-left: 10%;
+	   margin-bottom: 40%;
+	 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Móvil grande
+*/
+@media only screen and (min-width: 720px) and (max-width: 1280px){
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background: rgb(80,78,255);
+    background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
+  }
+
+  #anchoMenu{
+		width: 64%;
+	  }
+  
+	  #alignAbajofooter{
+		  margin-top: 55%;
+	  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Tablet orientation 
+*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    background: rgb(80,78,255);
+    background: linear-gradient(90deg, rgba(80,78,255,1) 0%, rgba(217,0,255,1) 60%);
+  } 
+}
