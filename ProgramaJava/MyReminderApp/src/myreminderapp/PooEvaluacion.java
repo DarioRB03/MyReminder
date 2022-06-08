@@ -15,6 +15,13 @@ public class PooEvaluacion {
     private float porcentaje;
     private float nota;
 
+    /**
+     * Constructor de evaluacion con parametros
+     * @param idModulo id del modulo al que se asigna
+     * @param numEvaluacion numero de la evaluacion que representa
+     * @param porcentaje porcentaje de nota
+     * @param nota valor de la nota
+     */
     public PooEvaluacion(int idModulo, int numEvaluacion, float porcentaje, float nota) {
         this.idModulo = idModulo;
         this.numEvaluacion = numEvaluacion;

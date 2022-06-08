@@ -20,7 +20,16 @@ public class PooTarea {
     private int realizado;
 
 
-
+    /**
+     * Constructor de tarea con parametros
+     * @param idTarea id de la tarea creada
+     * @param idModulo id del modulo al que se asigna
+     * @param titulo titulo de la tarea
+     * @param descripcion descripcion de la tarea 
+     * @param fecha fecha de la tarea
+     * @param prioridad prioridad de la tarea, valores del 1 al 3
+     * @param realizado  si esta realizada la tarea (1) o no (2)
+     */
     public PooTarea(int idTarea, int idModulo, String titulo, String descripcion, String fecha, int prioridad, int realizado) {
         this.idTarea = idTarea;
         this.idModulo = idModulo;
@@ -90,6 +99,10 @@ public class PooTarea {
         this.realizado = realizado;
     }
     
+    /**
+     * Devuelve una string leíble con los datos de la tarea
+     * @return 
+     */
     @Override
     public String toString(){
         String texto;

@@ -10,11 +10,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase model de modulo
  * @author 1erDAM
  */
 public class PooModuloModel extends DBUtil {
     
+    /**
+     * Obtener un ArrayList de modulos de la base de datos
+     * @return ArrayList
+     */
     public ArrayList<PooModulo> getModulos(){
         ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
         try {
@@ -43,6 +47,11 @@ public class PooModuloModel extends DBUtil {
 		}
     }
     
+    /**
+     * Obtener un ArrayList de modulos correspondientes a un usuario específico de la base de datos
+     * @param idUsuario el usuario específico
+     * @return ArrayList
+     */
     public ArrayList<PooModulo> getModulosDeUsuario(int idUsuario){
         ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
         try {
@@ -71,16 +80,21 @@ public class PooModuloModel extends DBUtil {
 		}
     }
     
-    public boolean agregarModulo(int idUsuario, String titulo, float notaFinal) {
+    /**
+     * Inserta un modulo en la base de datos
+     * @param idUsuario id del usuario correspondiente al modulo añadido
+     * @param titulo titulo del modulo
+     * @return booleana
+     */
+    public boolean agregarModulo(int idUsuario, String titulo) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO modulos (idUsuario, titulo, notaFianl) VALUES (?, ?, ?)";
+			String insertSql = "INSERT INTO modulos (idUsuario, titulo) VALUES (?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
 			prest.setInt(1, idUsuario);
 			prest.setString(2, titulo);
-			prest.setFloat(3, notaFinal);
                         
 			prest.execute();
                         resultado = true;
@@ -94,7 +108,11 @@ public class PooModuloModel extends DBUtil {
 		}
 	} 
     
-    
+    /**
+     * Eliminar un modulo de la base de datos
+     * @param idModulo id del modulo que se elimina
+     * @return booleana
+     */
         public boolean eliminarModulo(int idModulo) {
 		Boolean resultado = false;
 		try {
@@ -117,17 +135,22 @@ public class PooModuloModel extends DBUtil {
 	
         }
 
-        
-            public boolean editarModulo(int idModulo, int idUsuario, String titulo, float notaFinal) {
+        /**
+         * Editar un modulo en la base de datos
+         * @param idModulo id del modulo a editar
+         * @param idUsuario id del usuario que se edita
+         * @param titulo titulo que se edita
+         * @return booleana
+         */
+            public boolean editarModulo(int idModulo, int idUsuario, String titulo) {
 		Boolean resultado = false;
 		try {
-			String Sql = "UPDATE modulos SET titulo=?, notaFinal=? WHERE idModulo=?";
+			String Sql = "UPDATE modulos SET titulo=? WHERE idModulo=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
-			prest.setInt(3, idModulo);
+			prest.setInt(2, idModulo);
 			prest.setString(1, titulo);
-			prest.setFloat(2, notaFinal);
 			
 			prest.execute();
                         resultado = true;

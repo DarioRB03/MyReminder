@@ -2,20 +2,24 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="490.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLPantallaOpcionesController">
+<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="490.0" prefWidth="960.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLPantallaOpcionesController">
    <children>
       <Button fx:id="buttonCerrarSesion" layoutX="122.0" layoutY="367.0" mnemonicParsing="false" onAction="#handelCerrarSesion" prefHeight="71.0" prefWidth="313.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Cerrar Sesión" textAlignment="CENTER">
          <font>
             <Font name="Yu Gothic Regular" size="30.0" />
          </font>
       </Button>
-      <ImageView fitHeight="240.0" fitWidth="240.0" layoutX="553.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="240.0" fitWidth="240.0" layoutX="570.0" layoutY="70.0" onMouseClicked="#handlelinkLogo" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../recursos/Logo.png" />
+         </image></ImageView>
       <Hyperlink fx:id="linkTyC" layoutX="16.0" layoutY="260.0" onAction="#handleLinkTyC" text="Terminos y Condiciones" underline="true">
          <font>
             <Font name="Yu Gothic Regular" size="30.0" />

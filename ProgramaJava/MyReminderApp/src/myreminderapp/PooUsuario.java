@@ -16,6 +16,14 @@ public class PooUsuario {
     private String nick;
     private String password;
 
+    /**
+     * Constructor de usuario con parametros
+     * @param idUsuario id del usuario creado
+     * @param nombre nombre del usuario
+     * @param apellido apellido(s) del usuario
+     * @param nick nick del usuario
+     * @param password contraseña del usuario
+     */
     public PooUsuario(int idUsuario, String nombre, String apellido, String nick, String password) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;

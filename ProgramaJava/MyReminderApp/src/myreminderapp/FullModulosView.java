@@ -4,42 +4,59 @@
  */
 package myreminderapp;
 
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
- *
+ * Clase de objeto vista de modulos
  * @author 1erDAM
  */
 public class FullModulosView {
-    
     private ArrayList<AnchorPane> allModulePanes = new ArrayList<AnchorPane>();
     private VBox mView;
-    /*private PooModuloModel modelModulo = new PooModuloModel();
-    private PooTareaModel modelTarea = new PooTareaModel();
-    private PooEventoModel modelEvento = new PooEventoModel();*/
+    private int alongar;
+    private ArrayList<PooModulo> arrayModulos;
+    private ArrayList<PooTarea> arrayTareas;
+    private ArrayList<PooEvento> arrayEventos;
+    private PooModuloModel pmm;
+    private PooTareaModel ptm;
+    private PooEventoModel pem;
+    private int log;
     
-    
-    public FullModulosView(PooUsuario usuarioActivo){
+    /**
+     * Crea un VBox de modulos
+     */
+    public FullModulosView(){
         
-        /*ArrayList<PooModulo> arrayModulos = modelModulo.getModulosDeUsuario(usuarioActivo.getIdUsuario());*/
-        /* */
-        PooModulo modTest = new PooModulo(1,1,"a",2);
-        PooModulo modTest2 = new PooModulo(2,1,"b",4);
-        ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
-        arrayModulos.add(modTest);
-        arrayModulos.add(modTest2);
-        /* */
+        alongar=0;
+        log = MyReminderApp.getLog();
+        
+        pmm = new PooModuloModel();
+        ptm = new PooTareaModel();
+        pem = new PooEventoModel();
+        arrayModulos = pmm.getModulosDeUsuario(log);
+        arrayTareas = ptm.getTareasDeUsuario(log);
+        arrayEventos = pem.getEventosDeUsuario(log);
+
+        
         int numModulos = 1;
         if (arrayModulos.size()==2){
             numModulos = 1;
@@ -52,112 +69,156 @@ public class FullModulosView {
         } 
         
         GridPane listadoModulos = new GridPane();
-        listadoModulos.setPrefSize(1180,850);
+        listadoModulos.setPrefSize(620,450);
         listadoModulos.setGridLinesVisible(true);
         
-        for (int j = 0; j < numModulos; j++){
-            for (int i = 0; i < 3; i++){
+        for (int i = 0; i < numModulos; i++){
+            for (int j = 0; j < 3; j++){
                 AnchorPane ap = new AnchorPane();
-                ap.setPrefSize(312, 260);
+                ap.setPrefSize(240, 240);
                 listadoModulos.add(ap,j,i);
                 allModulePanes.add(ap);
+                alongar += 140;
             }
         }
-        
-        Font font = new Font("System", 200);
-        Paint paintFill = Paint.valueOf("#a4a4a4");
-        BorderPane bp = new BorderPane();
-        bp.setStyle("border-style: dotted;");
-        Button create = new Button();
-        create.setOnAction((event) -> {
-            handleCreateAction(event);
-        });
-        create.setText("+");
-        create.setFont(font);
-        create.setTextFill(paintFill);
-        create.setStyle("padding: -20; background-color: white; border-color: white;");
-        bp.getChildren().add(create);
-        allModulePanes.get(0).getChildren().add(bp);
         
         popularModulos(arrayModulos);
         
         mView = new VBox(listadoModulos);
+        mView.setAlignment(Pos.BOTTOM_CENTER);
     }
     
+    /**
+     * Asigna los modulos a los paneles para popular la VBox
+     * @param array 
+     */
     public void popularModulos(ArrayList<PooModulo> array){
-        for (int i=1; i < array.size(); i++){
+        
+
+        
+        for (int i=0; i < array.size(); i++){
             PooModulo m = array.get(i);
-            AnchorPane ap = allModulePanes.get(i);
-           /* ArrayList<PooTarea> arrayTareas = modelTarea.getTareasDeUsuario(array.get(i).getIdUsuario());
-            ArrayList<PooEvento> arrayEventos = modelEvento.getEventosDeUsuario(array.get(i).getIdUsuario());
-            */
+            AnchorPane ap = allModulePanes.get(i+1);
            
-           /**/
-            PooTarea tarTest = new PooTarea(1,1,"a","aaa","2022-6-12",2,0);
-            PooTarea tarTest2 = new PooTarea(2,2,"b","bbb","2022-5-26",3,1);
-            ArrayList<PooTarea> arrayTareas = new ArrayList<PooTarea>();
-            arrayTareas.add(tarTest);
-            arrayTareas.add(tarTest2);
-            
-            PooEvento eveTest = new PooEvento(1,1,"a","aaa","2022-6-12",2);
-            PooEvento eveTest2 = new PooEvento(2,1,"b","bbb","2022-5-26",1);
-            ArrayList<PooEvento> arrayEventos = new ArrayList<PooEvento>();
-            arrayEventos.add(eveTest);
-            arrayEventos.add(eveTest2);
-           /**/
            
             if(ap.getChildren().size()>0){
                 ap.getChildren().remove(0);
-            }
-            
-            AnchorPane tp = new AnchorPane();
-            tp.setPrefSize(312, 260);
+            } 
+            Paint labelPaint = Paint.valueOf("#0066ff");
+            Font fontTit = new Font("Yu Gothic light",20);
             Text titulo = new Text(m.getTitulo());
-            tp.setTopAnchor(titulo,5.0);
-            tp.setLeftAnchor(titulo,5.0);
+
+            ap.setTopAnchor(titulo,10.0);
+            ap.setLeftAnchor(titulo,10.0);
+            titulo.setFill(labelPaint);
+            titulo.setFont(fontTit);
             
-            AnchorPane aNew = new AnchorPane();
+            ap.getChildren().add(titulo);
+            
+            Font fontTxt = new Font("Yu Gothic light", 15);
             Text txt = new Text(arrayTareas.size() + " tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
-            aNew.setTopAnchor(txt, 5.0);
-            aNew.setLeftAnchor(txt, 5.0);
-            aNew.getChildren().add(aNew);
+
+            ap.setTopAnchor(txt, 40.0);
+            ap.setLeftAnchor(txt, 10.0);
+
+            ap.getChildren().add(txt);
+            txt.setFont(fontTxt);
             
+            Font fontButton = new Font("Yu Gothic light", 14);
             Button button = new Button();
-            //Setting text to the button
             button.setOnAction((event) -> {
-                handleButtonAction(event, m, arrayTareas, arrayEventos);
+                handleButtonAction(event, m);
             });
-            button.setText(">");
-            button.setTranslateY(30);
+
+            button.setText("Ver");
+            button.setFont(fontButton);
+            button.setTextFill(labelPaint);
+            ap.setTopAnchor(button,82.0);
+            ap.setLeftAnchor(button,10.0);
             ap.getChildren().add(button);
             
-            tp.setBottomAnchor(aNew,5.0);
-            tp.getChildren().add(aNew);
+            
         }
+        Button create = new Button();
+        create.setOnAction((event) -> {
+            handleCreateAction(event);
+        });
+        create.setPrefWidth(100);
+
+        Font font = new Font(40);
+        create.setFont(font);
+        Paint pintura = Paint.valueOf("#c4c4c4");
+        create.setTextFill(pintura);
+        create.setStyle("-fx-background-color: white; -fx-border-color: white;");
+        
+        create.setText("+");
+        allModulePanes.get(0).setTranslateX(50);
+        allModulePanes.get(0).setTranslateY(10);
+        allModulePanes.get(0).getChildren().add(create);
     }
     
+    /**
+     * Obtener valor de la variable alongar
+     * @return 
+     */
+    public int getAlongar(){
+        return alongar;
+    }
+    
+    /**
+     * Obtener VBox de los modulos
+     * @return 
+     */
     public VBox getView(){
         return mView;
     }
 
-    private void handleButtonAction(ActionEvent event, PooModulo mod, ArrayList<PooTarea> arrTar, ArrayList<PooEvento> arrEve) {
-        System.out.println("Funciona El Boton: " + mod.getIdModulo()); 
-        String tareas = "";
-        String eventos = "";
-        for (PooTarea t : arrTar){
-            tareas += (t.getTitulo() + " - " + t.getDescripcion() + "\n");
-        }
-        for (PooEvento e : arrEve){
-            eventos += (e.getTitulo() + " - " + e.getDescripcion() + "\n");
-        }
+    /**
+     * Evento que nos lleva a la pantalla de crear modulo
+     * @param event 
+     */
+    private void handleCreateAction(ActionEvent event) {
+        System.out.println("botonOk");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLCrearModulo.fxml"));
         
-        Alert alertaInfo = new Alert(Alert.AlertType.INFORMATION);
-        alertaInfo.setHeaderText(mod.getTitulo());
-        alertaInfo.setContentText("Tareas\n" + tareas + "\n\nEventos\n" + eventos);
-        alertaInfo.showAndWait();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        
+            Stage myStage = (Stage) this.mView.getScene().getWindow();
+            myStage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPantallaLogInController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
-    private void handleCreateAction(ActionEvent event){
+
+    /**
+     * Evento que nos lleva a ver el contenido de un modulo
+     * Asigna valor a la estatica de idModVer
+     * @param event
+     * @param m 
+     */
+    private void handleButtonAction(ActionEvent event, PooModulo m) {
+        System.out.println("Boton " + m.getIdModulo() + " Ok");
+        MyReminderApp.setIdModVer(m.getIdModulo());
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLVerModulo.fxml"));
         
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+        
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        
+            Stage myStage = (Stage) this.mView.getScene().getWindow();
+            myStage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPantallaLogInController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

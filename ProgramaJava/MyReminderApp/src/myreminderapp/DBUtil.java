@@ -4,21 +4,26 @@
  */
 package myreminderapp;
 
-/**
- *
- * @author 1erDAM
- */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Clase utilitaria de acceso a la base de datos
+ * @author 1erDAM
+ */
 public class DBUtil {
+    
 	private Connection conn;
 	private String cadenaConexion = "jdbc:mysql://myreminder.ddns.net:3306/myre_myreminderdb";
 	private String nombreUsuario = "myre_myreminderdbusr";
 	private String password = "MyReminder1234!";
 	
+        /**
+         * Devuelve la conexion con la base de datos
+         * @return 
+         */
 	public Connection getConexion() {
 		
 		try {
@@ -31,6 +36,9 @@ public class DBUtil {
 		}
 	}
 	
+        /**
+         * Cierra la conexion con la base de datos
+         */
 	public void cerrarConexion() {
 		try {
 			this.conn.close();

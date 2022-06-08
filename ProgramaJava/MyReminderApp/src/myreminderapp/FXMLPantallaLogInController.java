@@ -23,7 +23,7 @@ import javafx.scene.control.Alert;
 
 
 /**
- * FXML Controller class
+ * Clase FXML Controller
  *
  * @author 1erDAM
  */
@@ -38,27 +38,30 @@ public class FXMLPantallaLogInController implements Initializable {
     @FXML
     private Button buttonRegister;
     
-/*
-    private PooUsuarioModel pum;*/
+
+    private PooUsuarioModel pum;
     private ArrayList<PooUsuario> arrayUsuarios;
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller
+     * Se muestra la pantalla de inicio de sesión
+     * Pide nick y contraseña
+     * Boton de inicio de sesión y de registro
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
- /*       pum = new PooUsuarioModel();
-        arrayUsuarios = pum.getUsuarios();*/
-        arrayUsuarios = new ArrayList<PooUsuario>();
-        PooUsuario p = new PooUsuario(1,"Pau","Test","p","23aA");
-        PooUsuario p2 = new PooUsuario(2,"Antoni","Test","a","1234");
-        arrayUsuarios.add(p);
-        arrayUsuarios.add(p2);
+        //Se obtienen los usuarios de la base de datos y se meten en un ArrayList
+        pum = new PooUsuarioModel();
+        arrayUsuarios = pum.getUsuarios();
     }    
 
+    /**
+     * Obtiene los datos de la interfaz y se comprueba que el nick y el usuario coincidan, 
+     * estableciendo una booleana a true y dando valor a la estática de id de usuario (log)
+     * @param event 
+     */
     @FXML
     private void handleIniciarSesionAction(ActionEvent event) {
-        
         String nick = fieldTextNick.getText();
         String passwd = fieldTextPasswd.getText();
         boolean logInCorrecto = false;
@@ -69,7 +72,9 @@ public class FXMLPantallaLogInController implements Initializable {
             }
         }
         
+        
         if (logInCorrecto){
+            //Si la booleana es correcta nos salta un alert de OK y nos lleva a la pantalla base
             
             Alert correcto = new Alert(Alert.AlertType.INFORMATION);
             correcto.setHeaderText("OK");
@@ -84,6 +89,7 @@ public class FXMLPantallaLogInController implements Initializable {
             Stage stage = new Stage();
         
                 stage.setScene(scene);
+                stage.setResizable(false);
                 stage.show();
         
                 Stage myStage = (Stage) this.buttonLogIn.getScene().getWindow();
@@ -93,6 +99,7 @@ public class FXMLPantallaLogInController implements Initializable {
             }
             
         } else {
+            //Si la booleana es incorrecta nos salta un error de inicio de sesion
             
             Alert error = new Alert(Alert.AlertType.ERROR);
             error.setHeaderText("ERROR DE INICIO DE SESIÓN");
@@ -104,6 +111,10 @@ public class FXMLPantallaLogInController implements Initializable {
         
     }
 
+    /**
+     * Nos lleva a la página de registro
+     * @param event 
+     */
     @FXML
     private void handleRegistrarseAction(ActionEvent event) {
         try {
@@ -113,6 +124,7 @@ public class FXMLPantallaLogInController implements Initializable {
             Stage stage = new Stage();
         
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
         
             Stage myStage = (Stage) this.buttonLogIn.getScene().getWindow();

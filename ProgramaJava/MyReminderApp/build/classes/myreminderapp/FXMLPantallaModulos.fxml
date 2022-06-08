@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="-1.0" minWidth="-1.0" prefHeight="490.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLPantallaModulosController">
+<AnchorPane id="AnchorPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="-1.0" minWidth="-1.0" prefHeight="490.0" prefWidth="960.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLPantallaModulosController">
    <children>
       <Line endX="660.0" endY="490.0" startX="660.0" stroke="#575757" />
       <Button fx:id="botonTareasCercanas" layoutX="672.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleTareasCercanasAction" text="Tareas">
@@ -80,11 +80,11 @@
             </Text>
          </children>
       </Pane>
-      <ScrollPane fx:id="scrollPanel" prefHeight="490.0" prefWidth="660.0">
+      <ScrollPane fx:id="scrollPanel" prefHeight="490.0" prefWidth="660.0" style="-fx-background-color: white;">
          <content>
-            <AnchorPane layoutX="10.0" prefHeight="490.0" prefWidth="640.0">
+            <AnchorPane layoutX="10.0" prefHeight="490.0" prefWidth="640.0" style="-fx-background-color: white;">
                <children>
-                  <Pane fx:id="modulosPane" layoutX="10.0" prefHeight="490.0" prefWidth="620.0" />
+                  <Pane fx:id="modulosPane" layoutX="10.0" prefHeight="490.0" prefWidth="620.0" style="-fx-background-color: white;"/>
                </children>
             </AnchorPane>
          </content>

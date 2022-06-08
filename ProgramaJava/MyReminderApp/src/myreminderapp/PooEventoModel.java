@@ -13,11 +13,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * Clase model de evento
  * @author 1erDAM
  */
 public class PooEventoModel extends DBUtil{
-    
+        /**
+         * Obtener un ArrayList de eventos de la base de datos
+         * @return ArrayList
+         */
         public ArrayList<PooEvento> getEventos(){
             ArrayList<PooEvento> eventos = new ArrayList<PooEvento>();
             
@@ -47,6 +50,11 @@ public class PooEventoModel extends DBUtil{
             }
         }
         
+        /**
+         * Obtener un ArrayList de eventos correspondientes a un usuario específico de la base de datos
+         * @param idUsuarioActivo id del usuario correspondiente
+         * @return ArrayList
+         */
         public ArrayList<PooEvento> getEventosDeUsuario(int idUsuarioActivo){
             ArrayList<PooEvento> eventos = new ArrayList<PooEvento>();
             
@@ -77,7 +85,15 @@ public class PooEventoModel extends DBUtil{
             }
         }
     
-    
+        /**
+         * Inserta un evento en la base de datos
+         * @param idModulo id del modulo del evento 
+         * @param titulo titulo del evento
+         * @param descripcion descripcion del evento
+         * @param fechaEvento fecha del evento
+         * @param prioridad prioridad del evento, valores de 1 a 3
+         * @return booleana
+         */
         public boolean agregarEvento(int idModulo, String titulo, String descripcion, String fechaEvento, int prioridad) {
 		Boolean resultado = false;
 		try {
@@ -103,7 +119,11 @@ public class PooEventoModel extends DBUtil{
 		}
 	} 
     
-    
+        /**
+         * Eliminar un evento de la base de datos
+         * @param idEvento id del evento a eliminar
+         * @return booleana
+         */
         public boolean eliminarEvento(int idEvento) {
 		Boolean resultado = false;
 		try {
@@ -126,7 +146,16 @@ public class PooEventoModel extends DBUtil{
 	
         }
 
-        
+            /**
+             * Editar un evento de la base de datos
+             * @param idEvento id del evento a cambiar
+             * @param idModulo id del modulo al que pertenece el evento que se cambia
+             * @param titulo titulo del evento que se cambia
+             * @param descripcion descripcion del evento que se cambia
+             * @param fechaEvento fecha del evento que se cambia
+             * @param prioridad prioridad del evento a cambiar, de 1 a 3
+             * @return booleana
+             */
             public boolean editarEvento(int idEvento, int idModulo, String titulo, String descripcion, String fechaEvento, int prioridad) {
 		Boolean resultado = false;
 		try {
@@ -154,6 +183,11 @@ public class PooEventoModel extends DBUtil{
 	
             }
             
+            /**
+             * Obtener una ObservableList de eventos correspondientes a un usuario específico de la base de datos
+             * @param idUsuarioActivo id del usuario correspondiente a el array de eventos que se obtiene
+             * @return ObservableList
+             */
             public ObservableList<PooEvento> getEvento(int idUsuarioActivo){
 
                 ObservableList<PooEvento> eventosObservables = FXCollections.observableArrayList();
@@ -187,6 +221,12 @@ public class PooEventoModel extends DBUtil{
 		this.cerrarConexion();
 	}
 }
+    /**
+     * Obtener una ArrayList de 3 eventos correspondientes a un usuario específico de la base de datos
+     * de fecha más cercana
+     * @param idUsuarioActivo id del usuario correspondiente a los eventos que se obtienen
+     * @return ArrayList
+     */
     public ArrayList<PooEvento> getEventosCerca(int idUsuarioActivo){
             ArrayList<PooEvento> eventos = new ArrayList<PooEvento>();
             

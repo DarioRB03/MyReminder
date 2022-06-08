@@ -14,7 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 /**
- * FXML Controller class
+ * Clase FXML Controller
  *
  * @author 1erDAM
  */
@@ -28,12 +28,13 @@ public class FXMLPantallaCalendarioController implements Initializable {
     private FullCalendarView fcv;
 
     /**
-     * Initializes the controller class.
+     * Inicializa la clase controller
+     * Se muestra un calendario funcional autogenerado a través de la clase FullCalendarView
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-
+        //Crea el calendario y lo añade al panel de calendario
         fcv = new FullCalendarView(YearMonth.now());
         this.calenPane.getChildren().add(fcv.getView());
         

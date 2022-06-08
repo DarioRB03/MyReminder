@@ -12,11 +12,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
+ * Clase model de evaluacion
  * @author 1erDAM
  */
 public class PooEvaluacionModel extends DBUtil {
     
+        /**
+         * Obtener un ArrayList de evaluaciones de la base de datos
+         * @return ArrayList 
+         */
         public ArrayList<PooEvaluacion> getEvaluacion(){
             ArrayList<PooEvaluacion> arrayEvaluaciones = new ArrayList<PooEvaluacion>();
             try{
@@ -43,6 +47,11 @@ public class PooEvaluacionModel extends DBUtil {
 	}
         }
     
+        /**
+         * Obtener un ArrayList de evaluaciones correspondientes a un modulo específico de la base de datos
+         * @param idModulo el módulo específico
+         * @return ArrayList
+         */
         public ArrayList<PooEvaluacion> getEvaluacionDeModulo(int idModulo){
             ArrayList<PooEvaluacion> arrayEvaluaciones = new ArrayList<PooEvaluacion>();
             try{
@@ -70,6 +79,11 @@ public class PooEvaluacionModel extends DBUtil {
 	}
         }
         
+        /**
+         * devuelve un ObservableList de evaluaciones correspondientes a un modulo
+         * @param idModulo el modulo correspondiente
+         * @return la ObservableList
+         */
         public ObservableList<PooEvaluacion> getEva(int idModulo){
             ObservableList<PooEvaluacion> evaluacionesObservables = FXCollections.observableArrayList();
 
@@ -101,6 +115,14 @@ public class PooEvaluacionModel extends DBUtil {
 	}
         }
         
+        /**
+         * Inserta una evaluacion en la base de datos
+         * @param idModulo id del modulo correspondiente a la evaluacion
+         * @param numEvaluacion numero de la evaluacion correspondiente a la evaluacion
+         * @param procentaje porcentaje que cuenta de la evaluacion en la nota
+         * @param nota valor de la nota de la evaluacion
+         * @return booleana
+         */
         public boolean agregarEvaluacion(int idModulo, int numEvaluacion, float procentaje,float nota) {
 		Boolean resultado = false;
 		try {
@@ -125,7 +147,12 @@ public class PooEvaluacionModel extends DBUtil {
 		}
 	} 
     
-    
+        /**
+         * Eliminar una evaluacion de la base de datos
+         * @param idModulo id del modulo correspondiente a la evaluacion
+         * @param idEvaluacion id de la evaluacion correspondiente
+         * @return booleana
+         */
         public boolean eliminarEvaluacion(int idModulo, int idEvaluacion) {
 		Boolean resultado = false;
 		try {
@@ -149,7 +176,14 @@ public class PooEvaluacionModel extends DBUtil {
 	
         }
 
-        
+        /**
+         * Editar evaluacion en la base de datos
+         * @param idModulo id de modulo correspondiente a la evaluacion a cambiar
+         * @param numEvaluacion numero de la evaluacion que se cambia
+         * @param procentaje porcentaje a cambiar
+         * @param nota nota a cambiar
+         * @return booleana
+         */
             public boolean editarEvaluacion(int idModulo, int numEvaluacion, float procentaje,float nota) {
 		Boolean resultado = false;
 		try {
