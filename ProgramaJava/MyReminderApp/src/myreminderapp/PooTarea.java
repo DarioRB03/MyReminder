@@ -6,7 +6,7 @@ package myreminderapp;
 
 
 /**
- *
+ * Clase de objeto tarea
  * @author 1erDAM
  */
 public class PooTarea {

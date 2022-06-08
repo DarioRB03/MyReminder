@@ -5,7 +5,7 @@
 package myreminderapp;
 
 /**
- *
+ * Clase de objeto usuario
  * @author 1erDAM
  */
 public class PooUsuario {
