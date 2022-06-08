@@ -102,3 +102,50 @@
     margin-top: 20%;
     cursor: pointer;
   }
+
+
+
+  /*
+Móvil pequeño (LISTO FALTAA EL TÍTULO)
+*/
+@media only screen and (min-width: 355px) and (max-width: 640px){
+
+}
+
+
+
+
+/*
+Móvil mediano (LISTA FALTA TÍTULO)
+*/
+@media only screen and (min-width: 359px) and (max-width: 667px){
+
+}
+
+
+
+
+
+
+
+
+
+/*
+Móvil grande (LISTA FALTA TÍTULO)
+*/
+@media only screen and (min-width: 720px) and (max-width: 1280px){
+
+}
+
+
+
+
+
+
+
+/*
+Tablet orientation landscape (LISTO FALTA EL TÍTULO)
+*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+  
+}
