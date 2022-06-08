@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLCrearModuloController">
+   <children>
+      <Text fx:id="tituloTxt" layoutX="62.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tituloField" layoutX="148.0" layoutY="81.0" prefHeight="31.0" prefWidth="188.0" promptText="..." style="-fx-border-color: black;">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </TextField>
+      <Text fx:id="CrearModuloTxt" fill="#0066ff" layoutX="61.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Modulo">
+         <font>
+            <Font name="Yu Gothic Regular" size="25.0" />
+         </font>
+      </Text>
+      <Separator layoutX="1.0" layoutY="139.0" prefHeight="2.0" prefWidth="980.0" style="-fx-border-color: black; -fx-background-color: black;" />
+      <TextField fx:id="editarPorcField" layoutX="205.0" layoutY="277.0" prefHeight="45.0" prefWidth="75.0" promptText="..." style="-fx-border-color: black;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="editarNotaField" layoutX="205.0" layoutY="336.0" prefHeight="45.0" prefWidth="75.0" promptText="..." style="-fx-border-color: black;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Text fx:id="evaluacionTxt" layoutX="57.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Evaluación">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="configEvTxt" layoutX="55.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configurar Evaluación">
+         <font>
+            <Font name="Yu Gothic Regular" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="editarPorcTxt" layoutX="56.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Porcentaje">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="editarPorcLabel" layoutX="308.0" layoutY="271.0" text="\%">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Text fx:id="editarNotaTxt" layoutX="111.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nota">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="buttonCrear" layoutX="397.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleCrearAction" prefHeight="45.0" prefWidth="134.0" style="-fx-background-color: white; -fx-border-color: #0066ff; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Crear" textAlignment="CENTER" textFill="#0066ff">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Button>
+      <Separator layoutX="459.0" layoutY="143.0" opacity="0.51" orientation="VERTICAL" prefHeight="266.0" prefWidth="8.0" style="-fx-background-color: black; -fx-border-color: black;" />
+      <Text fx:id="añadirEvTxt" layoutX="564.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Evaluación Adicional">
+         <font>
+            <Font name="Yu Gothic Regular" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="añadirPorcTxt" layoutX="566.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Porcentaje">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="añadirNotaTxt" layoutX="619.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nota">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="añadirPorcField" layoutX="691.0" layoutY="220.0" prefHeight="45.0" prefWidth="75.0" promptText="..." style="-fx-border-color: black;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="añadirNotaField" layoutX="691.0" layoutY="290.0" prefHeight="45.0" prefWidth="75.0" promptText="..." style="-fx-border-color: black;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Label fx:id="añadirPorcLabel" layoutX="781.0" layoutY="228.0" text="\%">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonConfirmar" layoutX="336.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleConfirmarAction" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: #dddddd; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Confirmar" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonAñadir" layoutX="687.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleAñadirAction" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: #dddddd; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Añadir" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="ComboBoxEv" layoutX="208.0" layoutY="216.0" prefHeight="45.0" prefWidth="75.0" promptText="Nº" style="-fx-background-color: white; -fx-border-color: black;" />
+      <Button fx:id="buttonVolver" layoutX="900.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleVolverAction" style="-fx-background-color: white; -fx-border-color: #777; -fx-border-radius: 20; -fx-border-width: 1;" text="&lt;" textFill="#707070">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Separator layoutX="1.0" layoutY="408.0" prefHeight="2.0" prefWidth="980.0" style="-fx-border-color: black; -fx-background-color: black;" />
+   </children>
+</AnchorPane>
