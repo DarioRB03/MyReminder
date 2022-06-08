@@ -6,6 +6,7 @@ package myreminderapp;
 
 import javafx.scene.paint.Paint;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -15,6 +16,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -38,9 +41,12 @@ public class FXMLPantallaBaseController implements Initializable {
     private Button buttonOpciones;
     @FXML
     private AnchorPane rootPane;
+    
     private int log;
     private Paint activeButtonPaint;
     private Paint unactiveButtonPaint;
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -56,7 +62,6 @@ public class FXMLPantallaBaseController implements Initializable {
         buttonEventos.setTextFill(unactiveButtonPaint);
         buttonCalendario.setTextFill(unactiveButtonPaint);
         buttonOpciones.setTextFill(unactiveButtonPaint);
-
     }    
 
     @FXML

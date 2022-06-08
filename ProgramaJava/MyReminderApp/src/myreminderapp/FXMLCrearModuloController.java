@@ -128,7 +128,8 @@ public class FXMLCrearModuloController implements Initializable {
         arrayEvaluaciones.add(ev3);
         
         for (PooEvaluacion e : arrayEvaluaciones){
-            listaEv.add(String.valueOf(e.getNumEvaluacion()));
+            String numero = String.valueOf(e.getNumEvaluacion());
+            listaEv.add(numero);
         }
         
         ComboBoxEv.setItems(listaEv);
@@ -181,7 +182,7 @@ public class FXMLCrearModuloController implements Initializable {
     private void handleAñadirAction(ActionEvent event) {/*Añadir evaluacion*/
         float porc = Float.parseFloat(añadirPorcField.getText());
         float nota = Float.parseFloat(añadirNotaField.getText());
-        int idEv = arrayEvaluaciones.size()+1;
+        int idEv = listaEv.size()+1;
         PooEvaluacion nueva = new PooEvaluacion(idModulo, idEv, porc, nota);
         
         System.out.println(String.valueOf(nueva.getIdModulo()) + " - " + String.valueOf(nueva.getNumEvaluacion()) + " - " + String.valueOf(nueva.getPorcentaje()) + " - " + String.valueOf(nueva.getNota()));

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLVerEventoController">
+<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="960.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLVerEventoController">
    <children>
       <Text fx:id="IdTxt" layoutX="125.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
          <font>
@@ -79,7 +79,7 @@
       </Label>
       <TextArea fx:id="DescripLabel" editable="false" layoutX="488.0" layoutY="194.0" prefHeight="148.0" prefWidth="314.0" wrapText="true">
          <font>
-            <Font name="Yu Gothic Regular" size="24.0" />
+            <Font name="Yu Gothic Regular" size="15.0" />
          </font>
       </TextArea>
       <Button fx:id="buttonVolver" layoutX="869.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleVolverAction" style="-fx-background-color: white; -fx-border-color: #777; -fx-border-radius: 20; -fx-border-width: 1;" text="&lt;" textFill="#707070">

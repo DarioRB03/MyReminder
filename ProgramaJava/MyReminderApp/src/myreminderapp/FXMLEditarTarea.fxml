@@ -22,7 +22,7 @@
             <Font name="Yu Gothic Regular" size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="TituloEventoField" layoutX="180.0" layoutY="89.0" maxHeight="31.0" maxWidth="188.0" promptText="..." style="-fx-border-color: black;">
+      <TextField fx:id="TituloTareaField" layoutX="180.0" layoutY="89.0" maxHeight="31.0" maxWidth="188.0" promptText="..." style="-fx-border-color: black;">
          <font>
             <Font name="Yu Gothic Regular" size="20.0" />
          </font>
@@ -35,7 +35,7 @@
       </Text>
       <TextArea fx:id="DescripTextArea" layoutX="89.0" layoutY="228.0" prefHeight="148.0" prefWidth="314.0" promptText="Introduzca la descripción..." style="-fx-border-color: black;">
          <font>
-            <Font name="Yu Gothic Regular" size="20.0" />
+            <Font name="Yu Gothic Regular" size="15.0" />
          </font>
       </TextArea>
       <Separator layoutX="458.0" layoutY="157.0" orientation="VERTICAL" prefHeight="252.0" prefWidth="3.0" style="-fx-background-color: gray;" />

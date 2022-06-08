@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -32,38 +33,11 @@ import javafx.stage.Stage;
  */
 public class FXMLEditarModuloController implements Initializable {
 
+    
+    
+    
     @FXML
     private Text tituloTxt;
-    @FXML
-    private Text editarPorcTxt;/**/
-    @FXML
-    private Text editarNotaTxt;/**/
-    @FXML
-    private Label editarPorcLabel;
-    @FXML
-    private Text añadirPorcTxt;/**/
-    @FXML
-    private Text añadirNotaTxt;/**/
-    @FXML
-    private Label añadirPorcLabel;
-    @FXML
-    private Button buttonConfirmar;/**/
-    @FXML
-    private Button buttonAñadir;/**/
-    @FXML
-    private ComboBox<String> ComboBoxEv;/**/
-    @FXML
-    private Button buttonVolver;/**/
-    
-    private ObservableList listaEv = FXCollections.observableArrayList();
-    
-    private ArrayList<PooModulo> arrayModulos;
-    private ArrayList<PooEvaluacion> arrayEvaluaciones;
-    private PooEvaluacionModel pem;
-    private PooModuloModel pmm;
-    private int idModulo;
-    private int log;
-    private PooModulo modulo;
     @FXML
     private TextField tituloField;
     @FXML
@@ -77,15 +51,47 @@ public class FXMLEditarModuloController implements Initializable {
     @FXML
     private Text EditarEvTxt;
     @FXML
+    private Text editarPorcTxt;
+    @FXML
+    private Label editarPorcLabel;
+    @FXML
+    private Text editarNotaTxt;
+    @FXML
     private Text añadirEvTxt;
+    @FXML
+    private Text añadirPorcTxt;
+    @FXML
+    private Text añadirNotaTxt;
     @FXML
     private TextField añadirPorcField;
     @FXML
     private TextField añadirNotaField;
     @FXML
+    private Label añadirPorcLabel;
+    @FXML
+    private Button buttonConfirmar;
+    @FXML
+    private Button buttonAñadir;
+    @FXML
+    private ComboBox<?> ComboBoxEv;
+    @FXML
+    private Button buttonVolver;
+    @FXML
     private Button buttonAplicar1;
     @FXML
     private Button buttonEliminar1;
+    
+    
+    private PooModulo modulo;
+    
+    private ObservableList listaEv = FXCollections.observableArrayList();
+    
+    private ArrayList<PooModulo> arrayModulos;
+    private ArrayList<PooEvaluacion> arrayEvaluaciones;
+    private PooEvaluacionModel pem;
+    private PooModuloModel pmm;
+    private int idModulo;
+    private int log;
     
     /**
      * Initializes the controller class.
@@ -129,11 +135,12 @@ public class FXMLEditarModuloController implements Initializable {
         pem = new PooEvaluacionModel();
         pmm = new PooModuloModel();
         arrayModulos = pmm.getModulosDeUsuario(log);
-        arrayEvaluaciones = pem.getEvaluacionDeModulo(idModulo);
-        */
-
+        arrayEvaluaciones = pem.getEvaluacionDeModulo(idModulo);*/
+        
+        
         for (PooEvaluacion e : arrayEvaluaciones){
-            listaEv.add(String.valueOf(e.getNumEvaluacion()));
+            String numero = String.valueOf(e.getNumEvaluacion());
+            listaEv.add(numero);
         }
         
         
@@ -147,9 +154,9 @@ public class FXMLEditarModuloController implements Initializable {
     }    
 
     @FXML
-    private void handleAplicarAction(ActionEvent event) {
-        /*
-        pmm.editarModulo(idModulo, log, tituloTxt.getText());*/
+    private void handleAplicarAction(ActionEvent event) {/*
+        pmm.editarModulo(idModulo, log, tituloField.getText());*/
+        
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLVerModulo.fxml"));
         
@@ -190,21 +197,29 @@ public class FXMLEditarModuloController implements Initializable {
 
     @FXML
     private void handleConfirmarAction(ActionEvent event) {
+        System.out.println("Funciona confirmar");
         int ind = Integer.parseInt(ComboBoxEv.getValue().toString());
         PooEvaluacion ev = arrayEvaluaciones.get(ind);
         
-        float porc = Float.parseFloat(editarPorcTxt.getText());
-        float nota = Float.parseFloat(editarNotaTxt.getText());
+        float porc = Float.parseFloat(editarPorcField.getText());
+        float nota = Float.parseFloat(editarNotaField.getText());
+        
+        ev.setPorcentaje(porc);
+        ev.setNota(nota);
         
         arrayEvaluaciones.add(ind, ev);/*
         pem.editarEvaluacion(idModulo, ind, porc, nota);*/
+        
+        Alert alertaInfo = new Alert(Alert.AlertType.INFORMATION);
+        alertaInfo.setHeaderText("EVALUACION CONFIRMADA");
+        alertaInfo.setContentText(ev.getIdModulo() + " - " + ev.getNumEvaluacion() + " - " + ev.getPorcentaje() + " - " + ev.getNota());
+        alertaInfo.showAndWait();
     }
 
     @FXML
     private void handleAñadirAction(ActionEvent event) {
-        
-        float porc = Float.parseFloat(añadirPorcTxt.getText());
-        float nota = Float.parseFloat(añadirNotaTxt.getText());
+        float porc = Float.parseFloat(añadirPorcField.getText());
+        float nota = Float.parseFloat(añadirNotaField.getText());
         int idEv = arrayEvaluaciones.size()+1;
         PooEvaluacion nueva = new PooEvaluacion(idModulo, idEv, porc, nota);
         
@@ -212,6 +227,11 @@ public class FXMLEditarModuloController implements Initializable {
         listaEv.add(String.valueOf(nueva.getNumEvaluacion()));
         ComboBoxEv.setItems(listaEv);/*
         pem.agregarEvaluacion(idModulo, idEv, porc, nota);*/
+        
+        Alert alertaInfo = new Alert(Alert.AlertType.INFORMATION);
+        alertaInfo.setHeaderText("EVALUACION AÑADIDA");
+        alertaInfo.setContentText(nueva.getIdModulo() + " - " + nueva.getNumEvaluacion() + " - " + nueva.getPorcentaje() + " - " + nueva.getNota());
+        alertaInfo.showAndWait();
     }
 
     @FXML
@@ -248,9 +268,9 @@ public class FXMLEditarModuloController implements Initializable {
     }
     
     private void verEv(){
-        int ind = Integer.parseInt(ComboBoxEv.getValue());
+        int ind = Integer.parseInt(ComboBoxEv.getValue().toString());
         PooEvaluacion ev = arrayEvaluaciones.get(ind);
-        editarPorcTxt.setText(String.valueOf(ev.getPorcentaje()));
-        editarNotaTxt.setText(String.valueOf(ev.getNota()));
+        editarPorcField.setText(String.valueOf(ev.getPorcentaje()));
+        editarNotaField.setText(String.valueOf(ev.getNota()));
     }
 }

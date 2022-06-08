@@ -18,7 +18,7 @@ public class PooUsuarioModel extends DBUtil{
         public ArrayList<PooUsuario> getUsuarios(){
             ArrayList<PooUsuario> arrayUsuarios = new ArrayList<PooUsuario>();
         try {
-			String insertSql = "SELECT idUsuario, nombre, apellido, nick, password FROM usuarios";
+			String insertSql = "SELECT idUsuario, nombre, apellido, nick, MD5(password) FROM usuarios";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			ResultSet rs = prest.executeQuery();
@@ -48,7 +48,7 @@ public class PooUsuarioModel extends DBUtil{
         public boolean agregarUsuario(String nombre, String apellido, String nick, String password ) {
 		Boolean resultado = false;
 		try {
-			String insertSql = "INSERT INTO usuarios (nombre, apellido, nick, password) VALUES (?, ?, ?, ?)";
+			String insertSql = "INSERT INTO usuarios (nombre, apellido, nick, MD5(password)) VALUES (?, ?, ?, ?)";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
 			
@@ -96,7 +96,7 @@ public class PooUsuarioModel extends DBUtil{
             public boolean editarUsuario(int idUsuario, String nombre, String apellido, String nick, String password) {
 		Boolean resultado = false;
 		try {
-			String Sql = "UPDATE usuarios SET nombre=?, apellido=?, nick=?, password=? WHERE idUsuario=?";
+			String Sql = "UPDATE usuarios SET nombre=?, apellido=?, nick=?, MD5(password)=? WHERE idUsuario=?";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			

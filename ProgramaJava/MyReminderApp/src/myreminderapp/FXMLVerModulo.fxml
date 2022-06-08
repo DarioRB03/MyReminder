@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLVerModuloController">
+<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="960.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLVerModuloController">
    <children>
       <Text fx:id="IdTxt" layoutX="166.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
          <font>
