@@ -18,20 +18,19 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 
 
-/**
- * Clase de objeto calendario
- * @author 1erDAM
- */
+
 public class FullCalendarView {
 
     private ArrayList<AnchorPaneNode> allCalendarDays = new ArrayList<>(35);
+    private PooTareaModel ptm;
+    private PooEventoModel pem;
     private VBox view;
     private Text calendarTitle;
     private YearMonth currentYearMonth;
 
     private boolean temaOscuro;
     /**
-     * Crear una VBox calendario
+     * Create a calendar view
      * @param yearMonth year month to create the calendar of
      */
     public FullCalendarView(YearMonth yearMonth) {
@@ -82,42 +81,34 @@ public class FullCalendarView {
     }
 
     /**
-     * Asigna los dias del calendario para corresponder a la fecha apropiada
-     * @param yearMonth año y mes de la fecha a renderizar
+     * Set the days of the calendar to correspond to the appropriate date
+     * @param yearMonth year and month of month to render
      */
     public void populateCalendar(YearMonth yearMonth) {
         // Get the date we want to start with on the calendar
         LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
         LocalDate actualDate = LocalDate.now();
         System.out.println(actualDate);
-                  
-            
-            int log = MyReminderApp.getLog();
+        
+        /**/
             ArrayList<PooTarea> arrayTareas = new ArrayList<PooTarea>();
             ArrayList<PooEvento> arrayEventos = new ArrayList<PooEvento>();
-            PooTarea t1 = new PooTarea(1,1,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-            PooTarea t2 = new PooTarea(2,1,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-            PooTarea t3 = new PooTarea(3,1,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-            PooTarea t4 = new PooTarea(4,2,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-            PooTarea t5 = new PooTarea(5,2,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-            arrayTareas.add(t1);
-            arrayTareas.add(t2);
-            arrayTareas.add(t3);
-            
-        
-            PooEvento e1 = new PooEvento(1,1,"Titulo evento","Descripcion evento","2022-06-09",3);
-            PooEvento e2 = new PooEvento(2,1,"Titulo evento","Descripcion evento","2022-06-09",3);
-            PooEvento e3 = new PooEvento(3,1,"Titulo evento","Descripcion evento","2022-06-09",3);
-            PooEvento e4 = new PooEvento(4,2,"Titulo evento","Descripcion evento","2022-06-09",3);
-            arrayEventos.add(e1);
-            arrayEventos.add(e2);
-            arrayEventos.add(e3);
-            
-            if(MyReminderApp.getMostrarSegundoModulo()==1){
-                arrayTareas.add(t4);
-                arrayTareas.add(t5);
-                arrayEventos.add(e4);
-            }
+            /*
+            ptm = new PooTareaModel();
+            pem = new PooEventoModel();*/
+            int log = MyReminderApp.getLog();/*
+            ArrayList<PooTarea> arrayTareas = ptm.getTareasDeUsuario(log);
+            ArrayList<PooEvento> arrayEventos = pem.getEventosDeUsuario(log);
+            */
+            PooTarea tarTest = new PooTarea(1,1,"a","aaa","2022-06-12",2,0);
+            PooTarea tarTest2 = new PooTarea(2,2,"b","bbb","2022-05-30",3,0);
+            PooTarea tarTest3 = new PooTarea(3,2,"c","bbb","2022-05-26",1,0);
+            PooTarea tarTest4 = new PooTarea(4,1,"d","xd","2022-06-12",1,0);
+            arrayTareas.add(tarTest);
+            arrayTareas.add(tarTest2);
+            arrayTareas.add(tarTest3);
+            arrayTareas.add(tarTest4);
+        /**/
         
         // Dial back the day until it is MONDAY (unless the month starts on a monday)
         while (!calendarDate.getDayOfWeek().toString().equals("MONDAY") ) {
@@ -132,7 +123,14 @@ public class FullCalendarView {
             ap.setDate(calendarDate);
             if (ap.getDate().equals(actualDate)){
                 Paint pintura = Paint.valueOf("0000ff");
-                Paint pintura2 = Paint.valueOf("ffffff");
+                Paint pintura2 = Paint.valueOf("ffffff");/*
+                if (temaOscuro){
+                    pintura = Paint.valueOf("#0000ff");
+                    pintura2 = Paint.valueOf("#ffffff");
+                } else {
+                    pintura = Paint.valueOf("#0000ff");
+                    pintura2 = Paint.valueOf("#ffffff");
+                }*/
                 
                 txt.setFill(pintura);
                 Circle cir = new Circle(9);
@@ -151,6 +149,7 @@ public class FullCalendarView {
             String fecha = calendarDate.toString();
             
             Button button = new Button();
+            //Setting text to the button
             button.setOnAction((event) -> {
                 handleButtonAction(event, button, arrayTareas, arrayEventos, fecha);
             });
@@ -218,7 +217,7 @@ public class FullCalendarView {
     }
 
     /**
-     * Retrocede el mes en 1. Repopular el calendario con las fechas correctas.
+     * Move the month back by one. Repopulate the calendar with the correct dates.
      */
     private void previousMonth() {
         currentYearMonth = currentYearMonth.minusMonths(1);
@@ -229,7 +228,7 @@ public class FullCalendarView {
     }
 
     /**
-     * Avanza el mes en 1. Repopular el calendario con las fechas correctas.
+     * Move the month forward by one. Repopulate the calendar with the correct dates.
      */
     private void nextMonth() {
         currentYearMonth = currentYearMonth.plusMonths(1);
@@ -239,39 +238,20 @@ public class FullCalendarView {
         populateCalendar(currentYearMonth);
     }
 
-    /**
-     * Devuelve la VBox del calendario
-     * @return 
-     */
     public VBox getView() {
         return view;
     }
 
-    /**
-     * Devuelve todos los paneles de las fechas del calendario
-     * @return 
-     */
     public ArrayList<AnchorPaneNode> getAllCalendarDays() {
         return allCalendarDays;
     }
 
-    /**
-     * Asigna todos los pabeles de las fechas del calendario
-     * @param allCalendarDays 
-     */
     public void setAllCalendarDays(ArrayList<AnchorPaneNode> allCalendarDays) {
         this.allCalendarDays = allCalendarDays;
     }
     
-    /**
-     * Muestra las tareas y eventos del dia seleccionado
-     * @param e
-     * @param button
-     * @param arrayTareas
-     * @param arrayEventos
-     * @param fecha 
-     */
     private void handleButtonAction(ActionEvent e, Button button, ArrayList<PooTarea> arrayTareas, ArrayList<PooEvento> arrayEventos, String fecha) {
+        System.out.println("Funciona El Boton: " + button.getId()); 
         
         String contenidoTareas = "";
         String contenidoEventos = "";
@@ -296,11 +276,7 @@ public class FullCalendarView {
         alertaInfo.showAndWait();
     }
     
-    /**
-     * Convierte al español las fechas para mayor accesibilidad
-     * @param mes
-     * @return 
-     */
+    
     public String convertirMes(String mes){
         String mesConvertido;
         

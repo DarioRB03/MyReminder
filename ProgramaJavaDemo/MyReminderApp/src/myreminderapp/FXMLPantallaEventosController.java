@@ -27,7 +27,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
- * Clase FXML Controller
+ * FXML Controller class
  *
  * @author 1erDAM
  */
@@ -54,20 +54,20 @@ public class FXMLPantallaEventosController implements Initializable {
     @FXML
     private Button buttonEventoCrear;
     /**
-     * Inicializa la clase controller
-     * Nos muestra una tabla con los eventos del usuario a los cuales se puede acceder
-     * y un botón para crear un evento nuevo
+     * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //Recuper el ID de usuario activo de las estáticas
         log = MyReminderApp.getLog();
-        
-        //Crear el model y la lista observable para el tableview, se añaden los objetos del model a la lista
-        eventoModel = new PooEventoModel();
+        /*
+        eventoModel = new PooEventoModel();*/
         eventosObservable = FXCollections.observableArrayList();
-        eventosObservable = eventoModel.getEvento(log);
+       /*eventosObservable = eventoModel.getEvento(log);*/
         
+        PooEvento e1 = new PooEvento(1,1,"a","bb","2022-05-05",1);
+        PooEvento e2 = new PooEvento(2,1,"b","bb","2022-08-08",1);
+        eventosObservable.add(e1);
+        eventosObservable.add(e2);
        
         this.columnaIdModulo.setCellValueFactory(new PropertyValueFactory("IdModulo"));   
         this.columnaIdEvento.setCellValueFactory(new PropertyValueFactory("IdEvento"));
@@ -76,18 +76,12 @@ public class FXMLPantallaEventosController implements Initializable {
         this.columnaFecha.setCellValueFactory(new PropertyValueFactory("FechaEvento"));
         this.columnaPrioridad.setCellValueFactory(new PropertyValueFactory("Prioridad"));
         
-        //Se añade la lista a la tabla
         this.tableViewEventos.setItems(eventosObservable);
         
     }    
 
-    /**
-     * Nos lleva a la página de creación de evento
-     * @param event 
-     */
     @FXML
     private void handleCrearEventoAction(ActionEvent event) {
-        
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLCrearEvento.fxml"));
         
@@ -105,13 +99,8 @@ public class FXMLPantallaEventosController implements Initializable {
         }
     }
 
-    /**
-     * Al hacer doble click en un evento de la tabla, nos lleva a la página de ver dicho evento
-     * @param event 
-     */
     @FXML
     private void handleVerEventoClick(MouseEvent event) {
-        
          if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount()==2){
             PooEvento e = this.tableViewEventos.getSelectionModel().getSelectedItem();
             MyReminderApp.setIdEveVer(e.getIdEvento());

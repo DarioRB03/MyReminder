@@ -7,7 +7,7 @@ package myreminderapp;
 import java.util.Date;
 
 /**
- * Clase de objeto evento
+ *
  * @author 1erDAM
  */
 public class PooEvento {
@@ -22,15 +22,6 @@ public class PooEvento {
     public PooEvento() {
     }
 
-    /**
-     * Constructor de evento con parametros
-     * @param idEvento id del evento creado
-     * @param idModulo id del modulo al que se asigna
-     * @param titulo titulo del evento
-     * @param descripcion descripcion del evento 
-     * @param fechaEvento fecha del evento
-     * @param prioridad prioridad del evento, valores de 1 a 3
-     */
     public PooEvento(int idEvento, int idModulo, String titulo, String descripcion, String fechaEvento, int prioridad) {
         this.idEvento = idEvento;
         this.idModulo = idModulo;
@@ -88,10 +79,6 @@ public class PooEvento {
         this.prioridad = prioridad;
     }
     
-    /**
-     * Devuelve una string leíble con los datos del evento
-     * @return 
-     */
     @Override
     public String toString(){
         String texto;

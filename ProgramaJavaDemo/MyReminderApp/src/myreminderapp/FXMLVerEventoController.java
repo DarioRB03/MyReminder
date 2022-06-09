@@ -23,7 +23,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * Clase FXML Controller 
+ * FXML Controller class
  *
  * @author 1erDAM
  */
@@ -70,40 +70,40 @@ public class FXMLVerEventoController implements Initializable {
     private PooModulo modulo;
     
     /**
-     * Muestra los datos del evento seleccionado
-     * Inicializar la clase controller
+     * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //Obtener id de usuario y de evento a ver desde estáticas, se crean un evento y un modulo bases
         log=MyReminderApp.getLog();
         idEvVer=MyReminderApp.getIdEveVer();
-        
         evento = new PooEvento();
-        modulo = new PooModulo();
-        
-        //Se establecen los models y se obtienen los arrays
+        modulo = new PooModulo();/*
         eventoModel = new PooEventoModel();
         arrayEventos = eventoModel.getEventosDeUsuario(log);
         moduloModel = new PooModuloModel();
-        arrayModulos = moduloModel.getModulosDeUsuario(log);
+        arrayModulos = moduloModel.getModulosDeUsuario(log);*/
         
+        arrayEventos = new ArrayList<PooEvento>();
+        PooEvento e1 = new PooEvento(1,2,"a","bb","2022-05-05",1);
+        PooEvento e2 = new PooEvento(2,2,"b","bb","2022-08-08",1);
+        arrayEventos.add(e1);
+        arrayEventos.add(e2);
+        arrayModulos = new ArrayList<PooModulo>();
+        PooModulo m1 = new PooModulo(2,1,"Titulo de modulo",5);
+        arrayModulos.add(m1);
         
-        //Asigna el evento coincidente con el id de evento al ya creado
         for (PooEvento e : arrayEventos){
             if (e.getIdEvento()==idEvVer){
                 evento = e;
             }
         }
         
-        //Asigna el modulo coincidente con el id de modulo al ya creado
         for (PooModulo m : arrayModulos){
             if (m.getIdModulo()==evento.getIdModulo()){
                 modulo = m;
             }
         }
         
-        //Se establecen  los datos del evento y su respectivo modulo en la interfaz
         IdLabel.setText(String.valueOf(evento.getIdEvento()));
         
         TituloLabel.setText(evento.getTitulo());
@@ -125,13 +125,8 @@ public class FXMLVerEventoController implements Initializable {
         DescripLabel.setText(evento.getDescripcion());
     }    
 
-    /**
-     * Nos lleva al editor de dicho evento
-     * @param event 
-     */
     @FXML
     private void handleEditarAction(ActionEvent event) {
-       
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLEditarEvento.fxml"));
         
@@ -149,13 +144,8 @@ public class FXMLVerEventoController implements Initializable {
         }
     }
 
-    /**
-     * Nos devuelve a la página base
-     * @param event 
-     */
     @FXML
     private void handleVolverAction(ActionEvent event) {
-        
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaBase.fxml"));
         

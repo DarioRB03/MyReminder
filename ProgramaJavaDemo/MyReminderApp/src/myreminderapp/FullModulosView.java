@@ -26,67 +26,50 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * Clase de objeto vista de modulos
+ *
  * @author 1erDAM
  */
 public class FullModulosView {
     private ArrayList<AnchorPane> allModulePanes = new ArrayList<AnchorPane>();
     private VBox mView;
     private int alongar;
-    private ArrayList<PooModulo> arrayModulos;
-    private ArrayList<PooTarea> arrayTareas;
-    private ArrayList<PooEvento> arrayEventos;
-    private int log;
     
-    /**
-     * Crea un VBox de modulos
-     */
     public FullModulosView(){
         
         alongar=0;
-        log = MyReminderApp.getLog();
         
-        arrayModulos = new ArrayList<PooModulo>();
-        arrayTareas = new ArrayList<PooTarea>();
-        arrayEventos = new ArrayList<PooEvento>();
-        PooModulo m1 = new PooModulo(1,1,"Modulo 1",5);
-        PooModulo m2 = new PooModulo(2,1,"Modulo 2",5);
-        arrayModulos.add(m1);
+
+        PooModulo modTest = new PooModulo(1,1,"Titulo Largo",2);
+        PooModulo modTest2 = new PooModulo(2,1,"b",4);
+        PooModulo modTest3 = new PooModulo(3,1,"a",2);
+        PooModulo modTest4 = new PooModulo(4,1,"b",4);
+        PooModulo modTest5 = new PooModulo(5,1,"a",2);
+        PooModulo modTest6 = new PooModulo(6,1,"b",4);
+        PooModulo modTest7 = new PooModulo(7,1,"b",4);
+        PooModulo modTest8 = new PooModulo(8,1,"a",2);
+        PooModulo modTest9 = new PooModulo(9,1,"b",4);
+
+        ArrayList<PooModulo> arrayModulos = new ArrayList<PooModulo>();
+        arrayModulos.add(modTest);
+        arrayModulos.add(modTest2);
+        arrayModulos.add(modTest3);
+        arrayModulos.add(modTest4);
+        arrayModulos.add(modTest5);
+        arrayModulos.add(modTest6);
+        arrayModulos.add(modTest7);
+        arrayModulos.add(modTest8);
+        arrayModulos.add(modTest9);
         
-        if(MyReminderApp.getMostrarSegundoModulo()==1){
-            arrayModulos.add(m2);
-        }
-        
-        PooTarea t1 = new PooTarea(1,1,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-        PooTarea t2 = new PooTarea(2,1,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-        PooTarea t3 = new PooTarea(3,1,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-        PooTarea t4 = new PooTarea(4,2,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-        PooTarea t5 = new PooTarea(5,2,"Titulo tarea","Descripcion tarea","2022-06-09",3,0);
-        arrayTareas.add(t1);
-        arrayTareas.add(t2);
-        arrayTareas.add(t3);
-        arrayTareas.add(t4);
-        arrayTareas.add(t5);
-        
-        PooEvento e1 = new PooEvento(1,1,"Titulo evento","Descripcion evento","2022-06-09",3);
-        PooEvento e2 = new PooEvento(2,1,"Titulo evento","Descripcion evento","2022-06-09",3);
-        PooEvento e3 = new PooEvento(3,1,"Titulo evento","Descripcion evento","2022-06-09",3);
-        PooEvento e4 = new PooEvento(4,2,"Titulo evento","Descripcion evento","2022-06-09",3);
-        arrayEventos.add(e1);
-        arrayEventos.add(e2);
-        arrayEventos.add(e3);
-        arrayEventos.add(e4);
-        
-        if (arrayTareas==null){
-            arrayTareas = new ArrayList<PooTarea>(0);
-        }
-        if (arrayEventos==null){
-            arrayEventos = new ArrayList<PooEvento>(0);
-        }
-        
-        
-         
-        int numModulos = arrayModulos.size();
+        int numModulos = 1;
+        if (arrayModulos.size()==2){
+            numModulos = 1;
+        } else if ((arrayModulos.size()%3) == 0) {
+            numModulos = ((arrayModulos.size()/3)+1);
+        } else if (((arrayModulos.size()-1)%3) == 0){
+            numModulos = ((arrayModulos.size()/4)+1);
+        } else if (((arrayModulos.size()-2)%3) == 0){
+            numModulos = ((arrayModulos.size()/5)+1);
+        } 
         
         GridPane listadoModulos = new GridPane();
         listadoModulos.setPrefSize(620,450);
@@ -108,17 +91,29 @@ public class FullModulosView {
         mView.setAlignment(Pos.BOTTOM_CENTER);
     }
     
-    /**
-     * Asigna los modulos a los paneles para popular la VBox
-     * @param array 
-     */
     public void popularModulos(ArrayList<PooModulo> array){
         
-
+        /**/
+        PooTarea tarTest = new PooTarea(1,1,"a","aaa","2022-6-12",2,0);
+        PooTarea tarTest2 = new PooTarea(2,2,"b","bbb","2022-5-26",3,1);
+        ArrayList<PooTarea> arrayTareas = new ArrayList<PooTarea>();
+        arrayTareas.add(tarTest);
+        arrayTareas.add(tarTest2);
+            
+        PooEvento eveTest = new PooEvento(1,1,"a","aaa","2022-6-12",2);
+        PooEvento eveTest2 = new PooEvento(2,1,"b","bbb","2022-5-26",1);
+        ArrayList<PooEvento> arrayEventos = new ArrayList<PooEvento>();
+        arrayEventos.add(eveTest);
+        arrayEventos.add(eveTest2);
+        /**/
         
         for (int i=0; i < array.size(); i++){
             PooModulo m = array.get(i);
             AnchorPane ap = allModulePanes.get(i+1);
+           /* ArrayList<PooTarea> arrayTareas = modelTarea.getTareasDeUsuario(array.get(i).getIdUsuario());
+            ArrayList<PooEvento> arrayEventos = modelEvento.getEventosDeUsuario(array.get(i).getIdUsuario());
+            */
+           
            
            
             if(ap.getChildren().size()>0){
@@ -136,18 +131,7 @@ public class FullModulosView {
             ap.getChildren().add(titulo);
             
             Font fontTxt = new Font("Yu Gothic light", 15);
-            Text txt = new Text();
-            
-            if (arrayTareas==null&&arrayEventos==null){
-                txt = new Text("0 tareas pendientes\n0 eventos pendientes");
-            } else if (arrayEventos==null){
-                txt = new Text(arrayTareas.size() + " tareas pendientes\n0 eventos pendientes");
-            } else if (arrayTareas==null){
-                txt = new Text("0 tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
-            } else {
-                txt = new Text(arrayTareas.size() + " tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
-            }
-            
+            Text txt = new Text(arrayTareas.size() + " tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
 
             ap.setTopAnchor(txt, 40.0);
             ap.setLeftAnchor(txt, 10.0);
@@ -188,26 +172,14 @@ public class FullModulosView {
         allModulePanes.get(0).getChildren().add(create);
     }
     
-    /**
-     * Obtener valor de la variable alongar
-     * @return 
-     */
     public int getAlongar(){
         return alongar;
     }
     
-    /**
-     * Obtener VBox de los modulos
-     * @return 
-     */
     public VBox getView(){
         return mView;
     }
 
-    /**
-     * Evento que nos lleva a la pantalla de crear modulo
-     * @param event 
-     */
     private void handleCreateAction(ActionEvent event) {
         System.out.println("botonOk");
         try {
@@ -227,12 +199,6 @@ public class FullModulosView {
         }
     }
 
-    /**
-     * Evento que nos lleva a ver el contenido de un modulo
-     * Asigna valor a la estatica de idModVer
-     * @param event
-     * @param m 
-     */
     private void handleButtonAction(ActionEvent event, PooModulo m) {
         System.out.println("Boton " + m.getIdModulo() + " Ok");
         MyReminderApp.setIdModVer(m.getIdModulo());

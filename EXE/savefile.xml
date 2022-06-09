@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>O:\pauqu\DescargasEdge\localReminderApp\ProgramaJava\MyReminderApp\dist\MyReminderApp.jar</jar>
-  <outfile>O:\pauqu\DescargasEdge\localReminderApp\EXE\myReminderApp.exe</outfile>
+  <outfile>O:\pauqu\DescargasEdge\programa.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>

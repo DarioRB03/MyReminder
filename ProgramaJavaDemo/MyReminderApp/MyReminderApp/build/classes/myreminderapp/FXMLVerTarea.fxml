@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="490.0" prefWidth="960.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLVerTareaController">
+   <children>
+      <Text fx:id="DescripTxt" layoutX="523.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Separator layoutY="84.0" prefHeight="5.0" prefWidth="960.0" style="-fx-border-color: black; -fx-background-color: black;" />
+      <Text fx:id="TareaTxt" layoutX="75.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarea">
+         <font>
+            <Font name="Yu Gothic Regular" size="25.0" />
+         </font>
+      </Text>
+      <Separator layoutY="413.0" prefHeight="3.0" prefWidth="960.0" style="-fx-border-color: black; -fx-background-color: black;" />
+      <Button fx:id="buttonEditar" layoutX="388.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleEditarAction" prefHeight="57.0" prefWidth="141.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 30;" text="Editar" textAlignment="CENTER">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Button>
+      <Separator layoutX="442.0" layoutY="90.0" orientation="VERTICAL" prefHeight="323.0" prefWidth="3.0" style="-fx-background-color: black; -fx-border-color: black;" />
+      <TextArea fx:id="DescripLabel" editable="false" layoutX="543.0" layoutY="183.0" prefHeight="148.0" prefWidth="314.0" wrapText="true">
+         <font>
+            <Font name="Yu Gothic Regular" size="15.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="buttonVolver" layoutX="880.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleVolverAction" style="-fx-background-color: white; -fx-border-color: #777; -fx-border-radius: 20; -fx-border-width: 1;" text="&lt;" textFill="#707070">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Text fx:id="RealizadoTxt" layoutX="60.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Realizado:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="RealizadoLabel" layoutX="199.0" layoutY="373.0" text="Label">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Label>
+      <Text fx:id="IdTxt" layoutX="135.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="PrioridadTxt" layoutX="68.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prioridad:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="FechaTxt" layoutX="95.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="TituloTxt" layoutX="101.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="ModuloTxt" layoutX="84.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modulo:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="IdLabel" layoutX="203.0" layoutY="105.0" text="Label">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="TituloLabel" layoutX="202.0" layoutY="163.0" text="Label">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="ModuloLabel" layoutX="202.0" layoutY="223.0" text="Label">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="FechaLabel" layoutX="201.0" layoutY="276.0" text="Label">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="PrioridadLabel" layoutX="199.0" layoutY="328.0" text="Label">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

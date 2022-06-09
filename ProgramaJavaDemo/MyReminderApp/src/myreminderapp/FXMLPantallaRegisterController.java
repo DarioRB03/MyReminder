@@ -22,7 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * Clase FXML Controller
+ * FXML Controller class
  *
  * @author 1erDAM
  */
@@ -40,30 +40,26 @@ public class FXMLPantallaRegisterController implements Initializable {
     private Button buttonRegistrarse;
     @FXML
     private Button buttonVolver;
-
-    private PooUsuarioModel pum;
+/*
+    private PooUsuarioModel pum;*/
     private ArrayList<PooUsuario> arrayUsuarios;
     /**
-     * Inicializa la clase controller
-     * Nos muestra una pantalla de registro con su respectivo botón
+     * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        //Crea el model de usuarios y obtiene los usuarios de la base de datos, se insertan en el array de usuarios
-        pum = new PooUsuarioModel();
-        arrayUsuarios = pum.getUsuarios();
+        
+       /* pum = new PooUsuarioModel();
+        arrayUsuarios = pum.getUsuarios();*/
+        arrayUsuarios = new ArrayList<PooUsuario>();
+        PooUsuario p = new PooUsuario(1,"Pau","Test","p","23aA");
+        arrayUsuarios.add(p);
     }    
 
-    /**
-     * Se obtienen los campos de la interfaz
-       Se comprueba que no estén vacios, si lo están salta alerta.
-       Se comprueba que el nick de usuario a registrar no existe aún
-       Al crear salta alerta de confirmacon y nos lleva a la pantalla de LogIn
-     * @param event 
-     */
     @FXML
     private void handleRegistrarseAction(ActionEvent event) {
+        
         String nick = fillTextNickR.getText();
         String nombre = fillTextNombreR.getText();
         String apellidos = fillTextApellidosR.getText();
@@ -112,9 +108,9 @@ public class FXMLPantallaRegisterController implements Initializable {
             correcto.setHeaderText("OK");
             correcto.setContentText("Registro completado para el usuario:\n\nNICK:  " + nick + "\nNOMBRE:   " + nombre + "\nAPELLIDOS:  " + apellidos + "\nCONTRASEÑA:  " + passwd);
             correcto.showAndWait();
-            
+            /*
             pum.agregarUsuario(nombre, apellidos, nick, passwd);
-            
+            */
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaLogIn.fxml"));
         
@@ -136,13 +132,8 @@ public class FXMLPantallaRegisterController implements Initializable {
        
     }
 
-    /**
-     * Nos devuelve a la pantalla de LogIn
-     * @param event 
-     */
     @FXML
     private void handleVolverAction(ActionEvent event) {
- 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLPantallaLogIn.fxml"));
         

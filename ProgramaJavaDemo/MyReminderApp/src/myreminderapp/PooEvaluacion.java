@@ -5,24 +5,17 @@
 package myreminderapp;
 
 /**
- *Clase de objeto evaluacion
+ *
  * @author 1erDAM
  */
 public class PooEvaluacion {
     
     private int idModulo;
     private int numEvaluacion;
-    private int porcentaje;
-    private int nota;
+    private float porcentaje;
+    private float nota;
 
-    /**
-     * Constructor de evaluacion con parametros
-     * @param idModulo id del modulo al que se asigna
-     * @param numEvaluacion numero de la evaluacion que representa
-     * @param porcentaje porcentaje de nota
-     * @param nota valor de la nota
-     */
-    public PooEvaluacion(int idModulo, int numEvaluacion, int porcentaje, int nota) {
+    public PooEvaluacion(int idModulo, int numEvaluacion, float porcentaje, float nota) {
         this.idModulo = idModulo;
         this.numEvaluacion = numEvaluacion;
         this.porcentaje = porcentaje;
@@ -48,19 +41,19 @@ public class PooEvaluacion {
         this.numEvaluacion = numEvaluacion;
     }
 
-    public int getPorcentaje() {
+    public float getPorcentaje() {
         return porcentaje;
     }
 
-    public void setPorcentaje(int porcentaje) {
+    public void setPorcentaje(float porcentaje) {
         this.porcentaje = porcentaje;
     }
 
-    public int getNota() {
+    public float getNota() {
         return nota;
     }
 
-    public void setNota(int nota) {
+    public void setNota(float nota) {
         this.nota = nota;
     }
     

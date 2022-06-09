@@ -20,7 +20,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 /**
- * Clase FXML Controller
+ * FXML Controller class
  *
  * @author 1erDAM
  */
@@ -56,40 +56,32 @@ public class FXMLPantallaModulosController implements Initializable {
     private Text labelFecha3;
     @FXML
     private Pane modulosPane;
-    @FXML
-    private ScrollPane scrollPanel;
-    
     
     private FullModulosView fmv;
     private int log;
-
+/*
     private PooTareaModel ptm;
-    private PooEventoModel pem;
+    private PooEventoModel pem;*/
     private ArrayList<PooTarea> arrayTareas;
     private ArrayList<PooEvento> arrayEventos;
-    
+    @FXML
+    private ScrollPane scrollPanel;
     
     /**
-     * Nos muestra un grid panel con modulos scrolleable, se pueden crear nuevos modulos y ver los ya creados
-     * Podemos elegir si ver entre tareas o eventos cercanos
-     * Inicializa la clase controller
+     * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        //Obterner el ID de usuario de las estáticas
         log=MyReminderApp.getLog();
-        
-        //Se crean los models
+        /*
         ptm = new PooTareaModel();
         pem = new PooEventoModel();
-        
-        //Se crea el VBox de modulos, se ajusta al tamaño y se añade al panel dentro del scroll panel
+        */
         fmv = new FullModulosView();
-        this.modulosPane.setPrefHeight(this.scrollPanel.getPrefHeight() -600 + fmv.getAlongar());
+        this.modulosPane.setPrefHeight(this.scrollPanel.getPrefHeight() -600+ fmv.getAlongar());
         this.modulosPane.getChildren().add(fmv.getView());
         
-        //Vaciamos los campos del listado de tareas y eventos cercanos
         nombrePanel1.setText("...");
         textFieldDescripcion1.setText("...");
         labelFecha1.setText("...");
@@ -103,16 +95,21 @@ public class FXMLPantallaModulosController implements Initializable {
         labelFecha3.setText("...");
     }    
 
-    /**
-     * Muestra las tareas cercanas
-     * @param event 
-     */
     @FXML
     private void handleTareasCercanasAction(ActionEvent event) {
-        //Obtener el array de tareas cercanas de la base de datos
+        /*
         arrayTareas=ptm.getTareasCerca(log);
+        */
+        arrayTareas = new ArrayList<PooTarea>();
         
-        //Dependiendo del tamaño del array, se añaden las tareas a el listado
+        PooTarea t = new PooTarea(1,1,"a","aa","aa",1,0);
+        PooTarea t2 = new PooTarea(2,1,"b","bb","bb",1,0);
+        PooTarea t3 = new PooTarea(3,1,"c","cc","cc",1,0);
+        
+        arrayTareas.add(t);
+        arrayTareas.add(t2);
+        arrayTareas.add(t3);
+        
         if (arrayTareas.size()==1){
         
             nombrePanel1.setText(arrayTareas.get(0).getTitulo());
@@ -143,16 +140,20 @@ public class FXMLPantallaModulosController implements Initializable {
         }
     }
 
-    /**
-     * Muestra los eventos cercanos
-     * @param event 
-     */
     @FXML
     private void handleEventosCercanosAction(ActionEvent event) {
-        //Obtener el array de eventos cercanos de la base de datos
-        arrayEventos=pem.getEventosCerca(log);
+        /*
+        arrayEventos=pem.getEventosCerca(log);*/
+        arrayEventos = new ArrayList<PooEvento>();
         
-        //Dependiendo del tamaño del array, se añaden los eventos a el listado
+        PooEvento e = new PooEvento();
+        PooEvento e2 = new PooEvento();
+        PooEvento e3 = new PooEvento();
+        
+        arrayEventos.add(e);
+        arrayEventos.add(e2);
+        arrayEventos.add(e3);
+        
         if(arrayEventos.size()==1){
         
             nombrePanel1.setText(arrayEventos.get(0).getTitulo());
