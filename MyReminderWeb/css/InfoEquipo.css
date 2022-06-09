@@ -229,8 +229,14 @@
 
   #divImagenPortada{
     margin-bottom: 0%;
+  
+  
   }
 
+
+  #aumentarTamanyo{
+    font-size: 110%;
+  }
 
 
 
@@ -270,8 +276,9 @@ Móvil pequeño (LISTO FALTA CARDS)
     /*
     Contenedor cartas
     */
-  
+   
     .card-container {
+      margin-bottom: 40%;
       overflow-x: hidden;
       display: flex;
       padding: 3rem;
@@ -363,7 +370,8 @@ Móvil pequeño (LISTO FALTA CARDS)
       image-resolution: 300dpi;
       margin-top: -25%;
       margin-bottom: 10%;
-      align-content: center;
+      margin-left: -120%;
+      
     }
     
     /*
@@ -440,7 +448,7 @@ Móvil pequeño (LISTO FALTA CARDS)
     Alinear tag ID-Dario
     */
     #AlinearTagdario{
-      margin-top: 19%;
+      margin-top: 15%;
     }
 
     #alinearTagpau{
@@ -463,6 +471,7 @@ Móvil pequeño (LISTO FALTA CARDS)
     #espaciado-nav{
       margin-right: 100px;
     }
+
   
     .contenedor{
       width: 90%;
@@ -527,6 +536,7 @@ Móvil pequeño (LISTO FALTA CARDS)
    #alignTexttitle{
      margin-left: 5%;
    }
+  
   }
 
 
