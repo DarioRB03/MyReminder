@@ -52,21 +52,24 @@ public class FullModulosView {
         pmm = new PooModuloModel();
         ptm = new PooTareaModel();
         pem = new PooEventoModel();
+        arrayModulos = new ArrayList<PooModulo>();
+        arrayTareas = new ArrayList<PooTarea>();
+        arrayEventos = new ArrayList<PooEvento>();
         arrayModulos = pmm.getModulosDeUsuario(log);
+        
         arrayTareas = ptm.getTareasDeUsuario(log);
         arrayEventos = pem.getEventosDeUsuario(log);
-
         
-        int numModulos = 1;
-        if (arrayModulos.size()==2){
-            numModulos = 1;
-        } else if ((arrayModulos.size()%3) == 0) {
-            numModulos = ((arrayModulos.size()/3)+1);
-        } else if (((arrayModulos.size()-1)%3) == 0){
-            numModulos = ((arrayModulos.size()/4)+1);
-        } else if (((arrayModulos.size()-2)%3) == 0){
-            numModulos = ((arrayModulos.size()/5)+1);
-        } 
+        if (arrayTareas==null){
+            arrayTareas = new ArrayList<PooTarea>(0);
+        }
+        if (arrayEventos==null){
+            arrayEventos = new ArrayList<PooEvento>(0);
+        }
+        
+        
+         
+        int numModulos = arrayModulos.size();
         
         GridPane listadoModulos = new GridPane();
         listadoModulos.setPrefSize(620,450);
@@ -116,7 +119,18 @@ public class FullModulosView {
             ap.getChildren().add(titulo);
             
             Font fontTxt = new Font("Yu Gothic light", 15);
-            Text txt = new Text(arrayTareas.size() + " tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
+            Text txt = new Text();
+            
+            if (arrayTareas==null&&arrayEventos==null){
+                txt = new Text("0 tareas pendientes\n0 eventos pendientes");
+            } else if (arrayEventos==null){
+                txt = new Text(arrayTareas.size() + " tareas pendientes\n0 eventos pendientes");
+            } else if (arrayTareas==null){
+                txt = new Text("0 tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
+            } else {
+                txt = new Text(arrayTareas.size() + " tareas pendientes\n" + arrayEventos.size() + " eventos pendientes");
+            }
+            
 
             ap.setTopAnchor(txt, 40.0);
             ap.setLeftAnchor(txt, 10.0);

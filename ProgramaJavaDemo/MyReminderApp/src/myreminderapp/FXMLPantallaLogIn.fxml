@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="296.0" prefWidth="476.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myreminderapp.FXMLPantallaLogInController">
+   <children>
+      <Text layoutX="102.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NICK:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="23.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTRASEÑA:">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fieldTextNick" layoutX="190.0" layoutY="74.0" promptText="..." style="-fx-border-color: gray;">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </TextField>
+      <Button fx:id="buttonLogIn" layoutX="102.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleIniciarSesionAction" style="-fx-background-color: white; -fx-border-color: #0033ff;" text="Iniciar Sesión" textFill="#0033ff">
+         <font>
+            <Font name="Yu Gothic Regular" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonRegister" layoutX="292.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleRegistrarseAction" style="-fx-background-color: white; -fx-border-color: #2a612f;" text="Registrarse" textFill="#2a612f">
+         <font>
+            <Font name="Yu Gothic Regular" size="12.0" />
+         </font>
+      </Button>
+      <Text layoutX="145.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="~ INICIAR SESIÓN ~">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="fieldTextPasswd" layoutX="189.0" layoutY="155.0" promptText="..." style="-fx-border-color: gray;">
+         <font>
+            <Font name="Yu Gothic Regular" size="20.0" />
+         </font>
+      </PasswordField>
+   </children>
+</AnchorPane>

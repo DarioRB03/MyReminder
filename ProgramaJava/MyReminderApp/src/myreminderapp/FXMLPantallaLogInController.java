@@ -89,15 +89,15 @@ public class FXMLPantallaLogInController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = new Stage();
         
-                stage.setScene(scene);
-                stage.setResizable(false);
-                stage.show();
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
         
-                Stage myStage = (Stage) this.buttonLogIn.getScene().getWindow();
-                myStage.close();
-            } catch (IOException ex) {
-                Logger.getLogger(FXMLPantallaLogInController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Stage myStage = (Stage) this.buttonLogIn.getScene().getWindow();
+            myStage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPantallaLogInController.class.getName()).log(Level.SEVERE, null, ex);
+        }
             
         } else {
             //Si la booleana es incorrecta nos salta un error de inicio de sesion
@@ -128,7 +128,7 @@ public class FXMLPantallaLogInController implements Initializable {
             stage.setResizable(false);
             stage.show();
         
-            Stage myStage = (Stage) this.buttonLogIn.getScene().getWindow();
+            Stage myStage = (Stage) this.buttonRegister.getScene().getWindow();
             myStage.close();
         } catch (IOException ex) {
             Logger.getLogger(FXMLPantallaLogInController.class.getName()).log(Level.SEVERE, null, ex);

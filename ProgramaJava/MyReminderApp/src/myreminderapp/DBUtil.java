@@ -17,7 +17,7 @@ public class DBUtil {
     
 	private Connection conn;
 	private String cadenaConexion = "jdbc:mysql://myreminder.ddns.net:3306/myre_myreminderdb";
-	private String nombreUsuario = "myre_myreminderdbusr";
+	private String nombreUsuario = "myreminderuser";
 	private String password = "MyReminder1234!";
 	
         /**

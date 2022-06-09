@@ -20,7 +20,9 @@ public class PooUsuarioModel extends DBUtil{
          */
         public ArrayList<PooUsuario> getUsuarios(){
             ArrayList<PooUsuario> arrayUsuarios = new ArrayList<PooUsuario>();
+
             try {
+
 			String insertSql = "SELECT idUsuario, nombre, apellido, nick, password FROM usuarios";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
@@ -119,6 +121,8 @@ public class PooUsuarioModel extends DBUtil{
 		Boolean resultado = false;
 		try {
 			String Sql = "UPDATE usuarios SET nombre=?, apellido=?, nick=?, password=? WHERE idUsuario=?";
+
+
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			

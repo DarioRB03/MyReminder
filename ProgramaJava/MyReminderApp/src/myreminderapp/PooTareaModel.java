@@ -4,6 +4,7 @@
  */
 package myreminderapp;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,7 +34,8 @@ public class PooTareaModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    String fecha = rs.getString("fechaTarea");
+                    Date fechaTarea = rs.getDate("fechaTarea");
+                    String fecha = fechaTarea.toString();
                     int prioridad = rs.getInt("prioridad");
                     int realizado = rs.getInt("realizado");
                     
@@ -68,7 +70,8 @@ public class PooTareaModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    String fecha = rs.getString("fechaTarea");
+                    Date fechaTarea = rs.getDate("fechaTarea");
+                    String fecha = fechaTarea.toString();
                     int prioridad = rs.getInt("prioridad");
                     int realizado = rs.getInt("realizado");
                     
@@ -106,7 +109,15 @@ public class PooTareaModel extends DBUtil{
 			prest.setInt(1, idModulo);
 			prest.setString(2, titulo);
 			prest.setString(3, descripcion);
-                        prest.setString(4, fechaTarea);
+                        java.util.Date fecha = new java.util.Date();
+                        String[] camposDatos = fechaTarea.split("-");
+                        int year = Integer.parseInt(camposDatos[0]);
+                        int month = Integer.parseInt(camposDatos[1]);
+                        int day = Integer.parseInt(camposDatos[2]);;
+                        fecha.setYear(year);
+                        fecha.setMonth(month);
+                        fecha.setDate(day);
+                        prest.setDate(4, (Date) fecha);
                         prest.setInt(5, prioridad);
                         prest.setInt(6, realizado);
                         
@@ -171,7 +182,15 @@ public class PooTareaModel extends DBUtil{
 			prest.setInt(1, idModulo);
 			prest.setString(2, titulo);
 			prest.setString(3, descripcion);
-                        prest.setString(4, fechaTarea);
+                        java.util.Date fecha = new java.util.Date();
+                        String[] camposDatos = fechaTarea.split("-");
+                        int year = Integer.parseInt(camposDatos[0]);
+                        int month = Integer.parseInt(camposDatos[1]);
+                        int day = Integer.parseInt(camposDatos[2]);;
+                        fecha.setYear(year);
+                        fecha.setMonth(month);
+                        fecha.setDate(day);
+                        prest.setDate(4, (Date) fecha);
                         prest.setInt(5, prioridad);
 			prest.setInt(6, realizado);
 			
@@ -240,11 +259,12 @@ public class PooTareaModel extends DBUtil{
                         int idModulo = rs.getInt("idModulo");
                         String titulo = rs.getString("titulo");
                         String descripcion = rs.getString("descripcion");
-                        String fecha = rs.getString("fechaTarea");
+                        Date fecha = rs.getDate("fechaTarea");
+                        String fechaTarea = fecha.toString();
                         int prioridad = rs.getInt("prioridad");
                         int realizado = rs.getInt("realizado");
                         
-                        PooTarea t = new PooTarea(idTarea,idModulo,titulo,descripcion,fecha,prioridad,realizado);
+                        PooTarea t = new PooTarea(idTarea,idModulo,titulo,descripcion,fechaTarea,prioridad,realizado);
                         tareasObservables.add(t);
 		}
 
@@ -274,11 +294,12 @@ public class PooTareaModel extends DBUtil{
                     int idModulo = rs.getInt("idModulo");
                     String titulo = rs.getString("titulo");
                     String descripcion = rs.getString("descripcion");
-                    String fecha = rs.getString("fecha");
+                    Date fecha = rs.getDate("fecha");
+                    String fechaTarea = fecha.toString();
                     int prioridad = rs.getInt("prioridad");
                     int realizado = rs.getInt("realizado");
                     
-                    PooTarea t = new PooTarea(idTarea,idModulo,titulo,descripcion,fecha,prioridad,realizado);
+                    PooTarea t = new PooTarea(idTarea,idModulo,titulo,descripcion,fechaTarea,prioridad,realizado);
                     tareas.add(t);
                 }
                 

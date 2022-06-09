@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
+    <jar href="MyReminderApp.jar" size="1539876" download="eager" />
+=======
     <jar href="MyReminderApp.jar" size="1537526" download="eager" />
+>>>>>>> origin/main
     <jar href="lib\mysql-connector-java-8.0.28.jar" size="2476480" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="myreminderapp.MyReminderApp"  name="MyReminderApp" />

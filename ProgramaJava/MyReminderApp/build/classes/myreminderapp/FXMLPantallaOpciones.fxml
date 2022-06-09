@@ -15,11 +15,15 @@
          <font>
             <Font name="Yu Gothic Regular" size="30.0" />
          </font>
-      </Button>
+      </Button><!--
       <ImageView fitHeight="240.0" fitWidth="240.0" layoutX="570.0" layoutY="70.0" onMouseClicked="#handlelinkLogo" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@logo/Logo.png" />
+<<<<<<< HEAD
+         </image></ImageView>-->
+=======
          </image></ImageView>
+>>>>>>> origin/main
       <Hyperlink fx:id="linkTyC" layoutX="16.0" layoutY="260.0" onAction="#handleLinkTyC" text="Terminos y Condiciones" underline="true">
          <font>
             <Font name="Yu Gothic Regular" size="30.0" />
