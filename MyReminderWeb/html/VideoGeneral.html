@@ -115,7 +115,7 @@
         <div class="col">
             <div class="feature-img">
                 <img src="../Imagenes/configGeneral.jpg" style="width: 100%;" alt="configgeneral">
-                <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('!video!')">
+                <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('../Videos/General.mp4')">
             </div>
         </div>
         <div>
@@ -123,7 +123,7 @@
                 <div class="small-img-row">
                   <div class="small-img">
                     <img src="../Imagenes/calendarioImagen.png" alt="calendario">
-                    <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('!video!')">
+                    <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('../Videos/Calendario.mp4')">
                   </div>
                   <p> Esto es un video explicativo del calendario</p>
                 </div>
@@ -131,7 +131,7 @@
                 <div class="small-img-row">
                   <div class="small-img">
                     <img src="../Imagenes/modulos.png" alt="modulos">
-                    <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('!video!')">
+                    <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('../Videos/Modulos.mp4')">
                   </div>
                   <p> Esto es un video explicativo de los modulos </p>
                 </div>
@@ -139,7 +139,7 @@
                 <div class="small-img-row">
                   <div class="small-img">
                     <img src="../Imagenes/tareas.png" alt="tareas">
-                    <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('!video!')">
+                    <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('../Videos.Tarea.mp4')">
                   </div>
                   <p> Esto es un video explicativo de las tareas </p>
                 </div>
@@ -150,7 +150,7 @@
 
 <div class="video-player" id="videoPlayer">
   <video style="width: 100%;" controls autoplay id="myVideo">
-    <source src="https://www.youtube.com/watch?v=vOapgSfSN1s&ab_channel=MariaBecerraMusic" type="video/mp4">
+    <source src="../Videos/General.mp4" type="video/mp4">
   </video>
   <img src="../Imagenes/close.png" alt="cerrar" class="close-btn" onclick="stopVideo()">
 </div>
