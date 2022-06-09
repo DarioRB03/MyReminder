@@ -20,11 +20,9 @@ public class PooUsuarioModel extends DBUtil{
          */
         public ArrayList<PooUsuario> getUsuarios(){
             ArrayList<PooUsuario> arrayUsuarios = new ArrayList<PooUsuario>();
-<<<<<<< HEAD
+
             try {
-=======
-        try {
->>>>>>> 2ef6a54 (creado un exe de la aplicacion, aplicación terminada, fallan las inserciones en la bbdd excepto por los modulos)
+
 			String insertSql = "SELECT idUsuario, nombre, apellido, nick, password FROM usuarios";
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(insertSql);
@@ -122,11 +120,9 @@ public class PooUsuarioModel extends DBUtil{
             public boolean editarUsuario(int idUsuario, String nombre, String apellido, String nick, String password) {
 		Boolean resultado = false;
 		try {
-<<<<<<< HEAD
 			String Sql = "UPDATE usuarios SET nombre=?, apellido=?, nick=?, password=? WHERE idUsuario=?";
-=======
-			String Sql = "UPDATE usuarios SET nombre=?, apellido=?, nick=?, Mpassword=? WHERE idUsuario=?";
->>>>>>> 2ef6a54 (creado un exe de la aplicacion, aplicación terminada, fallan las inserciones en la bbdd excepto por los modulos)
+
+
 				  
 			PreparedStatement prest = this.getConexion().prepareStatement(Sql);
 			
